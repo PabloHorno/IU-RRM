@@ -19,6 +19,8 @@ namespace WindowsGame2
         private Vector3 rotacion = Vector3.Zero;
         private Matrix simuladorWorldRotation;
         private float velocidad = 10.0f;
+        SpriteFont fuente1;
+        SpriteBatch spriteBatch;
 
         GraphicsDeviceManager graphics;
 
@@ -36,6 +38,8 @@ namespace WindowsGame2
         protected override void LoadContent()
         {
             modeloMano = this.Content.Load<Model>("3D hand");
+            spriteBatch = new SpriteBatch(graphics.GraphicsDevice);
+            fuente1 = this.Content.Load<SpriteFont>("Courier New");
         }
         protected override void UnloadContent()
         {
@@ -79,9 +83,13 @@ namespace WindowsGame2
         protected override void Draw(GameTime gameTime)
         {
             graphics.GraphicsDevice.Clear(Color.DarkGreen);
-
             DrawModel(modeloMano);
 
+            spriteBatch.Begin();
+            spriteBatch.DrawString(fuente1, rotacion.ToString(), new Vector2(graphics.GraphicsDevice.Viewport.Width / 2, graphics.GraphicsDevice.Viewport.Height / 2), Color.Black);/*,
+                0.0f, fuente1.MeasureString(rotacion.ToString()) / 2, 1, SpriteEffects.None, 0.5f);*/
+            spriteBatch.End();
+                
             base.Draw(gameTime);
         }
         private void DrawModel(Model m)
