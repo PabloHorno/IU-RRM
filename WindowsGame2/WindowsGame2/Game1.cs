@@ -65,6 +65,8 @@ namespace WindowsGame2
                 rotacion.Z -= velocidad * 0.1f;
             if (keyboardState.IsKeyDown(Keys.H))
                 rotacion = Vector3.Zero;
+            if (keyboardState.IsKeyDown(Keys.J))
+                rotacion = new Vector3( 90, 90, 90);
 
             simuladorWorldRotation =
                 Matrix.CreateRotationX(MathHelper.ToRadians(rotacion.X)) *
