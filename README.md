@@ -2,6 +2,6 @@
 Interfaz de Usuario para un Robot de Rehabilitacion de Mano
 
 
-![alt text](https://imgur.com/a/34jaU)
+![alt text](https://i.imgur.com/xgwlV7a.png)
 ###@Autor
 Pablo Horno Pérez
