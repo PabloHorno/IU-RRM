@@ -9,9 +9,9 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-namespace WindowsGame2
+namespace VentanaRender
 {
-    public class Game1 : Microsoft.Xna.Framework.Game
+    public class Render : Microsoft.Xna.Framework.Game
     {
         private Model modeloMano;
         private Vector3 posicion = Vector3.One;
@@ -25,10 +25,11 @@ namespace WindowsGame2
 
         GraphicsDeviceManager graphics;
 
-        public Game1()
+        public Render()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            Window.Title = "Ventana de Renderizacion Mano";
         }
         protected override void Initialize()
         {
@@ -86,10 +87,10 @@ namespace WindowsGame2
             graphics.GraphicsDevice.Clear(Color.DarkGreen);
             DrawModel(modeloMano);
 
-            spriteBatch.Begin();
+            /*spriteBatch.Begin();
             spriteBatch.DrawString(fuente1, rotacion.ToString() + velocidad, new Vector2(graphics.GraphicsDevice.Viewport.Width / 2, graphics.GraphicsDevice.Viewport.Height / 2), Color.Black,
                 0.0f, fuente1.MeasureString(rotacion.ToString()) / 2, 1, SpriteEffects.None, 0.5f);
-            spriteBatch.End();
+            spriteBatch.End();*/
                 
             base.Draw(gameTime);
         }

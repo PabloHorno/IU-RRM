@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IU-Windows", "IU-Windows\IU-Windows.csproj", "{7CDFD694-89AD-4B5C-BE6E-1350F6A480EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsGame2", "WindowsGame2\WindowsGame2\WindowsGame2.csproj", "{2C91924A-E90F-4C9D-98A0-51090483DB26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VentanaRender", "WindowsGame2\WindowsGame2\VentanaRender.csproj", "{2C91924A-E90F-4C9D-98A0-51090483DB26}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "WindowsGame2Content", "WindowsGame2\WindowsGame2Content\WindowsGame2Content.contentproj", "{10738FDE-4EE5-46F0-A779-C4582BE02CC9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsGame2Content", "WindowsGame2\WindowsGame2Content\WindowsGame2Content.contentproj", "{10738FDE-4EE5-46F0-A779-C4582BE02CC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
