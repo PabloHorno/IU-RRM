@@ -21,6 +21,7 @@ namespace WindowsGame2
         private float velocidad = 10.0f;
         SpriteFont fuente1;
         SpriteBatch spriteBatch;
+        List<Matrix> peta = new List<Matrix>();
 
         GraphicsDeviceManager graphics;
 
@@ -52,9 +53,9 @@ namespace WindowsGame2
                 this.Exit();
             //rotacion += Vector3.One;
             if (keyboardState.IsKeyDown(Keys.Add))
-                velocidad += 0.1f;
+                velocidad += 10f;
             if (keyboardState.IsKeyDown(Keys.Subtract))
-                velocidad -= 0.1f;
+                velocidad -= 10f;
             if (keyboardState.IsKeyDown(Keys.W))
                 rotacion.X += velocidad * 0.1f;
             if (keyboardState.IsKeyDown(Keys.S))
@@ -86,8 +87,8 @@ namespace WindowsGame2
             DrawModel(modeloMano);
 
             spriteBatch.Begin();
-            spriteBatch.DrawString(fuente1, rotacion.ToString(), new Vector2(graphics.GraphicsDevice.Viewport.Width / 2, graphics.GraphicsDevice.Viewport.Height / 2), Color.Black);/*,
-                0.0f, fuente1.MeasureString(rotacion.ToString()) / 2, 1, SpriteEffects.None, 0.5f);*/
+            spriteBatch.DrawString(fuente1, rotacion.ToString() + velocidad, new Vector2(graphics.GraphicsDevice.Viewport.Width / 2, graphics.GraphicsDevice.Viewport.Height / 2), Color.Black,
+                0.0f, fuente1.MeasureString(rotacion.ToString()) / 2, 1, SpriteEffects.None, 0.5f);
             spriteBatch.End();
                 
             base.Draw(gameTime);
