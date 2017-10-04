@@ -21,7 +21,6 @@ namespace VentanaRender
         private float velocidad = 10.0f;
         SpriteFont fuente1;
         SpriteBatch spriteBatch;
-        List<Matrix> peta = new List<Matrix>();
 
         GraphicsDeviceManager graphics;
 
