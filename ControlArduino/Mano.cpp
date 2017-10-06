@@ -1,0 +1,98 @@
+#include "Arduino.h"
+#include "Mano.h"
+
+void Mano::set_pines(unsigned pin[5])
+{
+	dedos[PULGAR].iniciar(pin[0], PULGAR_CERRADO, PULGAR_ABIERTO);
+	dedos[INDICE].iniciar(pin[1], INDICE_CERRADO, INDICE_ABIERTO);
+	dedos[CORAZON].iniciar(pin[2], CORAZON_CERRADO, CORAZON_ABIERTO);
+	dedos[ANULAR].iniciar(pin[3], ANULAR_CERRADO, ANULAR_ABIERTO);
+	dedos[MENIQUE].iniciar(pin[4], MENIQUE_CERRADO,MENIQUE_ABIERTO);
+}
+
+void Mano::set_pines(unsigned pin_pulgar, unsigned pin_indice, unsigned pin_corazon, unsigned pin_anular,unsigned pin_menique)
+{
+	unsigned pin[] = { pin_pulgar, pin_indice, pin_corazon, pin_anular, pin_menique };
+	set_pines(pin);
+}
+
+void Mano::abrir_dedos()
+{
+	for each (Dedo d in dedos)
+		d.abrir(false);
+	delay(8000);
+}
+
+void Mano::cerrar_dedos()
+{
+	for each (Dedo d in dedos)
+		d.cerrar(false);
+	delay(8000);
+}
+
+void Mano::contar(unsigned interaciones)
+{
+	for (unsigned iter = 0; iter < interaciones; iter++)
+	{
+		cerrar_dedos();
+		for each(Dedo d in dedos)
+			d.abrir();
+	}
+}
+
+void Mano::indice_pulgar()
+{
+}
+
+void Mano::asignar_posicion_dedos(unsigned posiciones[5])
+{
+	unsigned i = 0;
+	for each (Dedo d in dedos)
+		d.write(posiciones[i++]);
+}
+void Mano::calibrar_dedos()
+{
+	Serial.println("Calibrando dedos...");
+	unsigned dedo = 0;
+	bool siguiente_dedo = false;
+	unsigned posicion = 80;
+	unsigned input;
+	while (dedo < 5)
+	{
+		while (!siguiente_dedo)
+		{
+			if (Serial.available()) {
+				input = Serial.read();
+				if (input == 43)
+				{
+					posicion++;
+				}
+				else if (input == 45)
+				{
+					posicion--;
+				}
+				else if (input == 42)
+				{
+					siguiente_dedo = true;
+				}
+
+				dedos[dedo].write(posicion);
+
+				Serial.print("Dedo: ");
+				Serial.print(dedo);
+				Serial.print(" --- Posicion: ");
+				Serial.println(posicion);
+			}
+		}
+		siguiente_dedo = false;
+		dedo++;
+	}
+}
+
+bool Mano::is_ready()
+{
+	for each(Dedo d in dedos)
+		if (!d.attached())
+			return false;
+	return true;
+}
