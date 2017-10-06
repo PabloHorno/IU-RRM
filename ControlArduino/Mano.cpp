@@ -35,8 +35,8 @@ void Mano::contar(unsigned interaciones)
 	for (unsigned iter = 0; iter < interaciones; iter++)
 	{
 		cerrar_dedos();
-		for each(Dedo d in dedos)
-			d.abrir();
+		for (unsigned i = 0; i < sizeof(dedos); i++)
+			dedos[i].abrir();
 	}
 }
 
