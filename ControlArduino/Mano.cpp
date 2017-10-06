@@ -18,15 +18,15 @@ void Mano::set_pines(unsigned pin_pulgar, unsigned pin_indice, unsigned pin_cora
 
 void Mano::abrir_dedos()
 {
-	for each (Dedo d in dedos)
-		d.abrir(false);
+	for(unsigned i = 0; i < sizeof(dedos); i++)
+		dedos[i].abrir(false);
 	delay(8000);
 }
 
 void Mano::cerrar_dedos()
 {
-	for each (Dedo d in dedos)
-		d.cerrar(false);
+	for (unsigned i = 0; i < sizeof(dedos); i++)
+		dedos[i].cerrar(false);
 	delay(8000);
 }
 
@@ -46,9 +46,8 @@ void Mano::indice_pulgar()
 
 void Mano::asignar_posicion_dedos(unsigned posiciones[5])
 {
-	unsigned i = 0;
-	for each (Dedo d in dedos)
-		d.write(posiciones[i++]);
+	for (unsigned i = 0; i < sizeof(dedos); i++)
+		dedos[i].write(posiciones[i]);
 }
 void Mano::calibrar_dedos()
 {
@@ -91,8 +90,8 @@ void Mano::calibrar_dedos()
 
 bool Mano::is_ready()
 {
-	for each(Dedo d in dedos)
-		if (!d.attached())
+	for (unsigned i = 0; i < sizeof(dedos); i++)
+		if(dedos[i].attached())
 			return false;
 	return true;
 }

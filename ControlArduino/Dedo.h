@@ -1,5 +1,6 @@
 #pragma once
-
+#include <Arduino.h>
+#include <Servo.h>
 #define DELEY_APERTURA_DEDO 7000
 #define DELEY_CERRAR_DEDO 7000
 
