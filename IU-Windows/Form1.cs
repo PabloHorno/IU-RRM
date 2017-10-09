@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.IO.Ports;
+using System.Timers;
 namespace IU_Windows
 {
     public partial class Form1 : Form
@@ -18,6 +20,25 @@ namespace IU_Windows
             InitializeComponent();
             button1.Click += Button1_Click;
             button2.Click += Button2_Click;
+            toolStripMenuItem1.Click += ToolStripMenuItem1_Click;
+            toolStripMenuItem2.Click += ToolStripMenuItem2_Click;
+            label1.Click += Label1_Click;
+            
+        }
+
+        private void ToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            toolStripDropDownButton1.Text = "COM2";
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+            toolStripMenuItem1.Text = "";
+        }
+
+        private void ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            toolStripDropDownButton1.Text = "COM1";
         }
 
         private void Button2_Click(object sender, EventArgs e)
