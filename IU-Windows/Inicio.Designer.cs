@@ -29,28 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
-            this.button1 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tBoxUser = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tBoxPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.btnIniciar = new System.Windows.Forms.Button();
+            this.lblError = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(173, 182);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Iniciar Sesion";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // statusStrip1
             // 
@@ -87,12 +78,13 @@
             this.toolStripMenuItem2.Size = new System.Drawing.Size(108, 22);
             this.toolStripMenuItem2.Text = "COM2";
             // 
-            // textBox1
+            // tBoxUser
             // 
-            this.textBox1.Location = new System.Drawing.Point(173, 60);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(155, 20);
-            this.textBox1.TabIndex = 4;
+            this.tBoxUser.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tBoxUser.Location = new System.Drawing.Point(173, 60);
+            this.tBoxUser.Name = "tBoxUser";
+            this.tBoxUser.Size = new System.Drawing.Size(155, 20);
+            this.tBoxUser.TabIndex = 4;
             // 
             // label1
             // 
@@ -104,13 +96,14 @@
             this.label1.Text = "Usuario";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // textBox2
+            // tBoxPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(173, 115);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '•';
-            this.textBox2.Size = new System.Drawing.Size(155, 20);
-            this.textBox2.TabIndex = 6;
+            this.tBoxPassword.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tBoxPassword.Location = new System.Drawing.Point(173, 115);
+            this.tBoxPassword.Name = "tBoxPassword";
+            this.tBoxPassword.PasswordChar = '•';
+            this.tBoxPassword.Size = new System.Drawing.Size(155, 20);
+            this.tBoxPassword.TabIndex = 6;
             // 
             // label2
             // 
@@ -132,21 +125,40 @@
             this.linkLabel1.Text = "Crear nueva cuenta";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // btnIniciar
+            // 
+            this.btnIniciar.Location = new System.Drawing.Point(176, 194);
+            this.btnIniciar.Name = "btnIniciar";
+            this.btnIniciar.Size = new System.Drawing.Size(75, 23);
+            this.btnIniciar.TabIndex = 9;
+            this.btnIniciar.Text = "Iniciar";
+            this.btnIniciar.UseVisualStyleBackColor = true;
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(273, 203);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 13);
+            this.lblError.TabIndex = 10;
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 312);
+            this.Controls.Add(this.lblError);
+            this.Controls.Add(this.btnIniciar);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tBoxPassword);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tBoxUser);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Inicio";
-            this.Text = "Iniciar Sesion";
+            this.Text = "Prototipo de Robot de Rehabilitacion de Mano - v0.1";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -155,17 +167,17 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tBoxUser;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tBoxPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button btnIniciar;
+        private System.Windows.Forms.Label lblError;
     }
 }
 

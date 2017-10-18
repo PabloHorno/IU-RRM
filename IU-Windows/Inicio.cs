@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO.Ports;
 using System.Timers;
+using System.Data;
+using System.Data.SqlClient;
 namespace IU_Windows
 {
     public partial class Inicio : Form
@@ -18,15 +20,50 @@ namespace IU_Windows
         public Inicio()
         {
             InitializeComponent();
-            button1.Click += Button1_Click;
             toolStripMenuItem1.Click += ToolStripMenuItem1_Click;
             toolStripMenuItem2.Click += ToolStripMenuItem2_Click;
             label1.Click += Label1_Click;
             linkLabel1.Click += LinkLabel1_Click;
+            btnIniciar.Click += BtnIniciar_Click;
+        }
+
+        private void BtnIniciar_Click(object sender, EventArgs e)
+        {
+            if(String.IsNullOrEmpty(tBoxUser.Text) && String.IsNullOrEmpty(tBoxPassword.Text))
+            {
+                lblError.Text = "Faltan datos de rellenar";
+            }
+            else
+            {
+                SqlConnection sql = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\joseangel\\source\\repos\\IU-RRM\\IU-Windows\\DataBase.mdf;Integrated Security=True");
+                SqlCommand cmd = new SqlCommand($"SELECT * FROM Usuarios WHERE Nombre = @Nombre AND Contraseña = @Contraseña",sql);
+                cmd.Parameters.AddWithValue("@Nombre",tBoxUser.Text);
+                cmd.Parameters.AddWithValue("@Contraseña", Helper.encprytPassword(tBoxPassword.Text));
+                
+                sql.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        MessageBox.Show($"ID:{reader.GetSqlInt32(0)}\rNombre:{reader.GetString(1)}\rApellidos: {reader.GetString(3)}\rCorreo:{reader.GetString(4)}");
+
+                    }
+                }
+                else
+                {
+                    lblError.Text = "Usuario/Contraseña incorrectos";
+                }
+                reader.Close();
+                sql.Close();
+            }
         }
 
         private void LinkLabel1_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            CrearCuenta crearCuenta = new CrearCuenta();
+            crearCuenta.Show();
         }
 
         private void ToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -70,9 +107,9 @@ namespace IU_Windows
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Error faltan de rellenar datos","Error", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Error);
+
         }
     }
     public static class ProcessHelper

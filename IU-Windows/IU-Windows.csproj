@@ -71,6 +71,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataBaseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Helper.cs" />
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
