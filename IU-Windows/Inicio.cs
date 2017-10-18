@@ -12,18 +12,21 @@ using System.IO.Ports;
 using System.Timers;
 namespace IU_Windows
 {
-    public partial class Form1 : Form
+    public partial class Inicio : Form
     {
         Process p = new Process();
-        public Form1()
+        public Inicio()
         {
             InitializeComponent();
             button1.Click += Button1_Click;
-            button2.Click += Button2_Click;
             toolStripMenuItem1.Click += ToolStripMenuItem1_Click;
             toolStripMenuItem2.Click += ToolStripMenuItem2_Click;
             label1.Click += Label1_Click;
-            
+            linkLabel1.Click += LinkLabel1_Click;
+        }
+
+        private void LinkLabel1_Click(object sender, EventArgs e)
+        {
         }
 
         private void ToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -41,17 +44,6 @@ namespace IU_Windows
             toolStripDropDownButton1.Text = "COM1";
         }
 
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            if (ProcessHelper.IsProcessRunning(p))
-            {
-                p.CloseMainWindow();
-                p.Close();
-            }
-            else
-                this.Close();
-        }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             if (ProcessHelper.IsProcessRunning(p))
@@ -61,6 +53,26 @@ namespace IU_Windows
                 p.StartInfo.CreateNoWindow = true;
                 p.Start();
             }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("Error faltan de rellenar datos","Error", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Error);
         }
     }
     public static class ProcessHelper
