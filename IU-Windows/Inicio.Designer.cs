@@ -101,9 +101,9 @@
             this.tBoxPassword.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tBoxPassword.Location = new System.Drawing.Point(173, 115);
             this.tBoxPassword.Name = "tBoxPassword";
-            this.tBoxPassword.PasswordChar = '•';
             this.tBoxPassword.Size = new System.Drawing.Size(155, 20);
             this.tBoxPassword.TabIndex = 6;
+            this.tBoxPassword.UseSystemPasswordChar = true;
             // 
             // label2
             // 

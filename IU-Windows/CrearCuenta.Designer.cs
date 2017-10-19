@@ -28,24 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearCuenta));
+            this.inputNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.inputApellidos = new System.Windows.Forms.TextBox();
             this.lblApellidos = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.inputCorreo = new System.Windows.Forms.TextBox();
             this.lblCorreo = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.inputContraseña = new System.Windows.Forms.TextBox();
+            this.inputContraseña2 = new System.Windows.Forms.TextBox();
             this.lblContraseña = new System.Windows.Forms.Label();
             this.lblContraseña2 = new System.Windows.Forms.Label();
+            this.btnCrearCuenta = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
+            this.inputNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.lblNacimiento = new System.Windows.Forms.Label();
+            this.btnVerContraseña = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblErrorCrearCuenta = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // inputNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(139, 20);
-            this.textBox1.TabIndex = 0;
+            this.inputNombre.Location = new System.Drawing.Point(12, 43);
+            this.inputNombre.Name = "inputNombre";
+            this.inputNombre.Size = new System.Drawing.Size(139, 20);
+            this.inputNombre.TabIndex = 0;
             // 
             // lblNombre
             // 
@@ -56,12 +64,12 @@
             this.lblNombre.TabIndex = 3;
             this.lblNombre.Text = "Nombre";
             // 
-            // textBox2
+            // inputApellidos
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 92);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(139, 20);
-            this.textBox2.TabIndex = 4;
+            this.inputApellidos.Location = new System.Drawing.Point(12, 92);
+            this.inputApellidos.Name = "inputApellidos";
+            this.inputApellidos.Size = new System.Drawing.Size(139, 20);
+            this.inputApellidos.TabIndex = 4;
             // 
             // lblApellidos
             // 
@@ -72,12 +80,12 @@
             this.lblApellidos.TabIndex = 5;
             this.lblApellidos.Text = "Apellidos";
             // 
-            // textBox3
+            // inputCorreo
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 138);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(139, 20);
-            this.textBox3.TabIndex = 6;
+            this.inputCorreo.Location = new System.Drawing.Point(12, 138);
+            this.inputCorreo.Name = "inputCorreo";
+            this.inputCorreo.Size = new System.Drawing.Size(139, 20);
+            this.inputCorreo.TabIndex = 6;
             // 
             // lblCorreo
             // 
@@ -89,21 +97,21 @@
             this.lblCorreo.Text = "Correo";
             this.lblCorreo.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox4
+            // inputContraseña
             // 
-            this.textBox4.Location = new System.Drawing.Point(227, 43);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PasswordChar = '•';
-            this.textBox4.Size = new System.Drawing.Size(139, 20);
-            this.textBox4.TabIndex = 8;
+            this.inputContraseña.Location = new System.Drawing.Point(227, 43);
+            this.inputContraseña.Name = "inputContraseña";
+            this.inputContraseña.Size = new System.Drawing.Size(139, 20);
+            this.inputContraseña.TabIndex = 8;
+            this.inputContraseña.UseSystemPasswordChar = true;
             // 
-            // textBox5
+            // inputContraseña2
             // 
-            this.textBox5.Location = new System.Drawing.Point(227, 92);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.PasswordChar = '•';
-            this.textBox5.Size = new System.Drawing.Size(139, 20);
-            this.textBox5.TabIndex = 9;
+            this.inputContraseña2.Location = new System.Drawing.Point(227, 92);
+            this.inputContraseña2.Name = "inputContraseña2";
+            this.inputContraseña2.Size = new System.Drawing.Size(139, 20);
+            this.inputContraseña2.TabIndex = 9;
+            this.inputContraseña2.UseSystemPasswordChar = true;
             // 
             // lblContraseña
             // 
@@ -123,21 +131,93 @@
             this.lblContraseña2.TabIndex = 11;
             this.lblContraseña2.Text = "Repetir Contraseña";
             // 
+            // btnCrearCuenta
+            // 
+            this.btnCrearCuenta.Location = new System.Drawing.Point(319, 248);
+            this.btnCrearCuenta.Name = "btnCrearCuenta";
+            this.btnCrearCuenta.Size = new System.Drawing.Size(86, 23);
+            this.btnCrearCuenta.TabIndex = 12;
+            this.btnCrearCuenta.Text = "Crear Cuenta";
+            this.btnCrearCuenta.UseVisualStyleBackColor = true;
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.Location = new System.Drawing.Point(436, 248);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(86, 23);
+            this.btnAtras.TabIndex = 13;
+            this.btnAtras.Text = "Atrás";
+            this.btnAtras.UseVisualStyleBackColor = true;
+            // 
+            // inputNacimiento
+            // 
+            this.inputNacimiento.Location = new System.Drawing.Point(227, 138);
+            this.inputNacimiento.Name = "inputNacimiento";
+            this.inputNacimiento.Size = new System.Drawing.Size(200, 20);
+            this.inputNacimiento.TabIndex = 14;
+            // 
+            // lblNacimiento
+            // 
+            this.lblNacimiento.AutoSize = true;
+            this.lblNacimiento.Location = new System.Drawing.Point(224, 122);
+            this.lblNacimiento.Name = "lblNacimiento";
+            this.lblNacimiento.Size = new System.Drawing.Size(106, 13);
+            this.lblNacimiento.TabIndex = 15;
+            this.lblNacimiento.Text = "Fecha de nacimiento";
+            this.lblNacimiento.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // btnVerContraseña
+            // 
+            this.btnVerContraseña.Image = global::IU_Windows.Properties.Resources.viewPassword;
+            this.btnVerContraseña.Location = new System.Drawing.Point(372, 41);
+            this.btnVerContraseña.Name = "btnVerContraseña";
+            this.btnVerContraseña.Size = new System.Drawing.Size(33, 23);
+            this.btnVerContraseña.TabIndex = 16;
+            this.btnVerContraseña.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(372, 99);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 17;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // lblErrorCrearCuenta
+            // 
+            this.lblErrorCrearCuenta.AutoSize = true;
+            this.lblErrorCrearCuenta.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCrearCuenta.Location = new System.Drawing.Point(278, 253);
+            this.lblErrorCrearCuenta.Name = "lblErrorCrearCuenta";
+            this.lblErrorCrearCuenta.Size = new System.Drawing.Size(0, 13);
+            this.lblErrorCrearCuenta.TabIndex = 18;
+            this.lblErrorCrearCuenta.Click += new System.EventHandler(this.label1_Click_2);
+            // 
             // CrearCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 312);
+            this.Controls.Add(this.lblErrorCrearCuenta);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnVerContraseña);
+            this.Controls.Add(this.lblNacimiento);
+            this.Controls.Add(this.inputNacimiento);
+            this.Controls.Add(this.btnAtras);
+            this.Controls.Add(this.btnCrearCuenta);
             this.Controls.Add(this.lblContraseña2);
             this.Controls.Add(this.lblContraseña);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.inputContraseña2);
+            this.Controls.Add(this.inputContraseña);
             this.Controls.Add(this.lblCorreo);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.inputCorreo);
             this.Controls.Add(this.lblApellidos);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.inputApellidos);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.inputNombre);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CrearCuenta";
             this.Text = "CrearCuenta";
             this.ResumeLayout(false);
@@ -147,15 +227,22 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox inputNombre;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox inputApellidos;
         private System.Windows.Forms.Label lblApellidos;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox inputCorreo;
         private System.Windows.Forms.Label lblCorreo;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox inputContraseña;
+        private System.Windows.Forms.TextBox inputContraseña2;
         private System.Windows.Forms.Label lblContraseña;
         private System.Windows.Forms.Label lblContraseña2;
+        private System.Windows.Forms.Button btnCrearCuenta;
+        private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.DateTimePicker inputNacimiento;
+        private System.Windows.Forms.Label lblNacimiento;
+        private System.Windows.Forms.Button btnVerContraseña;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblErrorCrearCuenta;
     }
 }

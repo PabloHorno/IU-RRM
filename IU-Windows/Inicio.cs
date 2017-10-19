@@ -16,7 +16,7 @@ namespace IU_Windows
 {
     public partial class Inicio : Form
     {
-        Process p = new Process();
+        List<TextBox> requeridos = new List<TextBox>();
         public Inicio()
         {
             InitializeComponent();
@@ -25,6 +25,7 @@ namespace IU_Windows
             label1.Click += Label1_Click;
             linkLabel1.Click += LinkLabel1_Click;
             btnIniciar.Click += BtnIniciar_Click;
+            setRequeridos();
         }
 
         private void BtnIniciar_Click(object sender, EventArgs e)
@@ -83,13 +84,7 @@ namespace IU_Windows
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (ProcessHelper.IsProcessRunning(p))
-            {
-                p.StartInfo.UseShellExecute = false;
-                p.StartInfo.FileName = "C:\\Users\\joseangel\\source\\repos\\IU-RRM\\WindowsGame2\\WindowsGame2\\bin\\x86\\Debug\\WindowsGame2.exe";
-                p.StartInfo.CreateNoWindow = true;
-                p.Start();
-            }
+
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -110,6 +105,11 @@ namespace IU_Windows
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+        private void setRequeridos()
+        {
+            requeridos.Add(tBoxUser);
+            requeridos.Add(tBoxPassword);
         }
     }
     public static class ProcessHelper
