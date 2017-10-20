@@ -66,5 +66,21 @@ namespace IU_Windows
 
             return new List<string>();
         }
+        public int Count(string query, Dictionary<string,object> parameters)
+        {
+            SqlCommand cmd = new SqlCommand(query, sql);
+            foreach(var param in parameters)
+            {
+                cmd.Parameters.AddWithValue(param.Key, param.Value);
+            }
+            this.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            this.Close();
+            return 0;
+        }
+        public int Count(string tabla)
+        {
+            return Count($"SELECT COUNT(*) FROM {tabla}", new Dictionary<string, object>());
+        }
     }
 }
