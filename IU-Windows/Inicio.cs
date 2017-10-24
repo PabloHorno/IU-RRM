@@ -49,6 +49,9 @@ namespace IU_Windows
                     {
                         MessageBox.Show($"ID:{reader.GetSqlInt32(0)}\rNombre:{reader.GetString(1)}\rApellidos: {reader.GetString(3)}\rCorreo:{reader.GetString(4)}");
 
+                        this.Hide();
+                        SeleccionDePaciente next = new SeleccionDePaciente(reader.GetInt32(0));
+                        next.Show();
                     }
                 }
                 else

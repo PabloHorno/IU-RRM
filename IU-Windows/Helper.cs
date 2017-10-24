@@ -61,22 +61,29 @@ namespace IU_Windows
             SqlDataReader reader = cmd.ExecuteReader();
             this.Close();
         }
-        public List<string> Select(string query)
+        public Usuario GetUsuario(Int32 SqlId)
         {
 
-            return new List<string>();
+            SqlCommand cmd = new SqlCommand($"SELECT * FROM Usuarios WHERE Id = @Id", sql);
+            cmd.Parameters.AddWithValue("@Id", SqlId);
+            this.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+                while (reader.Read())
+                    return new Usuario { Nombre = reader.GetString(1), Apellido = reader.GetString(2), SqlId = reader.GetInt32(0) }; ;
+            return new Usuario();
         }
-        public int Count(string query, Dictionary<string,object> parameters)
+        public int Count(string query, Dictionary<string, object> parameters)
         {
             SqlCommand cmd = new SqlCommand(query, sql);
-            foreach(var param in parameters)
+            foreach (var param in parameters)
             {
                 cmd.Parameters.AddWithValue(param.Key, param.Value);
             }
             this.Open();
-            SqlDataReader reader = cmd.ExecuteReader();
+            int count = (Int32)cmd.ExecuteScalar();
             this.Close();
-            return 0;
+            return count;
         }
         public int Count(string tabla)
         {
