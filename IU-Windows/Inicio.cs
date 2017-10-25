@@ -20,14 +20,13 @@ namespace IU_Windows
         public Inicio()
         {
             InitializeComponent();
+            setRequeridos();
             toolStripMenuItem1.Click += ToolStripMenuItem1_Click;
             toolStripMenuItem2.Click += ToolStripMenuItem2_Click;
             label1.Click += Label1_Click;
             linkLabel1.Click += LinkLabel1_Click;
             btnIniciar.Click += BtnIniciar_Click;
-            setRequeridos();
         }
-
         private void BtnIniciar_Click(object sender, EventArgs e)
         {
             if(String.IsNullOrEmpty(tBoxUser.Text) && String.IsNullOrEmpty(tBoxPassword.Text))

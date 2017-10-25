@@ -70,8 +70,29 @@ namespace IU_Windows
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
                 while (reader.Read())
-                    return new Usuario { Nombre = reader.GetString(1), Apellido = reader.GetString(2), SqlId = reader.GetInt32(0) }; ;
+                {
+                    Usuario usuario = new Usuario { Nombre = reader["Nombre"].ToString(), Apellido = reader["Apellidos"].ToString(), SqlId = Int32.Parse(reader["Id"].ToString()) };
+                    this.Close();
+                    return usuario;
+                }
+            this.Close();
             return new Usuario();
+        }
+        public List<Paciente> GetPacientesFromUser(Int32 SqlId)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Pacientes WHERE Responsable = @RespId", sql);
+            cmd.Parameters.AddWithValue("@RespId", SqlId);
+            this.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<Paciente> pacientes = new List<Paciente>();
+            while(reader.Read())
+                pacientes.Add(new Paciente { Nombre = reader["Nombre"].ToString(), Apellidos = reader["Apellidos"].ToString(), SqlId = Int32.Parse(reader["Id"].ToString()) });
+            this.Close();
+            return pacientes;
+        }
+        public List<Paciente> GetPacientesFromUser(Usuario user)
+        {
+            return GetPacientesFromUser(user.SqlId);
         }
         public int Count(string query, Dictionary<string, object> parameters)
         {

@@ -32,13 +32,14 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellidos = new System.Windows.Forms.Label();
             this.lblCorreo = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // treeView1
             // 
             this.treeView1.Location = new System.Drawing.Point(13, 13);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(121, 526);
+            this.treeView1.Size = new System.Drawing.Size(151, 526);
             this.treeView1.TabIndex = 0;
             // 
             // lblNombre
@@ -69,11 +70,22 @@
             this.lblCorreo.TabIndex = 3;
             this.lblCorreo.Text = "Correo";
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(1057, 13);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 4;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.button1_Click);
+            // 
             // SeleccionDePaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 551);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblCorreo);
             this.Controls.Add(this.lblApellidos);
             this.Controls.Add(this.lblNombre);
@@ -91,5 +103,6 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblApellidos;
         private System.Windows.Forms.Label lblCorreo;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
