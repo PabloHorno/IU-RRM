@@ -27,5 +27,10 @@ namespace IU_Windows
         {
 
         }
+
+        private void acercaDeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Constants.AcercaDe();
+        }
     }
 }

@@ -87,7 +87,7 @@ namespace IU_Windows
 
         private void acercaDeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Este es un programa desarollado por\nPablo Horno Pérez", $"Version {Constants.version}",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            Constants.AcercaDe();
         }
 
         private void nuevoPacienteToolStripMenuItem_Click(object sender, EventArgs e)
