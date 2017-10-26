@@ -61,6 +61,23 @@ namespace IU_Windows
             SqlDataReader reader = cmd.ExecuteReader();
             this.Close();
         }
+        public List<object> Select(string query, Dictionary<string,object> parameters = null )
+        {
+            if (parameters == null)
+                parameters = new Dictionary<string, object>();
+
+            SqlCommand cmd = new SqlCommand(query, sql);
+            foreach (var param in parameters)
+                cmd.Parameters.AddWithValue(param.Key, param.Value);
+            this.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<object> datos = new List<object>();
+            while(reader.Read())
+                for(int i = 0; i < reader.FieldCount; i ++)
+                    datos.Add(reader[i]);
+            this.Close();
+            return datos;
+        }
         public Usuario GetUsuario(Int32 SqlId)
         {
 
@@ -98,9 +115,8 @@ namespace IU_Windows
         {
             SqlCommand cmd = new SqlCommand(query, sql);
             foreach (var param in parameters)
-            {
                 cmd.Parameters.AddWithValue(param.Key, param.Value);
-            }
+          
             this.Open();
             int count = (Int32)cmd.ExecuteScalar();
             this.Close();

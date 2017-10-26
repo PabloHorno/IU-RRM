@@ -6,6 +6,10 @@ using System.Windows.Forms;
 
 namespace IU_Windows
 {
+    static class Constants
+    {
+        static public string version = "1.0";
+    }
     static class Program
     {
         /// <summary>

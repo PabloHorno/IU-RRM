@@ -66,6 +66,12 @@
     <Compile Include="CrearCuenta.Designer.cs">
       <DependentUpon>CrearCuenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="CrearPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearPaciente.Designer.cs">
+      <DependentUpon>CrearPaciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataBaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -90,6 +96,9 @@
     <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="CrearCuenta.resx">
       <DependentUpon>CrearCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearPaciente.resx">
+      <DependentUpon>CrearPaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
