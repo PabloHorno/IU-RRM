@@ -12,6 +12,7 @@ namespace IU_Windows
 {
     public partial class SeleccionDePaciente : Form
     {
+        Usuario usuario = new Usuario();
         public SeleccionDePaciente(int sqlId)
         {
             InitializeComponent();
@@ -23,18 +24,19 @@ namespace IU_Windows
         private void TreeView1_NodeMouseClick1(object sender, TreeNodeMouseClickEventArgs e)
         {
             int SqlId;
-            if(e.Node.Nodes.Count > 0)
+            if (e.Node.Nodes.Count > 0)
             {
                 MessageBox.Show("Es un padre puesto que tiene hijos");
             }
             else if (int.TryParse(e.Node.Name, out SqlId))
             {
-                List<Paciente> paciente = new SQLHelper().GetPacientesFromUser(SqlId);
-                if (paciente.Count > 0)
+                List<Paciente> pacientes = new SQLHelper().GetPacientesFromUser(usuario.SqlId);
+                if (pacientes.Count > 0)
                 {
-                    lblNombre.Text = paciente[0].Nombre;
-                    lblApellidos.Text = paciente[0].Apellidos;
-                    lblCorreo.Text = paciente[0].SqlId.ToString();
+                    Paciente paciente = pacientes.Find(x => x.SqlId.ToString() == e.Node.Name);
+                    lblNombre.Text = paciente.Nombre;
+                    lblApellidos.Text = paciente.Apellidos;
+                    lblCorreo.Text = paciente.SqlId.ToString();
                 }
             }
         }
@@ -43,7 +45,7 @@ namespace IU_Windows
         {
             MessageBox.Show("Has hecho click sobre " + e.Node.Text + "Con SqlId " + e.Node.Name);
         }
-        
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -52,17 +54,17 @@ namespace IU_Windows
         private void CargarDatos(int sqlId)
         {
             SQLHelper db = new SQLHelper();
-            var usurario = db.GetUsuario(sqlId);
-            lblNombre.Text = usurario.Nombre;
-            lblApellidos.Text = usurario.Apellido;
-            lblCorreo.Text = usurario.SqlId.ToString();
+            usuario = db.GetUsuario(sqlId);
+            lblNombre.Text = usuario.Nombre;
+            lblApellidos.Text = usuario.Apellido;
+            lblCorreo.Text = usuario.SqlId.ToString();
 
             treeView1.BeginUpdate();
             treeView1.Nodes.Add("Pacientes");
             List<Paciente> pacientes = new SQLHelper().GetPacientesFromUser(sqlId);
-            foreach(Paciente paciente in pacientes)
+            foreach (Paciente paciente in pacientes)
             {
-                treeView1.Nodes[0].Nodes.Add(paciente.SqlId.ToString(), paciente.Nombre+" "+paciente.Apellidos);
+                treeView1.Nodes[0].Nodes.Add(paciente.SqlId.ToString(), paciente.Nombre + " " + paciente.Apellidos);
             }
             treeView1.Nodes.Add("Añadir Paciente");
             treeView1.EndUpdate();

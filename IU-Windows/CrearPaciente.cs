@@ -26,6 +26,7 @@ namespace IU_Windows
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+
         }
 
         private void acercaDeToolStripMenuItem1_Click(object sender, EventArgs e)
