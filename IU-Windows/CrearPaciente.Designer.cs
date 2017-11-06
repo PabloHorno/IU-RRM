@@ -71,6 +71,7 @@ namespace IU_Windows
             this.textBox1.Size = new System.Drawing.Size(179, 20);
             this.textBox1.TabIndex = 2;
             this.textBox1.Text = "Nombre";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -102,7 +103,7 @@ namespace IU_Windows
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.cerrar);
             // 

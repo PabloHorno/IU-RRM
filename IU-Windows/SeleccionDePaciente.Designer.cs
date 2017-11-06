@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "",
             "AbrirCerrar",
             "5",
             "10"}, -1);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SeleccionDePaciente));
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblCorreo = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,6 +68,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblNombreCuenta = new System.Windows.Forms.Label();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.dataBaseDataSet = new IU_Windows.DataBaseDataSet();
+            this.dataBaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBoxDatosPaciente = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -80,6 +84,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numRepeticiones)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataSetBindingSource)).BeginInit();
+            this.groupBoxDatosPaciente.SuspendLayout();
             this.SuspendLayout();
             // 
             // treeView1
@@ -89,29 +96,9 @@
             this.treeView1.Size = new System.Drawing.Size(151, 512);
             this.treeView1.TabIndex = 0;
             // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(221, 27);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(248, 31);
-            this.lblNombre.TabIndex = 1;
-            this.lblNombre.Text = "Nombre y Apellidos";
-            this.lblNombre.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // lblCorreo
-            // 
-            this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Location = new System.Drawing.Point(571, 42);
-            this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(38, 13);
-            this.lblCorreo.TabIndex = 3;
-            this.lblCorreo.Text = "Correo";
-            // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(1057, 27);
+            this.btnSalir.Location = new System.Drawing.Point(1110, 25);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 4;
@@ -126,7 +113,7 @@
             this.acercaDeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1144, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1197, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -174,7 +161,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(227, 61);
+            this.tabControl1.Location = new System.Drawing.Point(6, 31);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(905, 421);
@@ -220,7 +207,7 @@
             this.Repeticiones,
             this.Observaciones});
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem16});
+            listViewItem1});
             this.listView1.Location = new System.Drawing.Point(7, 7);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(884, 225);
@@ -272,7 +259,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(480, 280);
+            this.tabPage5.Size = new System.Drawing.Size(466, 280);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Dedos";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -295,7 +282,7 @@
             // 
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(480, 280);
+            this.tabPage6.Size = new System.Drawing.Size(466, 280);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "PinzaGruesa";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -304,7 +291,7 @@
             // 
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(480, 280);
+            this.tabPage7.Size = new System.Drawing.Size(466, 280);
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "PinzaFina";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -400,17 +387,56 @@
             this.groupBox3.Text = "Parametros de Terapia";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
+            // lblNombreCuenta
+            // 
+            this.lblNombreCuenta.AutoSize = true;
+            this.lblNombreCuenta.BackColor = System.Drawing.Color.White;
+            this.lblNombreCuenta.Location = new System.Drawing.Point(1097, 9);
+            this.lblNombreCuenta.Name = "lblNombreCuenta";
+            this.lblNombreCuenta.Size = new System.Drawing.Size(88, 13);
+            this.lblNombreCuenta.TabIndex = 7;
+            this.lblNombreCuenta.Text = "lblNombreCuenta";
+            this.lblNombreCuenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblNombreCuenta.Click += new System.EventHandler(this.lblNombreCuenta_Click);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "IU-RRM";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
+            // dataBaseDataSet
+            // 
+            this.dataBaseDataSet.DataSetName = "DataBaseDataSet";
+            this.dataBaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataBaseDataSetBindingSource
+            // 
+            this.dataBaseDataSetBindingSource.DataSource = this.dataBaseDataSet;
+            this.dataBaseDataSetBindingSource.Position = 0;
+            // 
+            // groupBoxDatosPaciente
+            // 
+            this.groupBoxDatosPaciente.Controls.Add(this.tabControl1);
+            this.groupBoxDatosPaciente.Location = new System.Drawing.Point(194, 27);
+            this.groupBoxDatosPaciente.Name = "groupBoxDatosPaciente";
+            this.groupBoxDatosPaciente.Size = new System.Drawing.Size(910, 512);
+            this.groupBoxDatosPaciente.TabIndex = 8;
+            this.groupBoxDatosPaciente.TabStop = false;
+            this.groupBoxDatosPaciente.Text = "NOMBRE Y APELLIDOS";
+            // 
             // SeleccionDePaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1144, 551);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(1197, 551);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.lblCorreo);
-            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.groupBoxDatosPaciente);
+            this.Controls.Add(this.lblNombreCuenta);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SeleccionDePaciente";
             this.Text = "SeleccionDePaciente";
@@ -428,6 +454,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numRepeticiones)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataSetBindingSource)).EndInit();
+            this.groupBoxDatosPaciente.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,8 +465,6 @@
         #endregion
 
         private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
@@ -470,5 +497,10 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblNombreCuenta;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.BindingSource dataBaseDataSetBindingSource;
+        private DataBaseDataSet dataBaseDataSet;
+        private System.Windows.Forms.GroupBox groupBoxDatosPaciente;
     }
 }
