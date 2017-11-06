@@ -14,8 +14,9 @@ namespace IU_Windows
     {
         public CrearPaciente()
         {
+            this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
-            this.comboBox1.Items.AddRange(new SQLHelper().Select("SELECT Nombre FROM Usuarios").ToArray());
+            this.comboBoxResponsable.Items.AddRange(new SQLHelper().Select("SELECT Nombre FROM Usuarios").ToArray());
         }
 
         private void cerrar(object sender, EventArgs e)
@@ -32,6 +33,16 @@ namespace IU_Windows
         private void acercaDeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Constants.AcercaDe();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

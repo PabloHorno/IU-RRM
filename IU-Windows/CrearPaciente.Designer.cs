@@ -30,38 +30,39 @@ namespace IU_Windows
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxResponsable = new System.Windows.Forms.ComboBox();
+            this.dateFechaDeNacimiento = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnGuardar
             // 
-            this.button1.Location = new System.Drawing.Point(72, 208);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGuardar.Location = new System.Drawing.Point(72, 208);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 0;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnCancelar
             // 
-            this.button2.Location = new System.Drawing.Point(176, 208);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.cerrar);
+            this.btnCancelar.Location = new System.Drawing.Point(176, 208);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 1;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.cerrar);
             // 
             // textBox1
             // 
@@ -78,13 +79,6 @@ namespace IU_Windows
             this.textBox2.Size = new System.Drawing.Size(179, 20);
             this.textBox2.TabIndex = 3;
             this.textBox2.Text = "Apellidos";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(72, 122);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(179, 20);
-            this.textBox3.TabIndex = 4;
             // 
             // menuStrip1
             // 
@@ -108,7 +102,7 @@ namespace IU_Windows
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.cerrar);
             // 
@@ -123,31 +117,39 @@ namespace IU_Windows
             // acercaDeToolStripMenuItem1
             // 
             this.acercaDeToolStripMenuItem1.Name = "acercaDeToolStripMenuItem1";
-            this.acercaDeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.acercaDeToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
             this.acercaDeToolStripMenuItem1.Text = "Acerca de";
             this.acercaDeToolStripMenuItem1.Click += new System.EventHandler(this.acercaDeToolStripMenuItem1_Click);
             // 
-            // comboBox1
+            // comboBoxResponsable
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(72, 158);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(179, 21);
-            this.comboBox1.TabIndex = 6;
-            this.comboBox1.Text = "Responsable";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBoxResponsable.FormattingEnabled = true;
+            this.comboBoxResponsable.Location = new System.Drawing.Point(72, 158);
+            this.comboBoxResponsable.Name = "comboBoxResponsable";
+            this.comboBoxResponsable.Size = new System.Drawing.Size(179, 21);
+            this.comboBoxResponsable.TabIndex = 6;
+            this.comboBoxResponsable.Text = "Responsable";
+            this.comboBoxResponsable.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // dateFechaDeNacimiento
+            // 
+            this.dateFechaDeNacimiento.Location = new System.Drawing.Point(75, 113);
+            this.dateFechaDeNacimiento.Name = "dateFechaDeNacimiento";
+            this.dateFechaDeNacimiento.Size = new System.Drawing.Size(176, 20);
+            this.dateFechaDeNacimiento.TabIndex = 7;
+            this.dateFechaDeNacimiento.Value = new System.DateTime(2017, 11, 6, 12, 7, 26, 0);
             // 
             // CrearPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(351, 298);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.dateFechaDeNacimiento);
+            this.Controls.Add(this.comboBoxResponsable);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "CrearPaciente";
@@ -164,16 +166,16 @@ namespace IU_Windows
 
 
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxResponsable;
+        private System.Windows.Forms.DateTimePicker dateFechaDeNacimiento;
     }
 }

@@ -19,6 +19,7 @@ namespace IU_Windows
         List<TextBox> requeridos = new List<TextBox>();
         public Inicio()
         {
+            this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             setRequeridos();
             toolStripMenuItem1.Click += ToolStripMenuItem1_Click;

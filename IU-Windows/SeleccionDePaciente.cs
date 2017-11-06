@@ -15,10 +15,20 @@ namespace IU_Windows
         Usuario usuario = new Usuario();
         public SeleccionDePaciente(int sqlId)
         {
+            this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
+            Inicializacion();
             CargarDatos(sqlId);
             treeView1.NodeMouseDoubleClick += TreeView1_NodeMouseDoubleClick;
             treeView1.NodeMouseClick += TreeView1_NodeMouseClick1;
+        }
+
+        private void Inicializacion()
+        {
+            this.tabControlTerapias.Appearance = TabAppearance.FlatButtons;
+            this.tabControlTerapias.ItemSize = new Size(0, 1);
+            this.tabControlTerapias.SizeMode = TabSizeMode.Fixed;
+            this.comboBoxSeleccionTerapia.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void TreeView1_NodeMouseClick1(object sender, TreeNodeMouseClickEventArgs e)
@@ -34,8 +44,7 @@ namespace IU_Windows
                 if (pacientes.Count > 0)
                 {
                     Paciente paciente = pacientes.Find(x => x.SqlId.ToString() == e.Node.Name);
-                    lblNombre.Text = paciente.Nombre;
-                    lblApellidos.Text = paciente.Apellidos;
+                    lblNombre.Text = paciente.Nombre + " " + paciente.Apellidos;
                     lblCorreo.Text = paciente.SqlId.ToString();
                 }
             }
@@ -43,7 +52,13 @@ namespace IU_Windows
 
         private void TreeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            MessageBox.Show("Has hecho click sobre " + e.Node.Text + "Con SqlId " + e.Node.Name);
+            if(e.Node.Text.Contains("Añadir Paciente"))
+            {
+                CrearPaciente crearPaciente = new CrearPaciente();
+                crearPaciente.Show();
+            }
+            else
+                MessageBox.Show("Has hecho click sobre " + e.Node.Text + "Con SqlId " + e.Node.Name);
         }
 
 
@@ -55,9 +70,6 @@ namespace IU_Windows
         {
             SQLHelper db = new SQLHelper();
             usuario = db.GetUsuario(sqlId);
-            lblNombre.Text = usuario.Nombre;
-            lblApellidos.Text = usuario.Apellido;
-            lblCorreo.Text = usuario.SqlId.ToString();
 
             treeView1.BeginUpdate();
             treeView1.Nodes.Add("Pacientes");
@@ -96,6 +108,46 @@ namespace IU_Windows
         {
             CrearPaciente crearPaciente = new CrearPaciente();
             crearPaciente.Show();
+        }
+
+        private void lblApellidos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.tabControlTerapias.SelectedIndex = this.comboBoxSeleccionTerapia.SelectedIndex;
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

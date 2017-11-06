@@ -16,6 +16,7 @@ namespace IU_Windows
         List<TextBox> requeridos = new List<TextBox>();
         public CrearCuenta()
         {
+            this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             btnCrearCuenta.Click += BtnCrearCuenta_Click;
             btnVerContraseña.Click += BtnVerContraseña_Click;
