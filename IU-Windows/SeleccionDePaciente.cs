@@ -13,6 +13,7 @@ namespace IU_Windows
     public partial class SeleccionDePaciente : Form
     {
         Usuario usuario = new Usuario();
+        Paciente paciente = new Paciente();
         public SeleccionDePaciente(int sqlId)
         {
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -29,8 +30,35 @@ namespace IU_Windows
             this.tabControlTerapias.Appearance = TabAppearance.FlatButtons;
             this.tabControlTerapias.ItemSize = new Size(0, 1);
             this.tabControlTerapias.SizeMode = TabSizeMode.Fixed;
-            this.comboBoxSeleccionTerapia.DropDownStyle = ComboBoxStyle.DropDownList;
             this.lblNombreCuenta.Text = usuario.Nombre;
+
+            this.comboBoxAnguloAperturaCompleta.SelectedIndex = 0;
+            this.comboBoxAnguloCierreCompleta.SelectedIndex = 0;
+            this.comboBoxSeleccionTerapia.SelectedIndex = 0;
+            this.comboBoxTiempoVelocidadAperturaCompleta.SelectedIndex = 0;
+            this.comboBoxTiempoVelocidadCierreCompleta.SelectedIndex = 0;
+            string str="";
+
+            var fields = typeof(SeleccionDePaciente).GetFields( 
+                                                                System.Reflection.BindingFlags.Public | 
+                                                                System.Reflection.BindingFlags.NonPublic |
+                                                                System.Reflection.BindingFlags.Instance);
+
+            var names = Array.ConvertAll(fields, field => field.Name);
+
+            MessageBox.Show(str);
+            /*
+            foreach (var prop in this.GetType().GetFields(System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance))
+            {
+                if (prop.GetType() == typeof(ComboBox))
+                {
+                    foreach (var value in prop.GetType().GetProperties())
+                        if (value.Name == "SelectedIndex")
+                            value.SetValue(prop, 0);
+                }
+                MessageBox.Show(prop.Name);
+            }*/
+
             this.groupBoxDatosPaciente.Hide();
         }
 
@@ -42,8 +70,8 @@ namespace IU_Windows
                 List<Paciente> pacientes = new SQLHelper().GetPacientesFromUser(usuario.SqlId);
                 if (pacientes.Count > 0)
                 {
-                    Paciente paciente = pacientes.Find(x => x.SqlId.ToString() == e.Node.Name);
-                    groupBoxDatosPaciente.Text = (paciente.Nombre + " " + paciente.Apellidos).ToUpper();
+                    paciente = pacientes.Find(x => x.SqlId.ToString() == e.Node.Name);
+                    mostrarDatosPaciente(paciente);
                     this.groupBoxDatosPaciente.Show();
                 }
             }
@@ -77,6 +105,13 @@ namespace IU_Windows
             }
             treeView1.Nodes.Add("Añadir Paciente");
             treeView1.EndUpdate();
+        }
+
+        private void mostrarDatosPaciente(Paciente paciente)
+        {
+            groupBoxDatosPaciente.Text = (paciente.Nombre + " " + paciente.Apellidos).ToUpper();
+
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -158,6 +193,16 @@ namespace IU_Windows
         }
 
         private void lblNombreCuenta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
