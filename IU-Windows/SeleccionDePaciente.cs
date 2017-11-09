@@ -23,6 +23,66 @@ namespace IU_Windows
             CargarDatos(sqlId);
             treeView1.NodeMouseDoubleClick += TreeView1_NodeMouseDoubleClick;
             treeView1.NodeMouseClick += TreeView1_NodeMouseClick1;
+
+           /* this.comboBoxAnguloAperturaCompleta.SelectedIndexChanged += ComboBoxAnguloAperturaCompleta_SelectedIndexChanged;
+            this.comboBoxAnguloCierreCompleta.SelectedIndex = 0;
+            this.comboBoxSeleccionTerapia.SelectedIndex = 0;
+            this.comboBoxTiempoVelocidadAperturaCompleta.SelectedIndex = 0;
+            this.comboBoxTiempoVelocidadCierreCompleta.SelectedIndex = 0;
+            this.comboBoxAnguloAperturaAnular.SelectedIndex = 0;
+            this.comboBoxAnguloAperturaCompleta.SelectedIndex = 0;
+            this.comboBoxAnguloAperturaCorazon.SelectedIndex = 0;
+            this.comboBoxAnguloAperturaIndice.SelectedIndex = 0;
+            this.comboBoxAnguloAperturaMeñique.SelectedIndex = 0;
+            this.comboBoxAnguloAperturaPulgar.SelectedIndex = 0;
+            this.comboBoxAnguloCierreAnular.SelectedIndex = 0;
+            this.comboBoxAnguloCierreCompleta.SelectedIndex = 0;
+            this.comboBoxAnguloCierreCorazon.SelectedIndex = 0;
+            this.comboBoxAnguloCierreIndice.SelectedIndex = 0;
+            this.comboBoxAnguloCierreMeñique.SelectedIndex = 0;
+            this.comboBoxAnguloCierrePulgar.SelectedIndex = 0;
+            this.comboBoxTeimpoVelocidadAperturaIndice.SelectedIndex = 0;
+            this.comboBoxTiempoVelocidadAperturaAnular.SelectedIndex = 0;
+            this.comboBoxTiempoVelocidadAperturaCompleta.SelectedIndex = 0;
+            this.comboBoxTiempoVelocidadAperturaCorazon.SelectedIndex = 0;
+            this.comboBoxTiempoVelocidadAperturaMeñique.SelectedIndex = 0;
+            this.comboBoxTiempoVelocidadAperturaPulgar.SelectedIndex = 0;
+            this.comboBoxTiempoVelocidadCierreAnular.SelectedIndex = 0;
+            this.comboBoxTiempoVelocidadCierreCompleta.SelectedIndex = 0;
+            this.comboBoxTiempoVelocidadCierreCorazon.SelectedIndex = 0;
+            this.comboBoxTiempoVelocidadCierreIndice.SelectedIndex = 0;
+            this.comboBoxTiempoVelocidadCierreMeñique.SelectedIndex = 0;
+            this.comboBoxTiempoVelocidadCierrePulgar.SelectedIndex = 0;*/
+            this.comboBoxTipoParametrosCierrePulgar.SelectedIndexChanged += ComboBoxTiempoVelocidadCierrePulgar_SelectedIndexChanged;
+        }
+
+        private void ComboBoxAnguloAperturaCompleta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ComboBoxTiempoVelocidadCierrePulgar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string name = ((ComboBox)sender).Name.Replace("comboBoxTipoParametros", "");
+
+            if ((sender as ComboBox).SelectedIndex == 0)
+            {
+                //Enable
+                //object second = this.GetType().GetField("numericUpDownTiempoCierrePulgar", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(this); 
+                (this.GetType().GetField("numericUpDownAngulo"+ name, System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(this) as NumericUpDown).Enabled = true;
+                (this.GetType().GetField("numericUpDownTiempo"+ name, System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(this) as NumericUpDown).Enabled = true;
+                (this.GetType().GetField("numericUpDownVeclocidad"+ name, System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(this) as NumericUpDown).Enabled = true;
+
+
+            }
+            else
+            {
+                (this.GetType().GetField("numericUpDownAngulo" + name, System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(this) as NumericUpDown).Enabled = false;
+                (this.GetType().GetField("numericUpDownTiempo" + name, System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(this) as NumericUpDown).Enabled = false;
+                (this.GetType().GetField("numericUpDownVeclocidad" + name, System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(this) as NumericUpDown).Enabled = false;
+            }
+
+          
         }
 
         private void Inicializacion()
@@ -32,32 +92,12 @@ namespace IU_Windows
             this.tabControlTerapias.SizeMode = TabSizeMode.Fixed;
             this.lblNombreCuenta.Text = usuario.Nombre;
 
-            this.comboBoxAnguloAperturaCompleta.SelectedIndex = 0;
-            this.comboBoxAnguloCierreCompleta.SelectedIndex = 0;
-            this.comboBoxSeleccionTerapia.SelectedIndex = 0;
-            this.comboBoxTiempoVelocidadAperturaCompleta.SelectedIndex = 0;
-            this.comboBoxTiempoVelocidadCierreCompleta.SelectedIndex = 0;
-            string str="";
-
-            var fields = typeof(SeleccionDePaciente).GetFields( 
-                                                                System.Reflection.BindingFlags.Public | 
-                                                                System.Reflection.BindingFlags.NonPublic |
-                                                                System.Reflection.BindingFlags.Instance);
-
-            var names = Array.ConvertAll(fields, field => field.Name);
-
-            MessageBox.Show(str);
-            /*
             foreach (var prop in this.GetType().GetFields(System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance))
             {
-                if (prop.GetType() == typeof(ComboBox))
-                {
-                    foreach (var value in prop.GetType().GetProperties())
-                        if (value.Name == "SelectedIndex")
-                            value.SetValue(prop, 0);
-                }
-                MessageBox.Show(prop.Name);
-            }*/
+                object obj = prop.GetValue(this);
+                if (obj.GetType() == typeof(ComboBox))
+                    (obj as ComboBox).SelectedIndex = 0;
+            }
 
             this.groupBoxDatosPaciente.Hide();
         }
@@ -203,6 +243,11 @@ namespace IU_Windows
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown5_ValueChanged(object sender, EventArgs e)
         {
 
         }
