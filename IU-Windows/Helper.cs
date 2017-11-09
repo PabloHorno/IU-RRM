@@ -102,10 +102,32 @@ namespace IU_Windows
             this.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             List<Paciente> pacientes = new List<Paciente>();
-            while(reader.Read())
+            while (reader.Read())
                 pacientes.Add(new Paciente { Nombre = reader["Nombre"].ToString(), Apellidos = reader["Apellidos"].ToString(), SqlId = Int32.Parse(reader["Id"].ToString()) });
             this.Close();
             return pacientes;
+        }
+        public List<Terapia> GetTerapiasFromPaciente(Int32 SqlId)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Terapias WHERE Paciente = @SqlId", sql);
+            cmd.Parameters.AddWithValue("@SqlId", SqlId);
+            this.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<Terapia> terapias = new List<Terapia>();
+            while (reader.Read())
+                terapias.Add(new Terapia {  LimiteApertura = Int32.Parse(reader["LimiteApertura"].ToString()),
+                                            LimiteCierre = Int32.Parse(reader["LimiteCierre"].ToString()),
+                                            PacienteSqlid = Int32.Parse(reader["Paciente"].ToString()),
+                                            Repeticiones = Int32.Parse(reader["Repeticiones"].ToString()),
+                                            TiempoApertura = DateTime.Parse(reader["TiempoApertura"].ToString()),
+                                            TiempoCierre = DateTime.Parse(reader["TiempoCierre"].ToString()),
+                                            VelocidadApertura = double.Parse(reader["VelocidadApertura"].ToString()),
+                                            VelocidadCierre = double.Parse(reader["VelocidadCierre"].ToString()),
+                                            //tipoTerapia = Enum.Parse(TipoTerapia, reader["Tipo"].ToString())
+
+                });
+            this.Close();
+            return terapias;
         }
         public List<Paciente> GetPacientesFromUser(Usuario user)
         {

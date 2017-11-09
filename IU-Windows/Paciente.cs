@@ -19,5 +19,11 @@ namespace IU_Windows
         public int SqlId { get; set; }
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
+        public List<Terapia> GetTerapias()
+        {
+            SQLHelper db = new SQLHelper();
+            List<Terapia> terapias = db.GetTerapiasFromPaciente(this.SqlId);
+            return new List<Terapia>();
+        }
     }
 }

@@ -93,6 +93,7 @@
     <Compile Include="SeleccionDePaciente.Designer.cs">
       <DependentUpon>SeleccionDePaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Terapia.cs" />
     <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="CrearCuenta.resx">
       <DependentUpon>CrearCuenta.cs</DependentUpon>
