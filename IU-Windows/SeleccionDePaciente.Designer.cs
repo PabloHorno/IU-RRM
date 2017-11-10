@@ -42,6 +42,12 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.listViewHistorialTerapias = new System.Windows.Forms.ListView();
+            this.Inicial = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Terapia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Duracion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Repeticiones = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Observaciones = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabControlTerapias = new System.Windows.Forms.TabControl();
@@ -177,12 +183,7 @@
             this.lblNombreCuenta = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.groupBoxDatosPaciente = new System.Windows.Forms.GroupBox();
-            this.listViewHistorialTerapias = new System.Windows.Forms.ListView();
-            this.Terapia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Duracion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Repeticiones = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Observaciones = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Inicial = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -371,8 +372,51 @@
             this.tabPage2.Text = "Historial de Terapias";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // listViewHistorialTerapias
+            // 
+            this.listViewHistorialTerapias.AllowColumnReorder = true;
+            this.listViewHistorialTerapias.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Inicial,
+            this.Terapia,
+            this.Duracion,
+            this.Repeticiones,
+            this.Observaciones});
+            this.listViewHistorialTerapias.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listViewHistorialTerapias.HideSelection = false;
+            this.listViewHistorialTerapias.HoverSelection = true;
+            this.listViewHistorialTerapias.Location = new System.Drawing.Point(6, 6);
+            this.listViewHistorialTerapias.Name = "listViewHistorialTerapias";
+            this.listViewHistorialTerapias.Size = new System.Drawing.Size(885, 408);
+            this.listViewHistorialTerapias.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.listViewHistorialTerapias.TabIndex = 0;
+            this.listViewHistorialTerapias.UseCompatibleStateImageBehavior = false;
+            this.listViewHistorialTerapias.View = System.Windows.Forms.View.Details;
+            // 
+            // Inicial
+            // 
+            this.Inicial.Text = "";
+            this.Inicial.Width = 0;
+            // 
+            // Terapia
+            // 
+            this.Terapia.Text = "Terapia";
+            this.Terapia.Width = 120;
+            // 
+            // Duracion
+            // 
+            this.Duracion.Text = "Duración";
+            // 
+            // Repeticiones
+            // 
+            this.Repeticiones.Text = "Repeticiones";
+            // 
+            // Observaciones
+            // 
+            this.Observaciones.Text = "Observaciones";
+            // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.progressBar1);
             this.tabPage3.Controls.Add(this.groupBox3);
             this.tabPage3.Controls.Add(this.numRepeticiones);
             this.tabPage3.Controls.Add(this.lblRepeticiones);
@@ -391,7 +435,7 @@
             this.groupBox3.Controls.Add(this.tabControlTerapias);
             this.groupBox3.Location = new System.Drawing.Point(6, 61);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(500, 356);
+            this.groupBox3.Size = new System.Drawing.Size(378, 356);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Parametros de Terapia";
@@ -405,7 +449,7 @@
             this.tabControlTerapias.Location = new System.Drawing.Point(6, 19);
             this.tabControlTerapias.Name = "tabControlTerapias";
             this.tabControlTerapias.SelectedIndex = 0;
-            this.tabControlTerapias.Size = new System.Drawing.Size(488, 331);
+            this.tabControlTerapias.Size = new System.Drawing.Size(366, 331);
             this.tabControlTerapias.TabIndex = 4;
             // 
             // tabPageCompleto
@@ -415,7 +459,7 @@
             this.tabPageCompleto.Location = new System.Drawing.Point(4, 22);
             this.tabPageCompleto.Name = "tabPageCompleto";
             this.tabPageCompleto.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCompleto.Size = new System.Drawing.Size(480, 305);
+            this.tabPageCompleto.Size = new System.Drawing.Size(358, 305);
             this.tabPageCompleto.TabIndex = 0;
             this.tabPageCompleto.Text = "Completo";
             this.tabPageCompleto.UseVisualStyleBackColor = true;
@@ -432,7 +476,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(6, 138);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(468, 136);
+            this.groupBox2.Size = new System.Drawing.Size(346, 136);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cierre";
@@ -456,7 +500,7 @@
             "Parámetros",
             "Por defecto",
             "Terapia anterior"});
-            this.comboBoxTipoParametrosCierreCompleta.Location = new System.Drawing.Point(341, 19);
+            this.comboBoxTipoParametrosCierreCompleta.Location = new System.Drawing.Point(182, 19);
             this.comboBoxTipoParametrosCierreCompleta.Name = "comboBoxTipoParametrosCierreCompleta";
             this.comboBoxTipoParametrosCierreCompleta.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosCierreCompleta.TabIndex = 18;
@@ -493,6 +537,16 @@
             // 
             this.numericUpDownAnguloCierreCompleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloCierreCompleta.Location = new System.Drawing.Point(60, 85);
+            this.numericUpDownAnguloCierreCompleta.Maximum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            0});
+            this.numericUpDownAnguloCierreCompleta.Minimum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            -2147483648});
             this.numericUpDownAnguloCierreCompleta.Name = "numericUpDownAnguloCierreCompleta";
             this.numericUpDownAnguloCierreCompleta.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownAnguloCierreCompleta.TabIndex = 16;
@@ -517,7 +571,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(468, 126);
+            this.groupBox1.Size = new System.Drawing.Size(346, 126);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Apertura";
@@ -531,7 +585,7 @@
             "Parámetros",
             "Por defecto",
             "Terapia anterior"});
-            this.comboBoxTipoParametrosAperturaCompleta.Location = new System.Drawing.Point(341, 19);
+            this.comboBoxTipoParametrosAperturaCompleta.Location = new System.Drawing.Point(182, 19);
             this.comboBoxTipoParametrosAperturaCompleta.Name = "comboBoxTipoParametrosAperturaCompleta";
             this.comboBoxTipoParametrosAperturaCompleta.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosAperturaCompleta.TabIndex = 10;
@@ -548,6 +602,16 @@
             // 
             this.numericUpDownAnguloAperturaCompleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloAperturaCompleta.Location = new System.Drawing.Point(59, 78);
+            this.numericUpDownAnguloAperturaCompleta.Maximum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            0});
+            this.numericUpDownAnguloAperturaCompleta.Minimum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            -2147483648});
             this.numericUpDownAnguloAperturaCompleta.Name = "numericUpDownAnguloAperturaCompleta";
             this.numericUpDownAnguloAperturaCompleta.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownAnguloAperturaCompleta.TabIndex = 8;
@@ -585,7 +649,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(0, 54);
+            this.label4.Location = new System.Drawing.Point(1, 54);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 6;
@@ -597,7 +661,7 @@
             this.tabPageDedos.Location = new System.Drawing.Point(4, 22);
             this.tabPageDedos.Name = "tabPageDedos";
             this.tabPageDedos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageDedos.Size = new System.Drawing.Size(480, 305);
+            this.tabPageDedos.Size = new System.Drawing.Size(358, 305);
             this.tabPageDedos.TabIndex = 1;
             this.tabPageDedos.Text = "Dedos";
             this.tabPageDedos.UseVisualStyleBackColor = true;
@@ -612,7 +676,7 @@
             this.tabControl2.Location = new System.Drawing.Point(6, 6);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(468, 303);
+            this.tabControl2.Size = new System.Drawing.Size(346, 303);
             this.tabControl2.TabIndex = 1;
             // 
             // tabPagePulgar
@@ -622,7 +686,7 @@
             this.tabPagePulgar.Location = new System.Drawing.Point(4, 22);
             this.tabPagePulgar.Name = "tabPagePulgar";
             this.tabPagePulgar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePulgar.Size = new System.Drawing.Size(460, 277);
+            this.tabPagePulgar.Size = new System.Drawing.Size(338, 277);
             this.tabPagePulgar.TabIndex = 0;
             this.tabPagePulgar.Text = "Pulgar";
             this.tabPagePulgar.UseVisualStyleBackColor = true;
@@ -639,7 +703,7 @@
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(6, 138);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(448, 136);
+            this.groupBox5.Size = new System.Drawing.Size(326, 136);
             this.groupBox5.TabIndex = 6;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Cierre";
@@ -663,7 +727,7 @@
             "Parámetros",
             "Por defecto",
             "Terapia anterior"});
-            this.comboBoxTipoParametrosCierrePulgar.Location = new System.Drawing.Point(321, 19);
+            this.comboBoxTipoParametrosCierrePulgar.Location = new System.Drawing.Point(182, 19);
             this.comboBoxTipoParametrosCierrePulgar.Name = "comboBoxTipoParametrosCierrePulgar";
             this.comboBoxTipoParametrosCierrePulgar.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosCierrePulgar.TabIndex = 18;
@@ -700,6 +764,16 @@
             // 
             this.numericUpDownAnguloCierrePulgar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloCierrePulgar.Location = new System.Drawing.Point(60, 85);
+            this.numericUpDownAnguloCierrePulgar.Maximum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            0});
+            this.numericUpDownAnguloCierrePulgar.Minimum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            -2147483648});
             this.numericUpDownAnguloCierrePulgar.Name = "numericUpDownAnguloCierrePulgar";
             this.numericUpDownAnguloCierrePulgar.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownAnguloCierrePulgar.TabIndex = 16;
@@ -724,7 +798,7 @@
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(6, 6);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(448, 126);
+            this.groupBox4.Size = new System.Drawing.Size(326, 126);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Apertura";
@@ -738,7 +812,7 @@
             "Parámetros",
             "Por defecto",
             "Terapia anterior"});
-            this.comboBoxTipoParametrosAperturaPulgar.Location = new System.Drawing.Point(321, 25);
+            this.comboBoxTipoParametrosAperturaPulgar.Location = new System.Drawing.Point(182, 25);
             this.comboBoxTipoParametrosAperturaPulgar.Name = "comboBoxTipoParametrosAperturaPulgar";
             this.comboBoxTipoParametrosAperturaPulgar.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosAperturaPulgar.TabIndex = 10;
@@ -755,6 +829,16 @@
             // 
             this.numericUpDownAnguloAperturaPulgar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloAperturaPulgar.Location = new System.Drawing.Point(60, 78);
+            this.numericUpDownAnguloAperturaPulgar.Maximum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            0});
+            this.numericUpDownAnguloAperturaPulgar.Minimum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            -2147483648});
             this.numericUpDownAnguloAperturaPulgar.Name = "numericUpDownAnguloAperturaPulgar";
             this.numericUpDownAnguloAperturaPulgar.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownAnguloAperturaPulgar.TabIndex = 8;
@@ -804,7 +888,7 @@
             this.tabPageIndice.Location = new System.Drawing.Point(4, 22);
             this.tabPageIndice.Name = "tabPageIndice";
             this.tabPageIndice.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageIndice.Size = new System.Drawing.Size(460, 277);
+            this.tabPageIndice.Size = new System.Drawing.Size(338, 277);
             this.tabPageIndice.TabIndex = 1;
             this.tabPageIndice.Text = "Indice";
             this.tabPageIndice.UseVisualStyleBackColor = true;
@@ -821,7 +905,7 @@
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(6, 138);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(448, 136);
+            this.groupBox6.Size = new System.Drawing.Size(326, 136);
             this.groupBox6.TabIndex = 7;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Cierre";
@@ -845,7 +929,7 @@
             "Parámetros",
             "Por defecto",
             "Terapia anterior"});
-            this.comboBoxTipoParametrosCierreIndice.Location = new System.Drawing.Point(321, 19);
+            this.comboBoxTipoParametrosCierreIndice.Location = new System.Drawing.Point(182, 19);
             this.comboBoxTipoParametrosCierreIndice.Name = "comboBoxTipoParametrosCierreIndice";
             this.comboBoxTipoParametrosCierreIndice.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosCierreIndice.TabIndex = 18;
@@ -882,6 +966,16 @@
             // 
             this.numericUpDownAnguloCierreIndice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloCierreIndice.Location = new System.Drawing.Point(60, 85);
+            this.numericUpDownAnguloCierreIndice.Maximum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            0});
+            this.numericUpDownAnguloCierreIndice.Minimum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            -2147483648});
             this.numericUpDownAnguloCierreIndice.Name = "numericUpDownAnguloCierreIndice";
             this.numericUpDownAnguloCierreIndice.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownAnguloCierreIndice.TabIndex = 16;
@@ -906,7 +1000,7 @@
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(6, 6);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(448, 126);
+            this.groupBox7.Size = new System.Drawing.Size(326, 126);
             this.groupBox7.TabIndex = 8;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Apertura";
@@ -920,7 +1014,7 @@
             "Parámetros",
             "Por defecto",
             "Terapia anterior"});
-            this.comboBoxTipoParametrosAperturaIndice.Location = new System.Drawing.Point(321, 25);
+            this.comboBoxTipoParametrosAperturaIndice.Location = new System.Drawing.Point(182, 25);
             this.comboBoxTipoParametrosAperturaIndice.Name = "comboBoxTipoParametrosAperturaIndice";
             this.comboBoxTipoParametrosAperturaIndice.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosAperturaIndice.TabIndex = 10;
@@ -937,6 +1031,16 @@
             // 
             this.numericUpDownAnguloAperturaIndice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloAperturaIndice.Location = new System.Drawing.Point(60, 78);
+            this.numericUpDownAnguloAperturaIndice.Maximum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            0});
+            this.numericUpDownAnguloAperturaIndice.Minimum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            -2147483648});
             this.numericUpDownAnguloAperturaIndice.Name = "numericUpDownAnguloAperturaIndice";
             this.numericUpDownAnguloAperturaIndice.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownAnguloAperturaIndice.TabIndex = 8;
@@ -985,7 +1089,7 @@
             this.tabPageCorazon.Controls.Add(this.groupBox8);
             this.tabPageCorazon.Location = new System.Drawing.Point(4, 22);
             this.tabPageCorazon.Name = "tabPageCorazon";
-            this.tabPageCorazon.Size = new System.Drawing.Size(460, 277);
+            this.tabPageCorazon.Size = new System.Drawing.Size(338, 277);
             this.tabPageCorazon.TabIndex = 3;
             this.tabPageCorazon.Text = "Corazon";
             this.tabPageCorazon.UseVisualStyleBackColor = true;
@@ -1002,7 +1106,7 @@
             this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox9.Location = new System.Drawing.Point(6, 138);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(448, 136);
+            this.groupBox9.Size = new System.Drawing.Size(326, 136);
             this.groupBox9.TabIndex = 10;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Cierre";
@@ -1026,7 +1130,7 @@
             "Parámetros",
             "Por defecto",
             "Terapia anterior"});
-            this.comboBoxTipoParametrosCierreCorazon.Location = new System.Drawing.Point(321, 19);
+            this.comboBoxTipoParametrosCierreCorazon.Location = new System.Drawing.Point(182, 19);
             this.comboBoxTipoParametrosCierreCorazon.Name = "comboBoxTipoParametrosCierreCorazon";
             this.comboBoxTipoParametrosCierreCorazon.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosCierreCorazon.TabIndex = 18;
@@ -1063,6 +1167,16 @@
             // 
             this.numericUpDownAnguloCierreCorazon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloCierreCorazon.Location = new System.Drawing.Point(60, 85);
+            this.numericUpDownAnguloCierreCorazon.Maximum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            0});
+            this.numericUpDownAnguloCierreCorazon.Minimum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            -2147483648});
             this.numericUpDownAnguloCierreCorazon.Name = "numericUpDownAnguloCierreCorazon";
             this.numericUpDownAnguloCierreCorazon.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownAnguloCierreCorazon.TabIndex = 16;
@@ -1087,7 +1201,7 @@
             this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox8.Location = new System.Drawing.Point(6, 6);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(448, 126);
+            this.groupBox8.Size = new System.Drawing.Size(326, 126);
             this.groupBox8.TabIndex = 9;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Apertura";
@@ -1101,7 +1215,7 @@
             "Parámetros",
             "Por defecto",
             "Terapia anterior"});
-            this.comboBoxTipoParametrosAperturaCorazon.Location = new System.Drawing.Point(321, 25);
+            this.comboBoxTipoParametrosAperturaCorazon.Location = new System.Drawing.Point(182, 25);
             this.comboBoxTipoParametrosAperturaCorazon.Name = "comboBoxTipoParametrosAperturaCorazon";
             this.comboBoxTipoParametrosAperturaCorazon.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosAperturaCorazon.TabIndex = 10;
@@ -1118,6 +1232,16 @@
             // 
             this.numericUpDownAnguloAperturaCorazon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloAperturaCorazon.Location = new System.Drawing.Point(60, 78);
+            this.numericUpDownAnguloAperturaCorazon.Maximum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            0});
+            this.numericUpDownAnguloAperturaCorazon.Minimum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            -2147483648});
             this.numericUpDownAnguloAperturaCorazon.Name = "numericUpDownAnguloAperturaCorazon";
             this.numericUpDownAnguloAperturaCorazon.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownAnguloAperturaCorazon.TabIndex = 8;
@@ -1166,7 +1290,7 @@
             this.tabPageAnular.Controls.Add(this.groupBox15);
             this.tabPageAnular.Location = new System.Drawing.Point(4, 22);
             this.tabPageAnular.Name = "tabPageAnular";
-            this.tabPageAnular.Size = new System.Drawing.Size(460, 277);
+            this.tabPageAnular.Size = new System.Drawing.Size(338, 277);
             this.tabPageAnular.TabIndex = 2;
             this.tabPageAnular.Text = "Anular";
             this.tabPageAnular.UseVisualStyleBackColor = true;
@@ -1183,7 +1307,7 @@
             this.groupBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox14.Location = new System.Drawing.Point(6, 138);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(448, 136);
+            this.groupBox14.Size = new System.Drawing.Size(326, 136);
             this.groupBox14.TabIndex = 12;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Cierre";
@@ -1207,7 +1331,7 @@
             "Parámetros",
             "Por defecto",
             "Terapia anterior"});
-            this.comboBoxTipoParametrosCierreAnular.Location = new System.Drawing.Point(321, 19);
+            this.comboBoxTipoParametrosCierreAnular.Location = new System.Drawing.Point(182, 19);
             this.comboBoxTipoParametrosCierreAnular.Name = "comboBoxTipoParametrosCierreAnular";
             this.comboBoxTipoParametrosCierreAnular.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosCierreAnular.TabIndex = 18;
@@ -1244,6 +1368,16 @@
             // 
             this.numericUpDownAnguloCierreAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloCierreAnular.Location = new System.Drawing.Point(60, 85);
+            this.numericUpDownAnguloCierreAnular.Maximum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            0});
+            this.numericUpDownAnguloCierreAnular.Minimum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            -2147483648});
             this.numericUpDownAnguloCierreAnular.Name = "numericUpDownAnguloCierreAnular";
             this.numericUpDownAnguloCierreAnular.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownAnguloCierreAnular.TabIndex = 16;
@@ -1268,7 +1402,7 @@
             this.groupBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox15.Location = new System.Drawing.Point(6, 6);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(448, 126);
+            this.groupBox15.Size = new System.Drawing.Size(326, 126);
             this.groupBox15.TabIndex = 11;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Apertura";
@@ -1282,7 +1416,7 @@
             "Parámetros",
             "Por defecto",
             "Terapia anterior"});
-            this.comboBoxTipoParametrosAperturaAnular.Location = new System.Drawing.Point(321, 25);
+            this.comboBoxTipoParametrosAperturaAnular.Location = new System.Drawing.Point(182, 25);
             this.comboBoxTipoParametrosAperturaAnular.Name = "comboBoxTipoParametrosAperturaAnular";
             this.comboBoxTipoParametrosAperturaAnular.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosAperturaAnular.TabIndex = 10;
@@ -1299,9 +1433,20 @@
             // 
             this.numericUpDownAnguloAperturaAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloAperturaAnular.Location = new System.Drawing.Point(60, 78);
+            this.numericUpDownAnguloAperturaAnular.Maximum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            0});
+            this.numericUpDownAnguloAperturaAnular.Minimum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            -2147483648});
             this.numericUpDownAnguloAperturaAnular.Name = "numericUpDownAnguloAperturaAnular";
             this.numericUpDownAnguloAperturaAnular.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownAnguloAperturaAnular.TabIndex = 8;
+            this.numericUpDownAnguloAperturaAnular.ValueChanged += new System.EventHandler(this.numericUpDownAnguloAperturaAnular_ValueChanged);
             // 
             // numericUpDownTiempoAperturaAnular
             // 
@@ -1347,7 +1492,7 @@
             this.tabPageMeñique.Controls.Add(this.groupBox13);
             this.tabPageMeñique.Location = new System.Drawing.Point(4, 22);
             this.tabPageMeñique.Name = "tabPageMeñique";
-            this.tabPageMeñique.Size = new System.Drawing.Size(460, 277);
+            this.tabPageMeñique.Size = new System.Drawing.Size(338, 277);
             this.tabPageMeñique.TabIndex = 4;
             this.tabPageMeñique.Text = "Meñique";
             this.tabPageMeñique.UseVisualStyleBackColor = true;
@@ -1364,7 +1509,7 @@
             this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox12.Location = new System.Drawing.Point(6, 138);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(445, 136);
+            this.groupBox12.Size = new System.Drawing.Size(326, 136);
             this.groupBox12.TabIndex = 7;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Cierre";
@@ -1388,7 +1533,7 @@
             "Parámetros",
             "Por defecto",
             "Terapia anterior"});
-            this.comboBoxTipoParametrosCierreMeñique.Location = new System.Drawing.Point(321, 19);
+            this.comboBoxTipoParametrosCierreMeñique.Location = new System.Drawing.Point(182, 19);
             this.comboBoxTipoParametrosCierreMeñique.Name = "comboBoxTipoParametrosCierreMeñique";
             this.comboBoxTipoParametrosCierreMeñique.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosCierreMeñique.TabIndex = 18;
@@ -1425,6 +1570,16 @@
             // 
             this.numericUpDownAnguloCierreMeñique.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloCierreMeñique.Location = new System.Drawing.Point(60, 85);
+            this.numericUpDownAnguloCierreMeñique.Maximum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            0});
+            this.numericUpDownAnguloCierreMeñique.Minimum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            -2147483648});
             this.numericUpDownAnguloCierreMeñique.Name = "numericUpDownAnguloCierreMeñique";
             this.numericUpDownAnguloCierreMeñique.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownAnguloCierreMeñique.TabIndex = 16;
@@ -1449,7 +1604,7 @@
             this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox13.Location = new System.Drawing.Point(6, 6);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(448, 126);
+            this.groupBox13.Size = new System.Drawing.Size(326, 126);
             this.groupBox13.TabIndex = 8;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Apertura";
@@ -1463,7 +1618,7 @@
             "Parámetros",
             "Por defecto",
             "Terapia anterior"});
-            this.comboBoxTipoParametrosAperturaMeñique.Location = new System.Drawing.Point(321, 25);
+            this.comboBoxTipoParametrosAperturaMeñique.Location = new System.Drawing.Point(182, 25);
             this.comboBoxTipoParametrosAperturaMeñique.Name = "comboBoxTipoParametrosAperturaMeñique";
             this.comboBoxTipoParametrosAperturaMeñique.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosAperturaMeñique.TabIndex = 10;
@@ -1480,6 +1635,16 @@
             // 
             this.numericUpDownAnguloAperturaMeñique.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloAperturaMeñique.Location = new System.Drawing.Point(60, 78);
+            this.numericUpDownAnguloAperturaMeñique.Maximum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            0});
+            this.numericUpDownAnguloAperturaMeñique.Minimum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            -2147483648});
             this.numericUpDownAnguloAperturaMeñique.Name = "numericUpDownAnguloAperturaMeñique";
             this.numericUpDownAnguloAperturaMeñique.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownAnguloAperturaMeñique.TabIndex = 8;
@@ -1529,7 +1694,7 @@
             this.tabPagePinza.Controls.Add(this.groupBox11);
             this.tabPagePinza.Location = new System.Drawing.Point(4, 22);
             this.tabPagePinza.Name = "tabPagePinza";
-            this.tabPagePinza.Size = new System.Drawing.Size(480, 305);
+            this.tabPagePinza.Size = new System.Drawing.Size(358, 305);
             this.tabPagePinza.TabIndex = 2;
             this.tabPagePinza.Text = "PinzaGruesa";
             this.tabPagePinza.UseVisualStyleBackColor = true;
@@ -1544,7 +1709,7 @@
             this.groupBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox16.Location = new System.Drawing.Point(6, 202);
             this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(468, 89);
+            this.groupBox16.Size = new System.Drawing.Size(349, 100);
             this.groupBox16.TabIndex = 19;
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "Parametros";
@@ -1552,18 +1717,19 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(324, 42);
+            this.radioButton2.Location = new System.Drawing.Point(16, 70);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(84, 17);
             this.radioButton2.TabIndex = 20;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Pinza Fina";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(324, 19);
+            this.radioButton1.Location = new System.Drawing.Point(111, 70);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(100, 17);
             this.radioButton1.TabIndex = 19;
@@ -1614,7 +1780,7 @@
             this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox10.Location = new System.Drawing.Point(6, 99);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(468, 97);
+            this.groupBox10.Size = new System.Drawing.Size(349, 97);
             this.groupBox10.TabIndex = 7;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Cierre";
@@ -1638,7 +1804,7 @@
             "Parámetros",
             "Por defecto",
             "Terapia anterior"});
-            this.comboBoxTipoParametrosCierrePinza.Location = new System.Drawing.Point(341, 19);
+            this.comboBoxTipoParametrosCierrePinza.Location = new System.Drawing.Point(182, 19);
             this.comboBoxTipoParametrosCierrePinza.Name = "comboBoxTipoParametrosCierrePinza";
             this.comboBoxTipoParametrosCierrePinza.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosCierrePinza.TabIndex = 18;
@@ -1679,7 +1845,7 @@
             this.groupBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox11.Location = new System.Drawing.Point(6, 6);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(468, 87);
+            this.groupBox11.Size = new System.Drawing.Size(349, 87);
             this.groupBox11.TabIndex = 6;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Apertura";
@@ -1693,7 +1859,7 @@
             "Parámetros",
             "Por defecto",
             "Terapia anterior"});
-            this.comboBoxTipoParametrosAperturaPinza.Location = new System.Drawing.Point(341, 19);
+            this.comboBoxTipoParametrosAperturaPinza.Location = new System.Drawing.Point(182, 19);
             this.comboBoxTipoParametrosAperturaPinza.Name = "comboBoxTipoParametrosAperturaPinza";
             this.comboBoxTipoParametrosAperturaPinza.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosAperturaPinza.TabIndex = 10;
@@ -1728,7 +1894,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(0, 54);
+            this.label31.Location = new System.Drawing.Point(1, 54);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(54, 13);
             this.label31.TabIndex = 6;
@@ -1825,47 +1991,13 @@
             this.groupBoxDatosPaciente.TabStop = false;
             this.groupBoxDatosPaciente.Text = "NOMBRE Y APELLIDOS";
             // 
-            // listViewHistorialTerapias
+            // progressBar1
             // 
-            this.listViewHistorialTerapias.AllowColumnReorder = true;
-            this.listViewHistorialTerapias.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Inicial,
-            this.Terapia,
-            this.Duracion,
-            this.Repeticiones,
-            this.Observaciones});
-            this.listViewHistorialTerapias.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listViewHistorialTerapias.HideSelection = false;
-            this.listViewHistorialTerapias.HoverSelection = true;
-            this.listViewHistorialTerapias.Location = new System.Drawing.Point(6, 6);
-            this.listViewHistorialTerapias.Name = "listViewHistorialTerapias";
-            this.listViewHistorialTerapias.Size = new System.Drawing.Size(885, 408);
-            this.listViewHistorialTerapias.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.listViewHistorialTerapias.TabIndex = 0;
-            this.listViewHistorialTerapias.UseCompatibleStateImageBehavior = false;
-            this.listViewHistorialTerapias.View = System.Windows.Forms.View.Details;
-            // 
-            // Terapia
-            // 
-            this.Terapia.Text = "Terapia";
-            this.Terapia.Width = 120;
-            // 
-            // Duracion
-            // 
-            this.Duracion.Text = "Duración";
-            // 
-            // Repeticiones
-            // 
-            this.Repeticiones.Text = "Repeticiones";
-            // 
-            // Observaciones
-            // 
-            this.Observaciones.Text = "Observaciones";
-            // 
-            // Inicial
-            // 
-            this.Inicial.Text = "";
-            this.Inicial.Width = 0;
+            this.progressBar1.Location = new System.Drawing.Point(438, 380);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(423, 23);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBar1.TabIndex = 6;
             // 
             // SeleccionDePaciente
             // 
@@ -2134,5 +2266,6 @@
         private System.Windows.Forms.ColumnHeader Repeticiones;
         private System.Windows.Forms.ColumnHeader Observaciones;
         private System.Windows.Forms.ColumnHeader Inicial;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

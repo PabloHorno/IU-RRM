@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO.Ports;
 using System.Timers;
-using System.Data;
 using System.Data.SqlClient;
 namespace IU_Windows
 {
@@ -36,30 +35,15 @@ namespace IU_Windows
             }
             else
             {
-                SqlConnection sql = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\joseangel\\source\\repos\\IU-RRM\\IU-Windows\\DataBase.mdf;Integrated Security=True");
-                SqlCommand cmd = new SqlCommand($"SELECT * FROM Usuarios WHERE Nombre = @Nombre AND Contraseña = @Contraseña",sql);
-                cmd.Parameters.AddWithValue("@Nombre",tBoxUser.Text);
-                cmd.Parameters.AddWithValue("@Contraseña", Helper.encprytPassword(tBoxPassword.Text));
-                
-                sql.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.HasRows)
+                Usuario usuario = new SQLHelper().GetUsuario(tBoxUser.Text, tBoxPassword.Text);
+                if(usuario != null)
                 {
-                    while (reader.Read())
-                    {
-                        MessageBox.Show($"ID:{reader.GetSqlInt32(0)}\rNombre:{reader.GetString(1)}\rApellidos: {reader.GetString(3)}\rCorreo:{reader.GetString(4)}");
-
-                        this.Hide();
-                        SeleccionDePaciente next = new SeleccionDePaciente(reader.GetInt32(0));
-                        next.Show();
-                    }
+                    this.Hide();
+                    SeleccionDePaciente next = new SeleccionDePaciente(usuario.SqlId);
+                    next.Show();
                 }
                 else
-                {
                     lblError.Text = "Usuario/Contraseña incorrectos";
-                }
-                reader.Close();
-                sql.Close();
             }
         }
 

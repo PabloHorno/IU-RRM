@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace IU_Windows
 {
@@ -15,6 +14,10 @@ namespace IU_Windows
     }
     public class Terapia
     {
+        public Terapia()
+        {
+
+        }
         public TipoTerapia tipoTerapia { get; set; }
         public string Nombre
         {
@@ -31,12 +34,8 @@ namespace IU_Windows
 
         public int PacienteSqlid { get; set; }
         public int Repeticiones { get; set; }
-        public DateTime TiempoApertura { get; set; }
-        public DateTime TiempoCierre { get; set; }
-        public double VelocidadApertura { get; set; }
-        public double VelocidadCierre { get; set; }
-        public int LimiteApertura { get; set; }
-        public int LimiteCierre { get; set; }
-        public string Observacion { get; set; }
+        public DateTime Duracion { get; set; }
+        public Dictionary<string, Int32> Parametros { get; set; }
+        public string Observaciones { get; set; }
     }
 }

@@ -23,7 +23,7 @@ namespace IU_Windows
             CargarDatos(sqlId);
             treeView1.NodeMouseDoubleClick += TreeView1_NodeMouseDoubleClick;
             treeView1.NodeMouseClick += TreeView1_NodeMouseClick1;
-
+            
         }
 
         private void HandlerComboBoxTipoParametros(object sender, EventArgs e)
@@ -50,9 +50,13 @@ namespace IU_Windows
                             Terapia ultimaTerapia = paciente.GetTerapias().Find(x => (int)x.tipoTerapia == this.comboBoxSeleccionTerapia.SelectedIndex);
                             if(ultimaTerapia == null)
                             {
-                                MessageBox.Show($"El paciente {paciente.Nombre.ToUpper()} {paciente.Apellidos.ToUpper()} no ha realizado ninguna terapia del tipo: " + (TipoTerapia)this.comboBoxSeleccionTerapia.SelectedIndex, "Falta terapia", MessageBoxButtons.OK,MessageBoxIcon.Stop);
+                                MessageBox.Show($"El paciente {paciente.Nombre.ToUpper()} {paciente.Apellidos.ToUpper()} no ha realizado ninguna terapia del tipo: " + (TipoTerapia)this.comboBoxSeleccionTerapia.SelectedIndex, "Falta terapia", MessageBoxButtons.OK,MessageBoxIcon.Information);
                                 (sender as ComboBox).SelectedIndex = 1;
                                 return;
+                            }
+                            else
+                            {
+                                obj.Value = ultimaTerapia.Parametros[obj.Name];
                             }
                         }
                     }
@@ -143,15 +147,15 @@ namespace IU_Windows
 
         private void mostrarDatosPaciente(Paciente paciente)
         {
-            groupBoxDatosPaciente.Text = ("[ " + paciente.SqlId + " ]: " + paciente.Nombre + " " + paciente.Apellidos).ToUpper();
+            groupBoxDatosPaciente.Text = (paciente.Nombre + " " + paciente.Apellidos).ToUpper();
             this.listViewHistorialTerapias.Items.Clear();
             foreach (Terapia terapia in paciente.GetTerapias())
             {
                 ListViewItem listViewItem = new ListViewItem();
                 listViewItem.SubItems.Add(terapia.Nombre);
-                listViewItem.SubItems.Add(terapia.TiempoApertura.ToShortTimeString());
+                listViewItem.SubItems.Add(terapia.Duracion.ToShortTimeString());
                 listViewItem.SubItems.Add(terapia.Repeticiones.ToString());
-                listViewItem.SubItems.Add(terapia.Observacion);
+                listViewItem.SubItems.Add(terapia.Observaciones);
                 this.listViewHistorialTerapias.Items.Add(listViewItem);
             }
             if (this.listViewHistorialTerapias.Items.Count > 0)
@@ -255,6 +259,16 @@ namespace IU_Windows
         }
 
         private void numericUpDown5_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDownAnguloAperturaAnular_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
 
         }

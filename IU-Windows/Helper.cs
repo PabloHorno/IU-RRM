@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+using Newtonsoft.Json;
 
 namespace IU_Windows
 {
@@ -133,6 +134,25 @@ namespace IU_Windows
             this.Close();
             return datos;
         }
+        public Usuario GetUsuario(string nombre, string contraseña)
+        {
+            SqlCommand cmd = new SqlCommand($"SELECT * FROM Usuarios WHERE Nombre = @Nombre AND Contraseña = @Contraseña", sql);
+            cmd.Parameters.AddWithValue("@Nombre", nombre);
+            cmd.Parameters.AddWithValue("@Contraseña", Helper.encprytPassword(contraseña));
+            sql.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            Usuario usuario = null;
+            if (reader.HasRows)
+                while (reader.Read())
+                {
+                    //usuario = new Usuario { Nombre = reader["Nombre"].ToString(), Apellido = reader["Apellidos"].ToString(), SqlId = Int32.Parse(reader["Id"].ToString()) };
+                    Int32 SqlId = Int32.Parse(reader["Id"].ToString());
+                    sql.Close();
+                    return GetUsuario(SqlId);
+                }
+            sql.Close();
+            return usuario;
+        }
         public Usuario GetUsuario(Int32 SqlId)
         {
 
@@ -172,14 +192,11 @@ namespace IU_Windows
             while (reader.Read())
                 terapias.Add(new Terapia
                 {
-                    LimiteApertura = Int32.Parse(reader["LimiteApertura"].ToString()),
-                    LimiteCierre = Int32.Parse(reader["LimiteCierre"].ToString()),
                     PacienteSqlid = Int32.Parse(reader["Paciente"].ToString()),
                     Repeticiones = Int32.Parse(reader["Repeticiones"].ToString()),
-                    TiempoApertura = DateTime.Parse(reader["TiempoApertura"].ToString()),
-                    TiempoCierre = DateTime.Parse(reader["TiempoCierre"].ToString()),
-                    VelocidadApertura = double.Parse(reader["VelocidadApertura"].ToString()),
-                    VelocidadCierre = double.Parse(reader["VelocidadCierre"].ToString()),
+                    Duracion = DateTime.Parse(reader["Duracion"].ToString()),
+                    Observaciones = reader["Observaciones"].ToString(),
+                    Parametros = JsonConvert.DeserializeObject<Dictionary<string, Int32>>(reader["Parametros"].ToString()),
                     tipoTerapia = Int32.Parse(reader["Tipo"].ToString()) == 0 ? TipoTerapia.AbrirCerrarDedos :
                                   Int32.Parse(reader["Tipo"].ToString()) == 1 ? TipoTerapia.AbrirCerrarMano :
                                   Int32.Parse(reader["Tipo"].ToString()) == 2 ? TipoTerapia.PinzaFina : TipoTerapia.PinzaGruesa
