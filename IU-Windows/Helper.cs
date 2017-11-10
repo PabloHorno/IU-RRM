@@ -18,6 +18,61 @@ namespace IU_Windows
 
             return Convert.ToBase64String(inArray);
         }
+        static public Dictionary<String, int> parametrosPorDefecto = new Dictionary<string, int>
+        {
+            ///ABRIR CERRAR COMPLETA
+            //Abrir
+            {"numericUpDownTiempoApertura"+"Completa", 5 },
+            {"numericUpDownAnguloApertura"+"Completa", 30 },
+            {"numericUpDownVelocidadApertura"+"Completa", 15 },
+            //Cerrar
+            {"numericUpDownTiempoCierre"+"Completa", 5 },
+            {"numericUpDownAnguloCierre"+"Completa", -90 },
+            {"numericUpDownVelocidadCierre"+"Completa", 15 },
+            ///ABRIR CERRAR DEDOS
+            //Pulgar
+            //Abrir
+            {"numericUpDownTiempoApertura"+"Pulgar", 5 },
+            {"numericUpDownAnguloApertura"+"Pulgar", 30 },
+            {"numericUpDownVelocidadApertura"+"Pulgar", 15 },
+            //Cerrar
+            {"numericUpDownTiempoCierre"+"Pulgar", 5 },
+            {"numericUpDownAnguloCierre"+"Pulgar", 30 },
+            {"numericUpDownVelocidadCierre"+"Pulgar", 15 },
+            //Indice
+            {"numericUpDownTiempoApertura"+"Indice", 5 },
+            {"numericUpDownAnguloApertura"+"Indice", 30 },
+            {"numericUpDownVelocidadApertura"+"Indice", 15 },
+            //Cerrar
+            {"numericUpDownTiempoCierre"+"Indice", 5 },
+            {"numericUpDownAnguloCierre"+"Indice", 30 },
+            {"numericUpDownVelocidadCierre"+"Indice", 15 },
+            //Corazón
+            {"numericUpDownTiempoApertura"+"Corazon", 5 },
+            {"numericUpDownAnguloApertura"+"Corazon", 30 },
+            {"numericUpDownVelocidadApertura"+"Corazon", 15 },
+            //Cerrar
+            {"numericUpDownTiempoCierre"+"Corazon", 5 },
+            {"numericUpDownAnguloCierre"+"Corazon", 30 },
+            {"numericUpDownVelocidadCierre"+"Corazon", 15 },
+            //Anular
+            {"numericUpDownTiempoApertura"+"Anular", 5 },
+            {"numericUpDownAnguloApertura"+"Anular", 30 },
+            {"numericUpDownVelocidadApertura"+"Anular", 15 },
+            //Cerrar
+            {"numericUpDownTiempoCierre"+"Anular", 5 },
+            {"numericUpDownAnguloCierre"+"Anular", 30 },
+            {"numericUpDownVelocidadCierre"+"Anular", 15 },
+            //Meñique
+            {"numericUpDownTiempoApertura"+"Meñique", 5 },
+            {"numericUpDownAnguloApertura"+"Meñique", 30 },
+            {"numericUpDownVelocidadApertura"+"Meñique", 15 },
+            //Cerrar
+            {"numericUpDownTiempoCierre"+"Meñique", 5 },
+            {"numericUpDownAnguloCierre"+"Meñique", 30 },
+            {"numericUpDownVelocidadCierre"+"Meñique", 15 },
+
+        };
     }
     public class SQLHelper
     {
@@ -61,7 +116,7 @@ namespace IU_Windows
             SqlDataReader reader = cmd.ExecuteReader();
             this.Close();
         }
-        public List<object> Select(string query, Dictionary<string,object> parameters = null )
+        public List<object> Select(string query, Dictionary<string, object> parameters = null)
         {
             if (parameters == null)
                 parameters = new Dictionary<string, object>();
@@ -72,8 +127,8 @@ namespace IU_Windows
             this.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             List<object> datos = new List<object>();
-            while(reader.Read())
-                for(int i = 0; i < reader.FieldCount; i ++)
+            while (reader.Read())
+                for (int i = 0; i < reader.FieldCount; i++)
                     datos.Add(reader[i]);
             this.Close();
             return datos;
@@ -115,15 +170,19 @@ namespace IU_Windows
             SqlDataReader reader = cmd.ExecuteReader();
             List<Terapia> terapias = new List<Terapia>();
             while (reader.Read())
-                terapias.Add(new Terapia {  LimiteApertura = Int32.Parse(reader["LimiteApertura"].ToString()),
-                                            LimiteCierre = Int32.Parse(reader["LimiteCierre"].ToString()),
-                                            PacienteSqlid = Int32.Parse(reader["Paciente"].ToString()),
-                                            Repeticiones = Int32.Parse(reader["Repeticiones"].ToString()),
-                                            TiempoApertura = DateTime.Parse(reader["TiempoApertura"].ToString()),
-                                            TiempoCierre = DateTime.Parse(reader["TiempoCierre"].ToString()),
-                                            VelocidadApertura = double.Parse(reader["VelocidadApertura"].ToString()),
-                                            VelocidadCierre = double.Parse(reader["VelocidadCierre"].ToString()),
-                                            //tipoTerapia = Enum.Parse(TipoTerapia, reader["Tipo"].ToString())
+                terapias.Add(new Terapia
+                {
+                    LimiteApertura = Int32.Parse(reader["LimiteApertura"].ToString()),
+                    LimiteCierre = Int32.Parse(reader["LimiteCierre"].ToString()),
+                    PacienteSqlid = Int32.Parse(reader["Paciente"].ToString()),
+                    Repeticiones = Int32.Parse(reader["Repeticiones"].ToString()),
+                    TiempoApertura = DateTime.Parse(reader["TiempoApertura"].ToString()),
+                    TiempoCierre = DateTime.Parse(reader["TiempoCierre"].ToString()),
+                    VelocidadApertura = double.Parse(reader["VelocidadApertura"].ToString()),
+                    VelocidadCierre = double.Parse(reader["VelocidadCierre"].ToString()),
+                    tipoTerapia = Int32.Parse(reader["Tipo"].ToString()) == 0 ? TipoTerapia.AbrirCerrarDedos :
+                                  Int32.Parse(reader["Tipo"].ToString()) == 1 ? TipoTerapia.AbrirCerrarMano :
+                                  Int32.Parse(reader["Tipo"].ToString()) == 2 ? TipoTerapia.PinzaFina : TipoTerapia.PinzaGruesa
 
                 });
             this.Close();
@@ -138,7 +197,7 @@ namespace IU_Windows
             SqlCommand cmd = new SqlCommand(query, sql);
             foreach (var param in parameters)
                 cmd.Parameters.AddWithValue(param.Key, param.Value);
-          
+
             this.Open();
             int count = (Int32)cmd.ExecuteScalar();
             this.Close();

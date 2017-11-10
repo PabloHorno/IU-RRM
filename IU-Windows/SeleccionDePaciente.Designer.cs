@@ -42,11 +42,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.listViewHistorialTerapias = new System.Windows.Forms.ListView();
-            this.Terapia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Duracion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Repeticiones = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Observaciones = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabControlTerapias = new System.Windows.Forms.TabControl();
@@ -61,8 +56,8 @@
             this.numericUpDownTiempoCierreCompleta = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxTipoParametrosAperturaCompleta = new System.Windows.Forms.ComboBox();
-            this.numericUpDownVelocidadCompleta = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownAnguloCompleta = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownVelocidadAperturaCompleta = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownAnguloAperturaCompleta = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownTiempoAperturaCompleta = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -163,14 +158,14 @@
             this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxTipoParametrosCierrePinza = new System.Windows.Forms.ComboBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownVelocidadCierrePinza = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownTiempoCierrePinza = new System.Windows.Forms.NumericUpDown();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
+            this.comboBoxTipoParametrosAperturaPinza = new System.Windows.Forms.ComboBox();
+            this.numericUpDownVelocidadAperturaPinza = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownTiempoAperturaPinza = new System.Windows.Forms.NumericUpDown();
             this.label29 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.numRepeticiones = new System.Windows.Forms.NumericUpDown();
@@ -182,6 +177,12 @@
             this.lblNombreCuenta = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.groupBoxDatosPaciente = new System.Windows.Forms.GroupBox();
+            this.listViewHistorialTerapias = new System.Windows.Forms.ListView();
+            this.Terapia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Duracion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Repeticiones = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Observaciones = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Inicial = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -195,8 +196,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAnguloCierreCompleta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTiempoCierreCompleta)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVelocidadCompleta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAnguloCompleta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVelocidadAperturaCompleta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAnguloAperturaCompleta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTiempoAperturaCompleta)).BeginInit();
             this.tabPageDedos.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -249,11 +250,11 @@
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVelocidadCierrePinza)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTiempoCierrePinza)).BeginInit();
             this.groupBox11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVelocidadAperturaPinza)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTiempoAperturaPinza)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRepeticiones)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBoxDatosPaciente.SuspendLayout();
@@ -369,40 +370,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Historial de Terapias";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // listViewHistorialTerapias
-            // 
-            this.listViewHistorialTerapias.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Terapia,
-            this.Duracion,
-            this.Repeticiones,
-            this.Observaciones});
-            this.listViewHistorialTerapias.Location = new System.Drawing.Point(7, 7);
-            this.listViewHistorialTerapias.Name = "listViewHistorialTerapias";
-            this.listViewHistorialTerapias.Size = new System.Drawing.Size(884, 407);
-            this.listViewHistorialTerapias.TabIndex = 0;
-            this.listViewHistorialTerapias.UseCompatibleStateImageBehavior = false;
-            this.listViewHistorialTerapias.View = System.Windows.Forms.View.Details;
-            this.listViewHistorialTerapias.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
-            // Terapia
-            // 
-            this.Terapia.Text = "Terapia";
-            // 
-            // Duracion
-            // 
-            this.Duracion.Text = "Duración";
-            this.Duracion.Width = 92;
-            // 
-            // Repeticiones
-            // 
-            this.Repeticiones.Text = "Repeticiones";
-            this.Repeticiones.Width = 96;
-            // 
-            // Observaciones
-            // 
-            this.Observaciones.Text = "Observaciones";
-            this.Observaciones.Width = 122;
             // 
             // tabPage3
             // 
@@ -541,8 +508,8 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.comboBoxTipoParametrosAperturaCompleta);
-            this.groupBox1.Controls.Add(this.numericUpDownVelocidadCompleta);
-            this.groupBox1.Controls.Add(this.numericUpDownAnguloCompleta);
+            this.groupBox1.Controls.Add(this.numericUpDownVelocidadAperturaCompleta);
+            this.groupBox1.Controls.Add(this.numericUpDownAnguloAperturaCompleta);
             this.groupBox1.Controls.Add(this.numericUpDownTiempoAperturaCompleta);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
@@ -569,21 +536,21 @@
             this.comboBoxTipoParametrosAperturaCompleta.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosAperturaCompleta.TabIndex = 10;
             // 
-            // numericUpDownVelocidadCompleta
+            // numericUpDownVelocidadAperturaCompleta
             // 
-            this.numericUpDownVelocidadCompleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownVelocidadCompleta.Location = new System.Drawing.Point(60, 52);
-            this.numericUpDownVelocidadCompleta.Name = "numericUpDownVelocidadCompleta";
-            this.numericUpDownVelocidadCompleta.Size = new System.Drawing.Size(65, 20);
-            this.numericUpDownVelocidadCompleta.TabIndex = 9;
+            this.numericUpDownVelocidadAperturaCompleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDownVelocidadAperturaCompleta.Location = new System.Drawing.Point(60, 52);
+            this.numericUpDownVelocidadAperturaCompleta.Name = "numericUpDownVelocidadAperturaCompleta";
+            this.numericUpDownVelocidadAperturaCompleta.Size = new System.Drawing.Size(65, 20);
+            this.numericUpDownVelocidadAperturaCompleta.TabIndex = 9;
             // 
-            // numericUpDownAnguloCompleta
+            // numericUpDownAnguloAperturaCompleta
             // 
-            this.numericUpDownAnguloCompleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownAnguloCompleta.Location = new System.Drawing.Point(59, 78);
-            this.numericUpDownAnguloCompleta.Name = "numericUpDownAnguloCompleta";
-            this.numericUpDownAnguloCompleta.Size = new System.Drawing.Size(65, 20);
-            this.numericUpDownAnguloCompleta.TabIndex = 8;
+            this.numericUpDownAnguloAperturaCompleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDownAnguloAperturaCompleta.Location = new System.Drawing.Point(59, 78);
+            this.numericUpDownAnguloAperturaCompleta.Name = "numericUpDownAnguloAperturaCompleta";
+            this.numericUpDownAnguloAperturaCompleta.Size = new System.Drawing.Size(65, 20);
+            this.numericUpDownAnguloAperturaCompleta.TabIndex = 8;
             // 
             // numericUpDownTiempoAperturaCompleta
             // 
@@ -1640,10 +1607,10 @@
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.label26);
-            this.groupBox10.Controls.Add(this.comboBox2);
+            this.groupBox10.Controls.Add(this.comboBoxTipoParametrosCierrePinza);
             this.groupBox10.Controls.Add(this.label27);
-            this.groupBox10.Controls.Add(this.numericUpDown1);
-            this.groupBox10.Controls.Add(this.numericUpDown3);
+            this.groupBox10.Controls.Add(this.numericUpDownVelocidadCierrePinza);
+            this.groupBox10.Controls.Add(this.numericUpDownTiempoCierrePinza);
             this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox10.Location = new System.Drawing.Point(6, 99);
             this.groupBox10.Name = "groupBox10";
@@ -1662,19 +1629,19 @@
             this.label26.TabIndex = 12;
             this.label26.Text = "Tiempo";
             // 
-            // comboBox2
+            // comboBoxTipoParametrosCierrePinza
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboBoxTipoParametrosCierrePinza.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTipoParametrosCierrePinza.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxTipoParametrosCierrePinza.FormattingEnabled = true;
+            this.comboBoxTipoParametrosCierrePinza.Items.AddRange(new object[] {
             "Parámetros",
             "Por defecto",
             "Terapia anterior"});
-            this.comboBox2.Location = new System.Drawing.Point(341, 19);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 18;
+            this.comboBoxTipoParametrosCierrePinza.Location = new System.Drawing.Point(341, 19);
+            this.comboBoxTipoParametrosCierrePinza.Name = "comboBoxTipoParametrosCierrePinza";
+            this.comboBoxTipoParametrosCierrePinza.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxTipoParametrosCierrePinza.TabIndex = 18;
             // 
             // label27
             // 
@@ -1686,27 +1653,27 @@
             this.label27.TabIndex = 14;
             this.label27.Text = "Velocidad";
             // 
-            // numericUpDown1
+            // numericUpDownVelocidadCierrePinza
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(61, 59);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(65, 20);
-            this.numericUpDown1.TabIndex = 17;
+            this.numericUpDownVelocidadCierrePinza.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDownVelocidadCierrePinza.Location = new System.Drawing.Point(61, 59);
+            this.numericUpDownVelocidadCierrePinza.Name = "numericUpDownVelocidadCierrePinza";
+            this.numericUpDownVelocidadCierrePinza.Size = new System.Drawing.Size(65, 20);
+            this.numericUpDownVelocidadCierrePinza.TabIndex = 17;
             // 
-            // numericUpDown3
+            // numericUpDownTiempoCierrePinza
             // 
-            this.numericUpDown3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown3.Location = new System.Drawing.Point(61, 33);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(65, 20);
-            this.numericUpDown3.TabIndex = 15;
+            this.numericUpDownTiempoCierrePinza.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDownTiempoCierrePinza.Location = new System.Drawing.Point(61, 33);
+            this.numericUpDownTiempoCierrePinza.Name = "numericUpDownTiempoCierrePinza";
+            this.numericUpDownTiempoCierrePinza.Size = new System.Drawing.Size(65, 20);
+            this.numericUpDownTiempoCierrePinza.TabIndex = 15;
             // 
             // groupBox11
             // 
-            this.groupBox11.Controls.Add(this.comboBox4);
-            this.groupBox11.Controls.Add(this.numericUpDown4);
-            this.groupBox11.Controls.Add(this.numericUpDown6);
+            this.groupBox11.Controls.Add(this.comboBoxTipoParametrosAperturaPinza);
+            this.groupBox11.Controls.Add(this.numericUpDownVelocidadAperturaPinza);
+            this.groupBox11.Controls.Add(this.numericUpDownTiempoAperturaPinza);
             this.groupBox11.Controls.Add(this.label29);
             this.groupBox11.Controls.Add(this.label31);
             this.groupBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1717,35 +1684,35 @@
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Apertura";
             // 
-            // comboBox4
+            // comboBoxTipoParametrosAperturaPinza
             // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.comboBoxTipoParametrosAperturaPinza.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTipoParametrosAperturaPinza.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxTipoParametrosAperturaPinza.FormattingEnabled = true;
+            this.comboBoxTipoParametrosAperturaPinza.Items.AddRange(new object[] {
             "Parámetros",
             "Por defecto",
             "Terapia anterior"});
-            this.comboBox4.Location = new System.Drawing.Point(341, 19);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 10;
+            this.comboBoxTipoParametrosAperturaPinza.Location = new System.Drawing.Point(341, 19);
+            this.comboBoxTipoParametrosAperturaPinza.Name = "comboBoxTipoParametrosAperturaPinza";
+            this.comboBoxTipoParametrosAperturaPinza.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxTipoParametrosAperturaPinza.TabIndex = 10;
             // 
-            // numericUpDown4
+            // numericUpDownVelocidadAperturaPinza
             // 
-            this.numericUpDown4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown4.Location = new System.Drawing.Point(60, 52);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(65, 20);
-            this.numericUpDown4.TabIndex = 9;
+            this.numericUpDownVelocidadAperturaPinza.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDownVelocidadAperturaPinza.Location = new System.Drawing.Point(60, 52);
+            this.numericUpDownVelocidadAperturaPinza.Name = "numericUpDownVelocidadAperturaPinza";
+            this.numericUpDownVelocidadAperturaPinza.Size = new System.Drawing.Size(65, 20);
+            this.numericUpDownVelocidadAperturaPinza.TabIndex = 9;
             // 
-            // numericUpDown6
+            // numericUpDownTiempoAperturaPinza
             // 
-            this.numericUpDown6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown6.Location = new System.Drawing.Point(60, 26);
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(65, 20);
-            this.numericUpDown6.TabIndex = 7;
+            this.numericUpDownTiempoAperturaPinza.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDownTiempoAperturaPinza.Location = new System.Drawing.Point(60, 26);
+            this.numericUpDownTiempoAperturaPinza.Name = "numericUpDownTiempoAperturaPinza";
+            this.numericUpDownTiempoAperturaPinza.Size = new System.Drawing.Size(65, 20);
+            this.numericUpDownTiempoAperturaPinza.TabIndex = 7;
             // 
             // label29
             // 
@@ -1858,6 +1825,48 @@
             this.groupBoxDatosPaciente.TabStop = false;
             this.groupBoxDatosPaciente.Text = "NOMBRE Y APELLIDOS";
             // 
+            // listViewHistorialTerapias
+            // 
+            this.listViewHistorialTerapias.AllowColumnReorder = true;
+            this.listViewHistorialTerapias.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Inicial,
+            this.Terapia,
+            this.Duracion,
+            this.Repeticiones,
+            this.Observaciones});
+            this.listViewHistorialTerapias.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listViewHistorialTerapias.HideSelection = false;
+            this.listViewHistorialTerapias.HoverSelection = true;
+            this.listViewHistorialTerapias.Location = new System.Drawing.Point(6, 6);
+            this.listViewHistorialTerapias.Name = "listViewHistorialTerapias";
+            this.listViewHistorialTerapias.Size = new System.Drawing.Size(885, 408);
+            this.listViewHistorialTerapias.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.listViewHistorialTerapias.TabIndex = 0;
+            this.listViewHistorialTerapias.UseCompatibleStateImageBehavior = false;
+            this.listViewHistorialTerapias.View = System.Windows.Forms.View.Details;
+            // 
+            // Terapia
+            // 
+            this.Terapia.Text = "Terapia";
+            this.Terapia.Width = 120;
+            // 
+            // Duracion
+            // 
+            this.Duracion.Text = "Duración";
+            // 
+            // Repeticiones
+            // 
+            this.Repeticiones.Text = "Repeticiones";
+            // 
+            // Observaciones
+            // 
+            this.Observaciones.Text = "Observaciones";
+            // 
+            // Inicial
+            // 
+            this.Inicial.Text = "";
+            this.Inicial.Width = 0;
+            // 
             // SeleccionDePaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1890,8 +1899,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTiempoCierreCompleta)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVelocidadCompleta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAnguloCompleta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVelocidadAperturaCompleta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAnguloAperturaCompleta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTiempoAperturaCompleta)).EndInit();
             this.tabPageDedos.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
@@ -1956,12 +1965,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVelocidadCierrePinza)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTiempoCierrePinza)).EndInit();
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVelocidadAperturaPinza)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTiempoAperturaPinza)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRepeticiones)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.groupBoxDatosPaciente.ResumeLayout(false);
@@ -1987,11 +1996,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem eliminarTerapiaToolStripMenuItem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listViewHistorialTerapias;
-        private System.Windows.Forms.ColumnHeader Terapia;
-        private System.Windows.Forms.ColumnHeader Duracion;
-        private System.Windows.Forms.ColumnHeader Repeticiones;
-        private System.Windows.Forms.ColumnHeader Observaciones;
         private System.Windows.Forms.Label lblTipoTerapia;
         private System.Windows.Forms.ComboBox comboBoxSeleccionTerapia;
         private System.Windows.Forms.Label lblRepeticiones;
@@ -2015,8 +2019,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDownVelocidadCompleta;
-        private System.Windows.Forms.NumericUpDown numericUpDownAnguloCompleta;
+        private System.Windows.Forms.NumericUpDown numericUpDownVelocidadAperturaCompleta;
+        private System.Windows.Forms.NumericUpDown numericUpDownAnguloAperturaCompleta;
         private System.Windows.Forms.NumericUpDown numericUpDownTiempoAperturaCompleta;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBoxTipoParametrosCierreCompleta;
@@ -2111,18 +2115,24 @@
         private System.Windows.Forms.NumericUpDown numericUpDown5;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxTipoParametrosCierrePinza;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown numericUpDownVelocidadCierrePinza;
+        private System.Windows.Forms.NumericUpDown numericUpDownTiempoCierrePinza;
         private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.NumericUpDown numericUpDown6;
+        private System.Windows.Forms.ComboBox comboBoxTipoParametrosAperturaPinza;
+        private System.Windows.Forms.NumericUpDown numericUpDownVelocidadAperturaPinza;
+        private System.Windows.Forms.NumericUpDown numericUpDownTiempoAperturaPinza;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.ComboBox comboBoxTipoParametrosCierreMeñique;
+        private System.Windows.Forms.ListView listViewHistorialTerapias;
+        private System.Windows.Forms.ColumnHeader Terapia;
+        private System.Windows.Forms.ColumnHeader Duracion;
+        private System.Windows.Forms.ColumnHeader Repeticiones;
+        private System.Windows.Forms.ColumnHeader Observaciones;
+        private System.Windows.Forms.ColumnHeader Inicial;
     }
 }

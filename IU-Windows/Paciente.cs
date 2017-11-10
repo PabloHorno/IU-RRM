@@ -23,7 +23,7 @@ namespace IU_Windows
         {
             SQLHelper db = new SQLHelper();
             List<Terapia> terapias = db.GetTerapiasFromPaciente(this.SqlId);
-            return new List<Terapia>();
+            return terapias;
         }
     }
 }

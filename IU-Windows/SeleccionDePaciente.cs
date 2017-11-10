@@ -23,7 +23,7 @@ namespace IU_Windows
             CargarDatos(sqlId);
             treeView1.NodeMouseDoubleClick += TreeView1_NodeMouseDoubleClick;
             treeView1.NodeMouseClick += TreeView1_NodeMouseClick1;
-            
+
         }
 
         private void HandlerComboBoxTipoParametros(object sender, EventArgs e)
@@ -31,21 +31,38 @@ namespace IU_Windows
             if (((ComboBox)sender).Name.Contains("comboBoxTipoParametros"))
             {
                 string name = ((ComboBox)sender).Name.Replace("comboBoxTipoParametros", "");
-                List<string> campos = new List<string>{"numericUpDownAngulo", "numericUpDownTiempo", "numericUpDownVelocidad"};
+                List<string> campos = new List<string> { "numericUpDownAngulo", "numericUpDownTiempo", "numericUpDownVelocidad" };
 
-                if ((sender as ComboBox).SelectedIndex == 0)
+                //object second = this.GetType().GetField("numericUpDownTiempoCierrePulgar", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(this); 
+                foreach (string campo in campos)
                 {
-                    //object second = this.GetType().GetField("numericUpDownTiempoCierrePulgar", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(this); 
-                    foreach(string campo in campos)
-                    (this.GetType().GetField(campo + name, System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(this) as NumericUpDown).Enabled = true;
-                }
-                else
-                {
-                    foreach (string campo in campos)
-                        (this.GetType().GetField(campo + name, System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(this) as NumericUpDown).Enabled = false;
+                    try
+                    {
+                        var obj = (this.GetType().GetField(campo + name, System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(this) as NumericUpDown);
+                        obj.Enabled = ((sender as ComboBox).SelectedIndex == 0);
+
+                        if((sender as ComboBox).SelectedIndex == 1)
+                        {
+                            obj.Value = Helper.parametrosPorDefecto[obj.Name];
+                        }
+                        else if((sender as ComboBox).SelectedIndex == 2)
+                        {
+                            Terapia ultimaTerapia = paciente.GetTerapias().Find(x => (int)x.tipoTerapia == this.comboBoxSeleccionTerapia.SelectedIndex);
+                            if(ultimaTerapia == null)
+                            {
+                                MessageBox.Show($"El paciente {paciente.Nombre.ToUpper()} {paciente.Apellidos.ToUpper()} no ha realizado ninguna terapia del tipo: " + (TipoTerapia)this.comboBoxSeleccionTerapia.SelectedIndex, "Falta terapia", MessageBoxButtons.OK,MessageBoxIcon.Stop);
+                                (sender as ComboBox).SelectedIndex = 1;
+                                return;
+                            }
+                        }
+                    }
+                    catch
+                    {
+                    }
                 }
             }
         }
+
 
         private void Inicializacion()
         {
@@ -64,6 +81,10 @@ namespace IU_Windows
             this.comboBoxTipoParametrosCierreMeñique.SelectedIndexChanged += HandlerComboBoxTipoParametros;
             this.comboBoxTipoParametrosAperturaPulgar.SelectedIndexChanged += HandlerComboBoxTipoParametros;
             this.comboBoxTipoParametrosCierrePulgar.SelectedIndexChanged += HandlerComboBoxTipoParametros;
+            this.comboBoxTipoParametrosAperturaPinza.SelectedIndexChanged += HandlerComboBoxTipoParametros;
+            this.comboBoxTipoParametrosCierrePinza.SelectedIndexChanged += HandlerComboBoxTipoParametros;
+            this.comboBoxTipoParametrosAperturaCompleta.SelectedIndexChanged += HandlerComboBoxTipoParametros;
+            this.comboBoxTipoParametrosCierreCompleta.SelectedIndexChanged += HandlerComboBoxTipoParametros;
 
             foreach (var prop in this.GetType().GetFields(System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance))
             {
@@ -122,18 +143,21 @@ namespace IU_Windows
 
         private void mostrarDatosPaciente(Paciente paciente)
         {
-            groupBoxDatosPaciente.Text = (paciente.Nombre + " " + paciente.Apellidos).ToUpper();
+            groupBoxDatosPaciente.Text = ("[ " + paciente.SqlId + " ]: " + paciente.Nombre + " " + paciente.Apellidos).ToUpper();
             this.listViewHistorialTerapias.Items.Clear();
-            List<Terapia> terapia = paciente.GetTerapias();
-            if(terapia.Count > 0)
+            foreach (Terapia terapia in paciente.GetTerapias())
             {
-
-            ListViewItem listViewItem = new ListViewItem();
-            listViewItem.SubItems.Add(terapia[0].tipoTerapia.ToString());
-            listViewItem.SubItems.Add(terapia[0].Repeticiones.ToString());
-            listViewItem.SubItems.Add(terapia[0].TiempoApertura.ToString());
-            listViewItem.SubItems.Add("Esto es una observacion to rara");
-            this.listViewHistorialTerapias.Items.Add(listViewItem);
+                ListViewItem listViewItem = new ListViewItem();
+                listViewItem.SubItems.Add(terapia.Nombre);
+                listViewItem.SubItems.Add(terapia.TiempoApertura.ToShortTimeString());
+                listViewItem.SubItems.Add(terapia.Repeticiones.ToString());
+                listViewItem.SubItems.Add(terapia.Observacion);
+                this.listViewHistorialTerapias.Items.Add(listViewItem);
+            }
+            if (this.listViewHistorialTerapias.Items.Count > 0)
+            {
+                this.listViewHistorialTerapias.Items[0].Selected = true;
+                this.listViewHistorialTerapias.Items[0].Focused = true;
             }
         }
 
