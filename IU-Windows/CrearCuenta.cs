@@ -60,26 +60,7 @@ namespace IU_Windows
                 db.Insert("INSERT INTO Usuarios (Nombre,Contraseña,Apellidos,Correo) VALUES (@Nombre, @Contraseña, @Apellidos, @Correo)", parametros);
             }
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_2(object sender, EventArgs e)
-        {
-
-        }
+        
         private void setRequeridos()
         {
             requeridos.Add(inputNombre);

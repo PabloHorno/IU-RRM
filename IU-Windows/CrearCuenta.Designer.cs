@@ -69,7 +69,7 @@
             this.inputApellidos.Location = new System.Drawing.Point(12, 92);
             this.inputApellidos.Name = "inputApellidos";
             this.inputApellidos.Size = new System.Drawing.Size(139, 20);
-            this.inputApellidos.TabIndex = 4;
+            this.inputApellidos.TabIndex = 1;
             // 
             // lblApellidos
             // 
@@ -85,7 +85,7 @@
             this.inputCorreo.Location = new System.Drawing.Point(12, 138);
             this.inputCorreo.Name = "inputCorreo";
             this.inputCorreo.Size = new System.Drawing.Size(139, 20);
-            this.inputCorreo.TabIndex = 6;
+            this.inputCorreo.TabIndex = 2;
             // 
             // lblCorreo
             // 
@@ -95,14 +95,13 @@
             this.lblCorreo.Size = new System.Drawing.Size(38, 13);
             this.lblCorreo.TabIndex = 7;
             this.lblCorreo.Text = "Correo";
-            this.lblCorreo.Click += new System.EventHandler(this.label1_Click);
             // 
             // inputContraseña
             // 
             this.inputContraseña.Location = new System.Drawing.Point(227, 43);
             this.inputContraseña.Name = "inputContraseña";
             this.inputContraseña.Size = new System.Drawing.Size(139, 20);
-            this.inputContraseña.TabIndex = 8;
+            this.inputContraseña.TabIndex = 3;
             this.inputContraseña.UseSystemPasswordChar = true;
             // 
             // inputContraseña2
@@ -110,7 +109,7 @@
             this.inputContraseña2.Location = new System.Drawing.Point(227, 92);
             this.inputContraseña2.Name = "inputContraseña2";
             this.inputContraseña2.Size = new System.Drawing.Size(139, 20);
-            this.inputContraseña2.TabIndex = 9;
+            this.inputContraseña2.TabIndex = 4;
             this.inputContraseña2.UseSystemPasswordChar = true;
             // 
             // lblContraseña
@@ -136,7 +135,7 @@
             this.btnCrearCuenta.Location = new System.Drawing.Point(319, 248);
             this.btnCrearCuenta.Name = "btnCrearCuenta";
             this.btnCrearCuenta.Size = new System.Drawing.Size(86, 23);
-            this.btnCrearCuenta.TabIndex = 12;
+            this.btnCrearCuenta.TabIndex = 6;
             this.btnCrearCuenta.Text = "Crear Cuenta";
             this.btnCrearCuenta.UseVisualStyleBackColor = true;
             // 
@@ -145,7 +144,7 @@
             this.btnAtras.Location = new System.Drawing.Point(436, 248);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(86, 23);
-            this.btnAtras.TabIndex = 13;
+            this.btnAtras.TabIndex = 7;
             this.btnAtras.Text = "Atrás";
             this.btnAtras.UseVisualStyleBackColor = true;
             // 
@@ -154,7 +153,7 @@
             this.inputNacimiento.Location = new System.Drawing.Point(227, 138);
             this.inputNacimiento.Name = "inputNacimiento";
             this.inputNacimiento.Size = new System.Drawing.Size(200, 20);
-            this.inputNacimiento.TabIndex = 14;
+            this.inputNacimiento.TabIndex = 5;
             // 
             // lblNacimiento
             // 
@@ -164,7 +163,6 @@
             this.lblNacimiento.Size = new System.Drawing.Size(106, 13);
             this.lblNacimiento.TabIndex = 15;
             this.lblNacimiento.Text = "Fecha de nacimiento";
-            this.lblNacimiento.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // btnVerContraseña
             // 
@@ -172,7 +170,7 @@
             this.btnVerContraseña.Location = new System.Drawing.Point(372, 41);
             this.btnVerContraseña.Name = "btnVerContraseña";
             this.btnVerContraseña.Size = new System.Drawing.Size(33, 23);
-            this.btnVerContraseña.TabIndex = 16;
+            this.btnVerContraseña.TabIndex = 8;
             this.btnVerContraseña.UseVisualStyleBackColor = true;
             // 
             // label2
@@ -183,7 +181,6 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 17;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblErrorCrearCuenta
             // 
@@ -193,7 +190,6 @@
             this.lblErrorCrearCuenta.Name = "lblErrorCrearCuenta";
             this.lblErrorCrearCuenta.Size = new System.Drawing.Size(0, 13);
             this.lblErrorCrearCuenta.TabIndex = 18;
-            this.lblErrorCrearCuenta.Click += new System.EventHandler(this.label1_Click_2);
             // 
             // CrearCuenta
             // 

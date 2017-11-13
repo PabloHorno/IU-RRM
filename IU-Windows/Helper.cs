@@ -19,7 +19,7 @@ namespace IU_Windows
 
             return Convert.ToBase64String(inArray);
         }
-        static public Dictionary<String, int> parametrosPorDefecto = new Dictionary<string, int>
+        static public Dictionary<String, decimal> parametrosPorDefecto = new Dictionary<string, decimal>
         {
             ///ABRIR CERRAR COMPLETA
             //Abrir
@@ -182,37 +182,50 @@ namespace IU_Windows
             this.Close();
             return pacientes;
         }
-        public List<Terapia> GetTerapiasFromPaciente(Int32 SqlId)
+        public List<Terapia> GetTerapiasFromPaciente(Paciente paciente)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Terapias WHERE Paciente = @SqlId", sql);
-            cmd.Parameters.AddWithValue("@SqlId", SqlId);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Terapias WHERE SqlIdPaciente = @SqlId", sql);
+            cmd.Parameters.AddWithValue("@SqlId", paciente.SqlId);
             this.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             List<Terapia> terapias = new List<Terapia>();
             while (reader.Read())
                 terapias.Add(new Terapia
                 {
-                    PacienteSqlid = Int32.Parse(reader["Paciente"].ToString()),
+                    PacienteSqlid = Int32.Parse(reader["SqlIdPaciente"].ToString()),
                     Repeticiones = Int32.Parse(reader["Repeticiones"].ToString()),
-                    Duracion = DateTime.Parse(reader["Duracion"].ToString()),
+                    Duracion = TimeSpan.Parse(reader["Duracion"].ToString()),
                     Observaciones = reader["Observaciones"].ToString(),
-                    Parametros = JsonConvert.DeserializeObject<Dictionary<string, Int32>>(reader["Parametros"].ToString()),
-                    tipoTerapia = Int32.Parse(reader["Tipo"].ToString()) == 0 ? TipoTerapia.AbrirCerrarDedos :
-                                  Int32.Parse(reader["Tipo"].ToString()) == 1 ? TipoTerapia.AbrirCerrarMano :
-                                  Int32.Parse(reader["Tipo"].ToString()) == 2 ? TipoTerapia.PinzaFina : TipoTerapia.PinzaGruesa
+                    Parametros = JsonConvert.DeserializeObject<Dictionary<string, decimal>>(reader["Parametros"].ToString()),
+                    tipoTerapia = (TipoTerapia)Int32.Parse(reader["Tipo"].ToString()),
+                    Fecha = DateTime.Parse(reader["Fecha"].ToString())
 
                 });
             this.Close();
             return terapias;
         }
+        public TimeSpan GetHorasTerapiasFromPaciente(Paciente paciente)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT Duracion FROM Terapias WHERE SqlIdPaciente = @SqlId", sql);
+            cmd.Parameters.AddWithValue("@SqlId", paciente.SqlId);
+            List<TimeSpan> duraciones = new List<TimeSpan>();
+            this.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+                duraciones.Add(TimeSpan.Parse(reader["Duracion"].ToString()));
+            this.Close();
+            TimeSpan horasTotales = new TimeSpan();
+            duraciones.ForEach(x => horasTotales += x);
+            return horasTotales;
+        }
         public List<Paciente> GetPacientesFromUser(Usuario user)
         {
             return GetPacientesFromUser(user.SqlId);
         }
-        public int Count(string query, Dictionary<string, object> parameters)
+        public int SelectScalar(string query, Dictionary<string, object> parametros)
         {
             SqlCommand cmd = new SqlCommand(query, sql);
-            foreach (var param in parameters)
+            foreach (var param in parametros)
                 cmd.Parameters.AddWithValue(param.Key, param.Value);
 
             this.Open();
@@ -222,7 +235,19 @@ namespace IU_Windows
         }
         public int Count(string tabla)
         {
-            return Count($"SELECT COUNT(*) FROM {tabla}", new Dictionary<string, object>());
+            return SelectScalar($"SELECT COUNT(*) FROM {tabla}", new Dictionary<string, object>());
+        }
+        public Dictionary<TipoTerapia,int> GetNumTerapiasRealizadasFromPaciente(Paciente paciente)
+        {
+            Dictionary<TipoTerapia, int> numTerapias = new Dictionary<TipoTerapia, int>();
+            foreach(var terapia in Enum.GetValues(typeof(TipoTerapia)))
+            {
+                numTerapias.Add( (TipoTerapia)terapia, this.SelectScalar("SELECT COUNT(*) FROM Terapias WHERE Tipo = @TipoTerapia AND SqlIdPaciente = @SqlId", new Dictionary<string, object> {
+                                                                                                                                                        { "@TipoTerapia", terapia },
+                                                                                                                                                        { "@SqlId", paciente.SqlId} }
+                ));
+            }
+            return numTerapias;
         }
     }
 }

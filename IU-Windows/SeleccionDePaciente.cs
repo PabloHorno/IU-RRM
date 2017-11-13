@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace IU_Windows
 {
@@ -23,7 +24,7 @@ namespace IU_Windows
             CargarDatos(sqlId);
             treeView1.NodeMouseDoubleClick += TreeView1_NodeMouseDoubleClick;
             treeView1.NodeMouseClick += TreeView1_NodeMouseClick1;
-            
+
         }
 
         private void HandlerComboBoxTipoParametros(object sender, EventArgs e)
@@ -41,16 +42,16 @@ namespace IU_Windows
                         var obj = (this.GetType().GetField(campo + name, System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(this) as NumericUpDown);
                         obj.Enabled = ((sender as ComboBox).SelectedIndex == 0);
 
-                        if((sender as ComboBox).SelectedIndex == 1)
+                        if ((sender as ComboBox).SelectedIndex == 1)
                         {
                             obj.Value = Helper.parametrosPorDefecto[obj.Name];
                         }
-                        else if((sender as ComboBox).SelectedIndex == 2)
+                        else if ((sender as ComboBox).SelectedIndex == 2)
                         {
                             Terapia ultimaTerapia = paciente.GetTerapias().Find(x => (int)x.tipoTerapia == this.comboBoxSeleccionTerapia.SelectedIndex);
-                            if(ultimaTerapia == null)
+                            if (ultimaTerapia == null)
                             {
-                                MessageBox.Show($"El paciente {paciente.Nombre.ToUpper()} {paciente.Apellidos.ToUpper()} no ha realizado ninguna terapia del tipo: " + (TipoTerapia)this.comboBoxSeleccionTerapia.SelectedIndex, "Falta terapia", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                                MessageBox.Show($"El paciente {paciente.Nombre.ToUpper()} {paciente.Apellidos.ToUpper()} no ha realizado ninguna terapia del tipo: " + (TipoTerapia)this.comboBoxSeleccionTerapia.SelectedIndex + " Asignamos parametros por defecto", "Falta terapia", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 (sender as ComboBox).SelectedIndex = 1;
                                 return;
                             }
@@ -136,7 +137,7 @@ namespace IU_Windows
         {
             treeView1.BeginUpdate();
             treeView1.Nodes.Add("Pacientes");
-            List<Paciente> pacientes = new SQLHelper().GetPacientesFromUser(sqlId);
+            List<Paciente> pacientes = usuario.GetPacientes();
             foreach (Paciente paciente in pacientes)
             {
                 treeView1.Nodes[0].Nodes.Add(paciente.SqlId.ToString(), paciente.Nombre + " " + paciente.Apellidos);
@@ -148,14 +149,31 @@ namespace IU_Windows
         private void mostrarDatosPaciente(Paciente paciente)
         {
             groupBoxDatosPaciente.Text = (paciente.Nombre + " " + paciente.Apellidos).ToUpper();
+
+            #region Inicio
+            this.lblHorasTerapia.Text = paciente.GetHorasTerapias().ToString();
+            var numTerapias = new SQLHelper().GetNumTerapiasRealizadasFromPaciente(paciente);
+            this.lblNabrirCerrarDedos.Text = numTerapias[TipoTerapia.AbrirCerrarDedos].ToString();
+            this.lblNabrirCerrarMano.Text = numTerapias[TipoTerapia.AbrirCerrarMano].ToString();
+            this.lblNpinzaFina.Text = numTerapias[TipoTerapia.PinzaFina].ToString();
+            this.lblNpinzaGruesa.Text = numTerapias[TipoTerapia.PinzaGruesa].ToString();
+            this.lblTotalTerapiasRealizadas.Text = new SQLHelper().SelectScalar(
+                "SELECT COUNT(*) FROM Terapias WHERE SqlIdPaciente = @SqlIdPaciente",
+                new Dictionary<string, object>{
+                    { "@SqlIdPaciente", paciente.SqlId }}
+                ).ToString();
+
+            #endregion
+            #region Historial de Terapias
             this.listViewHistorialTerapias.Items.Clear();
             foreach (Terapia terapia in paciente.GetTerapias())
             {
                 ListViewItem listViewItem = new ListViewItem();
                 listViewItem.SubItems.Add(terapia.Nombre);
-                listViewItem.SubItems.Add(terapia.Duracion.ToShortTimeString());
+                listViewItem.SubItems.Add(terapia.Duracion.ToString());
                 listViewItem.SubItems.Add(terapia.Repeticiones.ToString());
                 listViewItem.SubItems.Add(terapia.Observaciones);
+                listViewItem.SubItems.Add(terapia.Fecha.ToShortDateString());
                 this.listViewHistorialTerapias.Items.Add(listViewItem);
             }
             if (this.listViewHistorialTerapias.Items.Count > 0)
@@ -163,6 +181,15 @@ namespace IU_Windows
                 this.listViewHistorialTerapias.Items[0].Selected = true;
                 this.listViewHistorialTerapias.Items[0].Focused = true;
             }
+            #endregion
+            #region Nueva Terapia
+            #endregion
+            //Reiniciamos controles terapia al cambiar de Paciente
+            foreach (var field in this.GetType().GetFields(System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance))
+                if (field.GetValue(this).GetType() == typeof(NumericUpDown))
+                    (field.GetValue(this) as NumericUpDown).Value = 0;
+                else if(field.GetValue(this).GetType() == typeof(ComboBox))
+                    (field.GetValue(this) as ComboBox).SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -192,85 +219,28 @@ namespace IU_Windows
             CrearPaciente crearPaciente = new CrearPaciente();
             crearPaciente.Show();
         }
-
-        private void lblApellidos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.tabControlTerapias.SelectedIndex = this.comboBoxSeleccionTerapia.SelectedIndex;
         }
 
-        private void tabPage3_Click(object sender, EventArgs e)
+        private void btnGuardarTerapia_Click(object sender, EventArgs e)
         {
+            Dictionary<string, decimal> parametros = new Dictionary<string, decimal>();
 
-        }
+            foreach(var field in this.GetType().GetFields(System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance))
+            {
 
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void lblNombreCuenta_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDown5_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDownAnguloAperturaAnular_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
+                if(field.GetValue(this).GetType() == typeof(NumericUpDown))
+                {
+                    NumericUpDown obj = (NumericUpDown)field.GetValue(this);
+                    //MessageBox.Show(obj.Name + " " + obj.Enabled.ToString());
+                    parametros.Add(obj.Name, obj.Value);
+                }
+            }
+            MessageBox.Show(JsonConvert.SerializeObject(parametros));
         }
     }
 }

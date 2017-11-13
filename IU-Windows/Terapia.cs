@@ -7,8 +7,8 @@ namespace IU_Windows
 {
     public enum TipoTerapia
     {
-        AbrirCerrarDedos,
         AbrirCerrarMano,
+        AbrirCerrarDedos,
         PinzaFina,
         PinzaGruesa
     }
@@ -34,8 +34,9 @@ namespace IU_Windows
 
         public int PacienteSqlid { get; set; }
         public int Repeticiones { get; set; }
-        public DateTime Duracion { get; set; }
-        public Dictionary<string, Int32> Parametros { get; set; }
+        public TimeSpan Duracion { get; set; }
+        public Dictionary<string, decimal> Parametros { get; set; }
         public string Observaciones { get; set; }
+        public DateTime Fecha { get; set; }
     }
 }

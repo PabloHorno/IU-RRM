@@ -22,8 +22,12 @@ namespace IU_Windows
         public List<Terapia> GetTerapias()
         {
             SQLHelper db = new SQLHelper();
-            List<Terapia> terapias = db.GetTerapiasFromPaciente(this.SqlId);
+            List<Terapia> terapias = db.GetTerapiasFromPaciente(this);
             return terapias;
+        }
+        public TimeSpan GetHorasTerapias()
+        {
+            return new SQLHelper().GetHorasTerapiasFromPaciente(this);
         }
     }
 }
