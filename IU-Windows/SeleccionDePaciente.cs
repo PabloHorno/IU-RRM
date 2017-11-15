@@ -101,6 +101,11 @@ namespace IU_Windows
             this.groupBoxDatosPaciente.Hide();
         }
 
+        private void RichTextBoxObservaciones_TextChanged(object sender, System.EventArgs e)
+        {
+            this.btnActualizarObservaciones.Enabled = true;
+        }
+
         private void TreeView1_NodeMouseClick1(object sender, TreeNodeMouseClickEventArgs e)
         {
             int SqlId;
@@ -162,6 +167,8 @@ namespace IU_Windows
                 new Dictionary<string, object>{
                     { "@SqlIdPaciente", paciente.SqlId }}
                 ).ToString();
+            this.richTextBoxObservaciones.Text = paciente.Observaciones;
+            this.btnActualizarObservaciones.Enabled = false;
 
             #endregion
             #region Historial de Terapias
@@ -236,11 +243,23 @@ namespace IU_Windows
                 if(field.GetValue(this).GetType() == typeof(NumericUpDown))
                 {
                     NumericUpDown obj = (NumericUpDown)field.GetValue(this);
-                    //MessageBox.Show(obj.Name + " " + obj.Enabled.ToString());
                     parametros.Add(obj.Name, obj.Value);
                 }
             }
             MessageBox.Show(JsonConvert.SerializeObject(parametros));
         }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnActualizarObservaciones_Click(object sender, EventArgs e)
+        {
+            paciente.Observaciones = this.richTextBoxObservaciones.Text;
+            this.btnActualizarObservaciones.Enabled = false;
+        }
+
+        
     }
 }

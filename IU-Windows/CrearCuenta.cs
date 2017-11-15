@@ -57,7 +57,7 @@ namespace IU_Windows
                 parametros.Add("@Correo", inputCorreo.Text);
                 parametros.Add("@FechaDeNacimiento", inputNacimiento.Text);
                 parametros.Add("@Contraseña", Helper.encprytPassword(inputContraseña.Text));
-                db.Insert("INSERT INTO Usuarios (Nombre,Contraseña,Apellidos,Correo) VALUES (@Nombre, @Contraseña, @Apellidos, @Correo)", parametros);
+                db.Query("INSERT INTO Usuarios (Nombre,Contraseña,Apellidos,Correo) VALUES (@Nombre, @Contraseña, @Apellidos, @Correo)", parametros);
             }
         }
         

@@ -40,6 +40,8 @@
             this.acercaDeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.richTextBoxObservaciones = new System.Windows.Forms.RichTextBox();
             this.ResumenTerapias = new System.Windows.Forms.GroupBox();
             this.lblTotalTerapiasRealizadas = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
@@ -62,9 +64,10 @@
             this.Observaciones = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Fecha = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.btnGuardarTerapia = new System.Windows.Forms.Button();
             this.btnIniciarTerapia = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabControlTerapias = new System.Windows.Forms.TabControl();
             this.tabPageCompleto = new System.Windows.Forms.TabPage();
@@ -199,14 +202,15 @@
             this.lblNombreCuenta = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.groupBoxDatosPaciente = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.btnActualizarObservaciones = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox17.SuspendLayout();
             this.ResumenTerapias.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.groupBox18.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabControlTerapias.SuspendLayout();
             this.tabPageCompleto.SuspendLayout();
@@ -277,7 +281,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numRepeticiones)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBoxDatosPaciente.SuspendLayout();
-            this.groupBox17.SuspendLayout();
             this.SuspendLayout();
             // 
             // treeView1
@@ -370,6 +373,28 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Inicio";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox17
+            // 
+            this.groupBox17.Controls.Add(this.btnActualizarObservaciones);
+            this.groupBox17.Controls.Add(this.richTextBoxObservaciones);
+            this.groupBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox17.Location = new System.Drawing.Point(364, 6);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(475, 206);
+            this.groupBox17.TabIndex = 4;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "Observaciones";
+            // 
+            // richTextBoxObservaciones
+            // 
+            this.richTextBoxObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxObservaciones.Location = new System.Drawing.Point(6, 25);
+            this.richTextBoxObservaciones.Name = "richTextBoxObservaciones";
+            this.richTextBoxObservaciones.Size = new System.Drawing.Size(463, 141);
+            this.richTextBoxObservaciones.TabIndex = 3;
+            this.richTextBoxObservaciones.Text = "";
+            this.richTextBoxObservaciones.TextChanged += RichTextBoxObservaciones_TextChanged;
             // 
             // ResumenTerapias
             // 
@@ -575,9 +600,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.btnGuardarTerapia);
-            this.tabPage3.Controls.Add(this.btnIniciarTerapia);
-            this.tabPage3.Controls.Add(this.progressBar1);
+            this.tabPage3.Controls.Add(this.groupBox18);
             this.tabPage3.Controls.Add(this.groupBox3);
             this.tabPage3.Controls.Add(this.numRepeticiones);
             this.tabPage3.Controls.Add(this.lblRepeticiones);
@@ -589,10 +612,32 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nueva Terapia";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+            // 
+            // groupBox18
+            // 
+            this.groupBox18.Controls.Add(this.progressBar1);
+            this.groupBox18.Controls.Add(this.btnGuardarTerapia);
+            this.groupBox18.Controls.Add(this.btnIniciarTerapia);
+            this.groupBox18.Enabled = false;
+            this.groupBox18.Location = new System.Drawing.Point(438, 8);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(449, 399);
+            this.groupBox18.TabIndex = 9;
+            this.groupBox18.TabStop = false;
+            this.groupBox18.Text = "Ejecucion de terápia";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(6, 293);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(437, 23);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBar1.TabIndex = 6;
             // 
             // btnGuardarTerapia
             // 
-            this.btnGuardarTerapia.Location = new System.Drawing.Point(694, 321);
+            this.btnGuardarTerapia.Location = new System.Drawing.Point(308, 345);
             this.btnGuardarTerapia.Name = "btnGuardarTerapia";
             this.btnGuardarTerapia.Size = new System.Drawing.Size(105, 23);
             this.btnGuardarTerapia.TabIndex = 8;
@@ -602,23 +647,16 @@
             // 
             // btnIniciarTerapia
             // 
-            this.btnIniciarTerapia.Location = new System.Drawing.Point(501, 321);
+            this.btnIniciarTerapia.Location = new System.Drawing.Point(32, 345);
             this.btnIniciarTerapia.Name = "btnIniciarTerapia";
-            this.btnIniciarTerapia.Size = new System.Drawing.Size(75, 23);
+            this.btnIniciarTerapia.Size = new System.Drawing.Size(100, 23);
             this.btnIniciarTerapia.TabIndex = 7;
-            this.btnIniciarTerapia.Text = "Iniciar";
+            this.btnIniciarTerapia.Text = "Iniciar Terapia";
             this.btnIniciarTerapia.UseVisualStyleBackColor = true;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(438, 380);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(423, 23);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.progressBar1.TabIndex = 6;
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.White;
             this.groupBox3.Controls.Add(this.tabControlTerapias);
             this.groupBox3.Location = new System.Drawing.Point(6, 61);
             this.groupBox3.Name = "groupBox3";
@@ -640,6 +678,7 @@
             // 
             // tabPageCompleto
             // 
+            this.tabPageCompleto.BackColor = System.Drawing.Color.White;
             this.tabPageCompleto.Controls.Add(this.groupBox2);
             this.tabPageCompleto.Controls.Add(this.groupBox1);
             this.tabPageCompleto.Location = new System.Drawing.Point(4, 22);
@@ -648,7 +687,6 @@
             this.tabPageCompleto.Size = new System.Drawing.Size(358, 305);
             this.tabPageCompleto.TabIndex = 0;
             this.tabPageCompleto.Text = "Completo";
-            this.tabPageCompleto.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -842,6 +880,7 @@
             // 
             // tabPageDedos
             // 
+            this.tabPageDedos.BackColor = System.Drawing.Color.White;
             this.tabPageDedos.Controls.Add(this.tabControl2);
             this.tabPageDedos.Location = new System.Drawing.Point(4, 22);
             this.tabPageDedos.Name = "tabPageDedos";
@@ -849,7 +888,6 @@
             this.tabPageDedos.Size = new System.Drawing.Size(358, 305);
             this.tabPageDedos.TabIndex = 1;
             this.tabPageDedos.Text = "Dedos";
-            this.tabPageDedos.UseVisualStyleBackColor = true;
             // 
             // tabControl2
             // 
@@ -1873,6 +1911,7 @@
             // 
             // tabPagePinza
             // 
+            this.tabPagePinza.BackColor = System.Drawing.Color.White;
             this.tabPagePinza.Controls.Add(this.groupBox16);
             this.tabPagePinza.Controls.Add(this.groupBox10);
             this.tabPagePinza.Controls.Add(this.groupBox11);
@@ -1881,7 +1920,6 @@
             this.tabPagePinza.Size = new System.Drawing.Size(358, 305);
             this.tabPagePinza.TabIndex = 2;
             this.tabPagePinza.Text = "PinzaGruesa";
-            this.tabPagePinza.UseVisualStyleBackColor = true;
             // 
             // groupBox16
             // 
@@ -2168,24 +2206,17 @@
             this.groupBoxDatosPaciente.TabStop = false;
             this.groupBoxDatosPaciente.Text = "NOMBRE Y APELLIDOS";
             // 
-            // richTextBox1
+            // btnActualizarObservaciones
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(6, 25);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(463, 141);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
-            // 
-            // groupBox17
-            // 
-            this.groupBox17.Controls.Add(this.richTextBox1);
-            this.groupBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox17.Location = new System.Drawing.Point(364, 6);
-            this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(475, 172);
-            this.groupBox17.TabIndex = 4;
-            this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "Observaciones";
+            this.btnActualizarObservaciones.Enabled = false;
+            this.btnActualizarObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarObservaciones.Location = new System.Drawing.Point(393, 173);
+            this.btnActualizarObservaciones.Name = "btnActualizarObservaciones";
+            this.btnActualizarObservaciones.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizarObservaciones.TabIndex = 4;
+            this.btnActualizarObservaciones.Text = "Actualizar";
+            this.btnActualizarObservaciones.UseVisualStyleBackColor = true;
+            this.btnActualizarObservaciones.Click += new System.EventHandler(this.btnActualizarObservaciones_Click);
             // 
             // SeleccionDePaciente
             // 
@@ -2205,11 +2236,13 @@
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.groupBox17.ResumeLayout(false);
             this.ResumenTerapias.ResumeLayout(false);
             this.ResumenTerapias.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.groupBox18.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.tabControlTerapias.ResumeLayout(false);
             this.tabPageCompleto.ResumeLayout(false);
@@ -2295,7 +2328,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numRepeticiones)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.groupBoxDatosPaciente.ResumeLayout(false);
-            this.groupBox17.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2473,6 +2505,8 @@
         private System.Windows.Forms.Button btnGuardarTerapia;
         private System.Windows.Forms.Button btnIniciarTerapia;
         private System.Windows.Forms.GroupBox groupBox17;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBoxObservaciones;
+        private System.Windows.Forms.GroupBox groupBox18;
+        private System.Windows.Forms.Button btnActualizarObservaciones;
     }
 }

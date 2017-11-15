@@ -106,7 +106,7 @@ namespace IU_Windows
             }
 
         }
-        public void Insert(string query, Dictionary<string, object> parameters)
+        public void Query(string query, Dictionary<string, object> parameters)
         {
             SqlCommand cmd = new SqlCommand(query, sql);
             foreach (var param in parameters)
@@ -114,7 +114,7 @@ namespace IU_Windows
                 cmd.Parameters.AddWithValue(param.Key, param.Value);
             }
             this.Open();
-            SqlDataReader reader = cmd.ExecuteReader();
+            cmd.ExecuteNonQuery();
             this.Close();
         }
         public List<object> Select(string query, Dictionary<string, object> parameters = null)
@@ -178,7 +178,13 @@ namespace IU_Windows
             SqlDataReader reader = cmd.ExecuteReader();
             List<Paciente> pacientes = new List<Paciente>();
             while (reader.Read())
-                pacientes.Add(new Paciente { Nombre = reader["Nombre"].ToString(), Apellidos = reader["Apellidos"].ToString(), SqlId = Int32.Parse(reader["Id"].ToString()) });
+                pacientes.Add(new Paciente
+                {
+                    Nombre = reader["Nombre"].ToString(),
+                    Apellidos = reader["Apellidos"].ToString(),
+                    SqlId = Int32.Parse(reader["Id"].ToString()),
+                    Observaciones = reader["Observaciones"].ToString()
+                });
             this.Close();
             return pacientes;
         }
