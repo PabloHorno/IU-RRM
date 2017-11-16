@@ -66,6 +66,10 @@
             this.Fecha = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBoxEjecucionTerapia = new System.Windows.Forms.GroupBox();
+            this.lblTiempoTranscurridoTerapia = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.lblComienzoTerapia = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.btnGuardarTerapia = new System.Windows.Forms.Button();
             this.btnIniciarTerapia = new System.Windows.Forms.Button();
@@ -203,10 +207,6 @@
             this.lblNombreCuenta = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.groupBoxDatosPaciente = new System.Windows.Forms.GroupBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.lblComienzoTerapia = new System.Windows.Forms.Label();
-            this.lblTiempoTranscurridoTerapia = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -579,7 +579,7 @@
             this.listViewHistorialTerapias.HoverSelection = true;
             this.listViewHistorialTerapias.Location = new System.Drawing.Point(6, 6);
             this.listViewHistorialTerapias.Name = "listViewHistorialTerapias";
-            this.listViewHistorialTerapias.Size = new System.Drawing.Size(885, 408);
+            this.listViewHistorialTerapias.Size = new System.Drawing.Size(878, 408);
             this.listViewHistorialTerapias.TabIndex = 0;
             this.listViewHistorialTerapias.UseCompatibleStateImageBehavior = false;
             this.listViewHistorialTerapias.View = System.Windows.Forms.View.Details;
@@ -645,6 +645,42 @@
             this.groupBoxEjecucionTerapia.TabIndex = 9;
             this.groupBoxEjecucionTerapia.TabStop = false;
             this.groupBoxEjecucionTerapia.Text = "Ejecucion de terápia";
+            // 
+            // lblTiempoTranscurridoTerapia
+            // 
+            this.lblTiempoTranscurridoTerapia.AutoSize = true;
+            this.lblTiempoTranscurridoTerapia.Location = new System.Drawing.Point(145, 53);
+            this.lblTiempoTranscurridoTerapia.Name = "lblTiempoTranscurridoTerapia";
+            this.lblTiempoTranscurridoTerapia.Size = new System.Drawing.Size(13, 13);
+            this.lblTiempoTranscurridoTerapia.TabIndex = 12;
+            this.lblTiempoTranscurridoTerapia.Text = "0";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(32, 53);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(100, 13);
+            this.label48.TabIndex = 11;
+            this.label48.Text = "Tiempo transcurrido";
+            // 
+            // lblComienzoTerapia
+            // 
+            this.lblComienzoTerapia.AutoSize = true;
+            this.lblComienzoTerapia.Location = new System.Drawing.Point(145, 33);
+            this.lblComienzoTerapia.Name = "lblComienzoTerapia";
+            this.lblComienzoTerapia.Size = new System.Drawing.Size(13, 13);
+            this.lblComienzoTerapia.TabIndex = 10;
+            this.lblComienzoTerapia.Text = "0";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(32, 33);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(107, 13);
+            this.label44.TabIndex = 9;
+            this.label44.Text = "Comienzo de Terapia";
             // 
             // progressBar1
             // 
@@ -2225,42 +2261,6 @@
             this.groupBoxDatosPaciente.TabIndex = 8;
             this.groupBoxDatosPaciente.TabStop = false;
             this.groupBoxDatosPaciente.Text = "NOMBRE Y APELLIDOS";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(32, 33);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(107, 13);
-            this.label44.TabIndex = 9;
-            this.label44.Text = "Comienzo de Terapia";
-            // 
-            // lblComienzoTerapia
-            // 
-            this.lblComienzoTerapia.AutoSize = true;
-            this.lblComienzoTerapia.Location = new System.Drawing.Point(145, 33);
-            this.lblComienzoTerapia.Name = "lblComienzoTerapia";
-            this.lblComienzoTerapia.Size = new System.Drawing.Size(13, 13);
-            this.lblComienzoTerapia.TabIndex = 10;
-            this.lblComienzoTerapia.Text = "0";
-            // 
-            // lblTiempoTranscurridoTerapia
-            // 
-            this.lblTiempoTranscurridoTerapia.AutoSize = true;
-            this.lblTiempoTranscurridoTerapia.Location = new System.Drawing.Point(145, 53);
-            this.lblTiempoTranscurridoTerapia.Name = "lblTiempoTranscurridoTerapia";
-            this.lblTiempoTranscurridoTerapia.Size = new System.Drawing.Size(13, 13);
-            this.lblTiempoTranscurridoTerapia.TabIndex = 12;
-            this.lblTiempoTranscurridoTerapia.Text = "0";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(32, 53);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(100, 13);
-            this.label48.TabIndex = 11;
-            this.label48.Text = "Tiempo transcurrido";
             // 
             // SeleccionDePaciente
             // 
