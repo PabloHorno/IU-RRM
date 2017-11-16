@@ -18,6 +18,7 @@ namespace IU_Windows
         Usuario usuario = new Usuario();
         Paciente paciente = new Paciente();
         BackgroundWorker thread = new BackgroundWorker();
+        Stopwatch tiempoTranscurridoTerapia = new Stopwatch();
         public SeleccionDePaciente(int sqlId)
         {
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -317,26 +318,28 @@ namespace IU_Windows
             this.lblComienzoTerapia.Text = DateTime.Now.ToShortTimeString();
             this.btnIniciarTerapia.Enabled = false;
             this.progressBar1.Style = ProgressBarStyle.Continuous;
+            tiempoTranscurridoTerapia.Start();
         }
         private void Thread_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            this.lblTiempoTranscurridoTerapia.Text = Int32.Parse((DateTime.Now - DateTime.Parse(this.lblComienzoTerapia.Text)).TotalSeconds.ToString()).ToString();
-            this.progressBar1.Value = e.ProgressPercentage < 100 ? 100: e.ProgressPercentage;
+            this.lblTiempoTranscurridoTerapia.Text = tiempoTranscurridoTerapia.Elapsed.ToString(@"mm\:ss");
+            this.progressBar1.Value = e.ProgressPercentage > 100 ? 100: e.ProgressPercentage;
         }
         private void Thread_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             this.btnIniciarTerapia.Enabled = true;
             this.progressBar1.Style = ProgressBarStyle.Marquee;
+            tiempoTranscurridoTerapia.Reset();
         }
         private void Thread_DoWork(object sender, DoWorkEventArgs e)
         {
-            Stopwatch stopwatch = Stopwatch.StartNew();
-            while (stopwatch.ElapsedMilliseconds <= 10000)
+            Stopwatch marcaTiempo = Stopwatch.StartNew();
+            while (marcaTiempo.ElapsedMilliseconds <= 10000)
             {
-                System.Threading.Thread.Sleep(10);
-                thread.ReportProgress((Int32)stopwatch.ElapsedMilliseconds / 100);
+                System.Threading.Thread.Sleep(100);
+                thread.ReportProgress((Int32)(marcaTiempo.ElapsedMilliseconds / 100));
             }
-            
+            thread.ReportProgress(100);
         }
     }
 }
