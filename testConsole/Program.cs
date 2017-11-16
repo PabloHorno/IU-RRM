@@ -1,23 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Diagnostics;
+using System.Threading;
 
-
-class class1
+public class Example
 {
-    static void Main(string[] args)
+    public static void Main()
     {
-        Dictionary<string, string> p = new Dictionary<string, string>();
-        p.Add("Jeff","34");
-        p.Add("A","34");
-        p.Add("B","56");
+        var th = new Thread(ExecuteInForeground);
+        th.Start();
+        Thread.Sleep(1000);
+        Console.WriteLine("Main thread ({0}) exiting...",
+                          Thread.CurrentThread.ManagedThreadId);
+    }
 
-        string json = JsonConvert.SerializeObject(p);
-
-        Console.WriteLine(json);
-        Dictionary<string, string> d = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
-
-        Console.WriteLine(d["A"]);
-        Console.ReadLine();
+    private static void ExecuteInForeground()
+    {
+        DateTime start = DateTime.Now;
+        var sw = Stopwatch.StartNew();
+        Console.WriteLine("Thread {0}: {1}, Priority {2}",
+                          Thread.CurrentThread.ManagedThreadId,
+                          Thread.CurrentThread.ThreadState,
+                          Thread.CurrentThread.Priority);
+        do
+        {
+            Console.WriteLine("Thread {0}: Elapsed {1:N2} seconds",
+                              Thread.CurrentThread.ManagedThreadId,
+                              sw.ElapsedMilliseconds / 1000.0);
+            Thread.Sleep(500);
+        } while (sw.ElapsedMilliseconds <= 5000);
+        sw.Stop();
     }
 }

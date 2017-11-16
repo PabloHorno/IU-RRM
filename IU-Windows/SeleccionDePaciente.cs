@@ -5,7 +5,9 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 
@@ -15,6 +17,7 @@ namespace IU_Windows
     {
         Usuario usuario = new Usuario();
         Paciente paciente = new Paciente();
+        BackgroundWorker thread = new BackgroundWorker();
         public SeleccionDePaciente(int sqlId)
         {
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -75,32 +78,75 @@ namespace IU_Windows
             this.tabControlTerapias.ItemSize = new Size(0, 1);
             this.tabControlTerapias.SizeMode = TabSizeMode.Fixed;
             this.lblNombreCuenta.Text = usuario.Nombre;
-
-            this.comboBoxTipoParametrosAperturaIndice.SelectedIndexChanged += HandlerComboBoxTipoParametros;
-            this.comboBoxTipoParametrosCierreIndice.SelectedIndexChanged += HandlerComboBoxTipoParametros;
-            this.comboBoxTipoParametrosAperturaCorazon.SelectedIndexChanged += HandlerComboBoxTipoParametros;
-            this.comboBoxTipoParametrosCierreCorazon.SelectedIndexChanged += HandlerComboBoxTipoParametros;
-            this.comboBoxTipoParametrosAperturaAnular.SelectedIndexChanged += HandlerComboBoxTipoParametros;
-            this.comboBoxTipoParametrosCierreAnular.SelectedIndexChanged += HandlerComboBoxTipoParametros;
-            this.comboBoxTipoParametrosAperturaMeñique.SelectedIndexChanged += HandlerComboBoxTipoParametros;
-            this.comboBoxTipoParametrosCierreMeñique.SelectedIndexChanged += HandlerComboBoxTipoParametros;
-            this.comboBoxTipoParametrosAperturaPulgar.SelectedIndexChanged += HandlerComboBoxTipoParametros;
-            this.comboBoxTipoParametrosCierrePulgar.SelectedIndexChanged += HandlerComboBoxTipoParametros;
-            this.comboBoxTipoParametrosAperturaPinza.SelectedIndexChanged += HandlerComboBoxTipoParametros;
-            this.comboBoxTipoParametrosCierrePinza.SelectedIndexChanged += HandlerComboBoxTipoParametros;
-            this.comboBoxTipoParametrosAperturaCompleta.SelectedIndexChanged += HandlerComboBoxTipoParametros;
-            this.comboBoxTipoParametrosCierreCompleta.SelectedIndexChanged += HandlerComboBoxTipoParametros;
+            this.comboBoxSeleccionTerapia.SelectedIndexChanged += HandlerHabilitarInicioTerapia;
 
             foreach (var prop in this.GetType().GetFields(System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance))
             {
                 object obj = prop.GetValue(this);
+                if (obj == null)
+                    continue;
                 if (obj.GetType() == typeof(ComboBox))
+                {
                     (obj as ComboBox).SelectedIndex = 0;
+                    if ((obj as ComboBox).Name.Contains("Parametros"))
+                        (obj as ComboBox).SelectedIndexChanged += HandlerComboBoxTipoParametros;
+                }
+                else if (obj.GetType() == typeof(NumericUpDown))
+                {
+                    (obj as NumericUpDown).ValueChanged += HandlerHabilitarInicioTerapia;
+                }
             }
-
+            this.thread.DoWork += Thread_DoWork;
+            this.thread.ProgressChanged += Thread_ProgressChanged;
+            this.thread.RunWorkerCompleted += Thread_RunWorkerCompleted;
+            this.thread.WorkerReportsProgress = true;
             this.groupBoxDatosPaciente.Hide();
         }
 
+        private void HandlerHabilitarInicioTerapia(object sender, System.EventArgs e)
+        {
+            TipoTerapia tipoTerapia = (TipoTerapia)this.comboBoxSeleccionTerapia.SelectedIndex;
+            bool enable = true;
+
+            foreach (var prop in this.GetType().GetFields(System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance))
+            {
+                object obj = prop.GetValue(this);
+                if (obj == null)
+                    continue;
+                if (obj.GetType() == typeof(NumericUpDown))
+                    switch (tipoTerapia)
+                    {
+                        case TipoTerapia.AbrirCerrarDedos:
+                            String[] dedosStr = { "Pulgar", "Indice", "Corazon", "Anular", "Meñique" };
+                            if (dedosStr.Any((obj as NumericUpDown).Name.Contains))
+                            {
+                                if ((obj as NumericUpDown).Value == 0)
+                                    enable = false;
+                            }
+                            break;
+                        case TipoTerapia.AbrirCerrarMano:
+                            if ((obj as NumericUpDown).Name.Contains("Completa"))
+                            {
+                                if ((obj as NumericUpDown).Value == 0)
+                                    enable = false;
+                            }
+                            break;
+                        case TipoTerapia.PinzaFina:
+                        case TipoTerapia.PinzaGruesa:
+                            if ((obj as NumericUpDown).Name.Contains("Pinza"))
+                            {
+                                if ((obj as NumericUpDown).Value == 0)
+                                    enable = false;
+                            }
+                            break;
+                        default:
+                            enable = false;
+                            break;
+                    }
+
+            }
+            this.groupBoxEjecucionTerapia.Enabled = enable;
+        }
         private void RichTextBoxObservaciones_TextChanged(object sender, System.EventArgs e)
         {
             this.btnActualizarObservaciones.Enabled = true;
@@ -193,10 +239,14 @@ namespace IU_Windows
             #endregion
             //Reiniciamos controles terapia al cambiar de Paciente
             foreach (var field in this.GetType().GetFields(System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance))
+            {
+                if (field.GetValue(this) == null)
+                    continue;
                 if (field.GetValue(this).GetType() == typeof(NumericUpDown))
                     (field.GetValue(this) as NumericUpDown).Value = 0;
-                else if(field.GetValue(this).GetType() == typeof(ComboBox))
+                else if (field.GetValue(this).GetType() == typeof(ComboBox))
                     (field.GetValue(this) as ComboBox).SelectedIndex = 0;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -226,7 +276,7 @@ namespace IU_Windows
             CrearPaciente crearPaciente = new CrearPaciente();
             crearPaciente.Show();
         }
-        
+
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -237,10 +287,10 @@ namespace IU_Windows
         {
             Dictionary<string, decimal> parametros = new Dictionary<string, decimal>();
 
-            foreach(var field in this.GetType().GetFields(System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance))
+            foreach (var field in this.GetType().GetFields(System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance))
             {
 
-                if(field.GetValue(this).GetType() == typeof(NumericUpDown))
+                if (field.GetValue(this).GetType() == typeof(NumericUpDown))
                 {
                     NumericUpDown obj = (NumericUpDown)field.GetValue(this);
                     parametros.Add(obj.Name, obj.Value);
@@ -260,6 +310,33 @@ namespace IU_Windows
             this.btnActualizarObservaciones.Enabled = false;
         }
 
-        
+        private void btnIniciarTerapia_Click(object sender, EventArgs e)
+        {
+            this.thread.RunWorkerAsync();
+            DateTime tIni = DateTime.Now;
+            this.lblComienzoTerapia.Text = DateTime.Now.ToShortTimeString();
+            this.btnIniciarTerapia.Enabled = false;
+            this.progressBar1.Style = ProgressBarStyle.Continuous;
+        }
+        private void Thread_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            this.lblTiempoTranscurridoTerapia.Text = Int32.Parse((DateTime.Now - DateTime.Parse(this.lblComienzoTerapia.Text)).TotalSeconds.ToString()).ToString();
+            this.progressBar1.Value = e.ProgressPercentage < 100 ? 100: e.ProgressPercentage;
+        }
+        private void Thread_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            this.btnIniciarTerapia.Enabled = true;
+            this.progressBar1.Style = ProgressBarStyle.Marquee;
+        }
+        private void Thread_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Stopwatch stopwatch = Stopwatch.StartNew();
+            while (stopwatch.ElapsedMilliseconds <= 10000)
+            {
+                System.Threading.Thread.Sleep(10);
+                thread.ReportProgress((Int32)stopwatch.ElapsedMilliseconds / 100);
+            }
+            
+        }
     }
 }

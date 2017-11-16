@@ -41,6 +41,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.btnActualizarObservaciones = new System.Windows.Forms.Button();
             this.richTextBoxObservaciones = new System.Windows.Forms.RichTextBox();
             this.ResumenTerapias = new System.Windows.Forms.GroupBox();
             this.lblTotalTerapiasRealizadas = new System.Windows.Forms.Label();
@@ -64,7 +65,7 @@
             this.Observaciones = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Fecha = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.groupBoxEjecucionTerapia = new System.Windows.Forms.GroupBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.btnGuardarTerapia = new System.Windows.Forms.Button();
             this.btnIniciarTerapia = new System.Windows.Forms.Button();
@@ -202,7 +203,10 @@
             this.lblNombreCuenta = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.groupBoxDatosPaciente = new System.Windows.Forms.GroupBox();
-            this.btnActualizarObservaciones = new System.Windows.Forms.Button();
+            this.label44 = new System.Windows.Forms.Label();
+            this.lblComienzoTerapia = new System.Windows.Forms.Label();
+            this.lblTiempoTranscurridoTerapia = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -210,7 +214,7 @@
             this.ResumenTerapias.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.groupBox18.SuspendLayout();
+            this.groupBoxEjecucionTerapia.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabControlTerapias.SuspendLayout();
             this.tabPageCompleto.SuspendLayout();
@@ -386,6 +390,18 @@
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Observaciones";
             // 
+            // btnActualizarObservaciones
+            // 
+            this.btnActualizarObservaciones.Enabled = false;
+            this.btnActualizarObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarObservaciones.Location = new System.Drawing.Point(393, 173);
+            this.btnActualizarObservaciones.Name = "btnActualizarObservaciones";
+            this.btnActualizarObservaciones.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizarObservaciones.TabIndex = 4;
+            this.btnActualizarObservaciones.Text = "Actualizar";
+            this.btnActualizarObservaciones.UseVisualStyleBackColor = true;
+            this.btnActualizarObservaciones.Click += new System.EventHandler(this.btnActualizarObservaciones_Click);
+            // 
             // richTextBoxObservaciones
             // 
             this.richTextBoxObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -394,7 +410,6 @@
             this.richTextBoxObservaciones.Size = new System.Drawing.Size(463, 141);
             this.richTextBoxObservaciones.TabIndex = 3;
             this.richTextBoxObservaciones.Text = "";
-            this.richTextBoxObservaciones.TextChanged += RichTextBoxObservaciones_TextChanged;
             // 
             // ResumenTerapias
             // 
@@ -600,7 +615,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.groupBox18);
+            this.tabPage3.Controls.Add(this.groupBoxEjecucionTerapia);
             this.tabPage3.Controls.Add(this.groupBox3);
             this.tabPage3.Controls.Add(this.numRepeticiones);
             this.tabPage3.Controls.Add(this.lblRepeticiones);
@@ -614,18 +629,22 @@
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
-            // groupBox18
+            // groupBoxEjecucionTerapia
             // 
-            this.groupBox18.Controls.Add(this.progressBar1);
-            this.groupBox18.Controls.Add(this.btnGuardarTerapia);
-            this.groupBox18.Controls.Add(this.btnIniciarTerapia);
-            this.groupBox18.Enabled = false;
-            this.groupBox18.Location = new System.Drawing.Point(438, 8);
-            this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Size = new System.Drawing.Size(449, 399);
-            this.groupBox18.TabIndex = 9;
-            this.groupBox18.TabStop = false;
-            this.groupBox18.Text = "Ejecucion de terápia";
+            this.groupBoxEjecucionTerapia.Controls.Add(this.lblTiempoTranscurridoTerapia);
+            this.groupBoxEjecucionTerapia.Controls.Add(this.label48);
+            this.groupBoxEjecucionTerapia.Controls.Add(this.lblComienzoTerapia);
+            this.groupBoxEjecucionTerapia.Controls.Add(this.label44);
+            this.groupBoxEjecucionTerapia.Controls.Add(this.progressBar1);
+            this.groupBoxEjecucionTerapia.Controls.Add(this.btnGuardarTerapia);
+            this.groupBoxEjecucionTerapia.Controls.Add(this.btnIniciarTerapia);
+            this.groupBoxEjecucionTerapia.Enabled = false;
+            this.groupBoxEjecucionTerapia.Location = new System.Drawing.Point(438, 8);
+            this.groupBoxEjecucionTerapia.Name = "groupBoxEjecucionTerapia";
+            this.groupBoxEjecucionTerapia.Size = new System.Drawing.Size(449, 399);
+            this.groupBoxEjecucionTerapia.TabIndex = 9;
+            this.groupBoxEjecucionTerapia.TabStop = false;
+            this.groupBoxEjecucionTerapia.Text = "Ejecucion de terápia";
             // 
             // progressBar1
             // 
@@ -653,6 +672,7 @@
             this.btnIniciarTerapia.TabIndex = 7;
             this.btnIniciarTerapia.Text = "Iniciar Terapia";
             this.btnIniciarTerapia.UseVisualStyleBackColor = true;
+            this.btnIniciarTerapia.Click += new System.EventHandler(this.btnIniciarTerapia_Click);
             // 
             // groupBox3
             // 
@@ -1939,6 +1959,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
             this.radioButton2.Location = new System.Drawing.Point(16, 70);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(84, 17);
@@ -1954,7 +1975,6 @@
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(100, 17);
             this.radioButton1.TabIndex = 19;
-            this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Pinza Gruesa";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
@@ -2206,17 +2226,41 @@
             this.groupBoxDatosPaciente.TabStop = false;
             this.groupBoxDatosPaciente.Text = "NOMBRE Y APELLIDOS";
             // 
-            // btnActualizarObservaciones
+            // label44
             // 
-            this.btnActualizarObservaciones.Enabled = false;
-            this.btnActualizarObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizarObservaciones.Location = new System.Drawing.Point(393, 173);
-            this.btnActualizarObservaciones.Name = "btnActualizarObservaciones";
-            this.btnActualizarObservaciones.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizarObservaciones.TabIndex = 4;
-            this.btnActualizarObservaciones.Text = "Actualizar";
-            this.btnActualizarObservaciones.UseVisualStyleBackColor = true;
-            this.btnActualizarObservaciones.Click += new System.EventHandler(this.btnActualizarObservaciones_Click);
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(32, 33);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(107, 13);
+            this.label44.TabIndex = 9;
+            this.label44.Text = "Comienzo de Terapia";
+            // 
+            // lblComienzoTerapia
+            // 
+            this.lblComienzoTerapia.AutoSize = true;
+            this.lblComienzoTerapia.Location = new System.Drawing.Point(145, 33);
+            this.lblComienzoTerapia.Name = "lblComienzoTerapia";
+            this.lblComienzoTerapia.Size = new System.Drawing.Size(13, 13);
+            this.lblComienzoTerapia.TabIndex = 10;
+            this.lblComienzoTerapia.Text = "0";
+            // 
+            // lblTiempoTranscurridoTerapia
+            // 
+            this.lblTiempoTranscurridoTerapia.AutoSize = true;
+            this.lblTiempoTranscurridoTerapia.Location = new System.Drawing.Point(145, 53);
+            this.lblTiempoTranscurridoTerapia.Name = "lblTiempoTranscurridoTerapia";
+            this.lblTiempoTranscurridoTerapia.Size = new System.Drawing.Size(13, 13);
+            this.lblTiempoTranscurridoTerapia.TabIndex = 12;
+            this.lblTiempoTranscurridoTerapia.Text = "0";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(32, 53);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(100, 13);
+            this.label48.TabIndex = 11;
+            this.label48.Text = "Tiempo transcurrido";
             // 
             // SeleccionDePaciente
             // 
@@ -2242,7 +2286,8 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            this.groupBox18.ResumeLayout(false);
+            this.groupBoxEjecucionTerapia.ResumeLayout(false);
+            this.groupBoxEjecucionTerapia.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.tabControlTerapias.ResumeLayout(false);
             this.tabPageCompleto.ResumeLayout(false);
@@ -2506,7 +2551,11 @@
         private System.Windows.Forms.Button btnIniciarTerapia;
         private System.Windows.Forms.GroupBox groupBox17;
         private System.Windows.Forms.RichTextBox richTextBoxObservaciones;
-        private System.Windows.Forms.GroupBox groupBox18;
+        private System.Windows.Forms.GroupBox groupBoxEjecucionTerapia;
         private System.Windows.Forms.Button btnActualizarObservaciones;
+        private System.Windows.Forms.Label lblTiempoTranscurridoTerapia;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label lblComienzoTerapia;
+        private System.Windows.Forms.Label label44;
     }
 }
