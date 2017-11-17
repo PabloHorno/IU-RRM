@@ -797,6 +797,7 @@
             // 
             // numericUpDownVelocidadCierreCompleta
             // 
+            this.numericUpDownVelocidadCierreCompleta.AccessibleDescription = "0";
             this.numericUpDownVelocidadCierreCompleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadCierreCompleta.Location = new System.Drawing.Point(61, 59);
             this.numericUpDownVelocidadCierreCompleta.Name = "numericUpDownVelocidadCierreCompleta";
@@ -815,6 +816,7 @@
             // 
             // numericUpDownAnguloCierreCompleta
             // 
+            this.numericUpDownAnguloCierreCompleta.AccessibleDescription = "0";
             this.numericUpDownAnguloCierreCompleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloCierreCompleta.Location = new System.Drawing.Point(60, 85);
             this.numericUpDownAnguloCierreCompleta.Maximum = new decimal(new int[] {
@@ -833,6 +835,7 @@
             // 
             // numericUpDownTiempoCierreCompleta
             // 
+            this.numericUpDownTiempoCierreCompleta.AccessibleDescription = "0";
             this.numericUpDownTiempoCierreCompleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownTiempoCierreCompleta.Location = new System.Drawing.Point(61, 33);
             this.numericUpDownTiempoCierreCompleta.Name = "numericUpDownTiempoCierreCompleta";
@@ -872,6 +875,7 @@
             // 
             // numericUpDownVelocidadAperturaCompleta
             // 
+            this.numericUpDownVelocidadAperturaCompleta.AccessibleDescription = "0";
             this.numericUpDownVelocidadAperturaCompleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadAperturaCompleta.Location = new System.Drawing.Point(60, 52);
             this.numericUpDownVelocidadAperturaCompleta.Name = "numericUpDownVelocidadAperturaCompleta";
@@ -880,6 +884,7 @@
             // 
             // numericUpDownAnguloAperturaCompleta
             // 
+            this.numericUpDownAnguloAperturaCompleta.AccessibleDescription = "0";
             this.numericUpDownAnguloAperturaCompleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloAperturaCompleta.Location = new System.Drawing.Point(59, 78);
             this.numericUpDownAnguloAperturaCompleta.Maximum = new decimal(new int[] {
@@ -898,6 +903,7 @@
             // 
             // numericUpDownTiempoAperturaCompleta
             // 
+            this.numericUpDownTiempoAperturaCompleta.AccessibleDescription = "0";
             this.numericUpDownTiempoAperturaCompleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownTiempoAperturaCompleta.Location = new System.Drawing.Point(60, 26);
             this.numericUpDownTiempoAperturaCompleta.Name = "numericUpDownTiempoAperturaCompleta";
@@ -1023,6 +1029,7 @@
             // 
             // numericUpDownVelocidadCierrePulgar
             // 
+            this.numericUpDownVelocidadCierrePulgar.AccessibleDescription = "1";
             this.numericUpDownVelocidadCierrePulgar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadCierrePulgar.Location = new System.Drawing.Point(60, 59);
             this.numericUpDownVelocidadCierrePulgar.Name = "numericUpDownVelocidadCierrePulgar";
@@ -1041,6 +1048,7 @@
             // 
             // numericUpDownAnguloCierrePulgar
             // 
+            this.numericUpDownAnguloCierrePulgar.AccessibleDescription = "1";
             this.numericUpDownAnguloCierrePulgar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloCierrePulgar.Location = new System.Drawing.Point(60, 85);
             this.numericUpDownAnguloCierrePulgar.Maximum = new decimal(new int[] {
@@ -1059,6 +1067,7 @@
             // 
             // numericUpDownTiempoCierrePulgar
             // 
+            this.numericUpDownTiempoCierrePulgar.AccessibleDescription = "1";
             this.numericUpDownTiempoCierrePulgar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownTiempoCierrePulgar.Location = new System.Drawing.Point(60, 33);
             this.numericUpDownTiempoCierrePulgar.Name = "numericUpDownTiempoCierrePulgar";
@@ -1098,6 +1107,7 @@
             // 
             // numericUpDownVelocidadAperturaPulgar
             // 
+            this.numericUpDownVelocidadAperturaPulgar.AccessibleDescription = "1";
             this.numericUpDownVelocidadAperturaPulgar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadAperturaPulgar.Location = new System.Drawing.Point(60, 52);
             this.numericUpDownVelocidadAperturaPulgar.Name = "numericUpDownVelocidadAperturaPulgar";
@@ -1106,6 +1116,7 @@
             // 
             // numericUpDownAnguloAperturaPulgar
             // 
+            this.numericUpDownAnguloAperturaPulgar.AccessibleDescription = "1";
             this.numericUpDownAnguloAperturaPulgar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloAperturaPulgar.Location = new System.Drawing.Point(60, 78);
             this.numericUpDownAnguloAperturaPulgar.Maximum = new decimal(new int[] {
@@ -1124,6 +1135,7 @@
             // 
             // numericUpDownTiempoAperturaPulgar
             // 
+            this.numericUpDownTiempoAperturaPulgar.AccessibleDescription = "1";
             this.numericUpDownTiempoAperturaPulgar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownTiempoAperturaPulgar.Location = new System.Drawing.Point(60, 26);
             this.numericUpDownTiempoAperturaPulgar.Name = "numericUpDownTiempoAperturaPulgar";
@@ -1225,6 +1237,7 @@
             // 
             // numericUpDownVelocidadCierreIndice
             // 
+            this.numericUpDownVelocidadCierreIndice.AccessibleDescription = "1";
             this.numericUpDownVelocidadCierreIndice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadCierreIndice.Location = new System.Drawing.Point(60, 59);
             this.numericUpDownVelocidadCierreIndice.Name = "numericUpDownVelocidadCierreIndice";
@@ -1243,6 +1256,7 @@
             // 
             // numericUpDownAnguloCierreIndice
             // 
+            this.numericUpDownAnguloCierreIndice.AccessibleDescription = "1";
             this.numericUpDownAnguloCierreIndice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloCierreIndice.Location = new System.Drawing.Point(60, 85);
             this.numericUpDownAnguloCierreIndice.Maximum = new decimal(new int[] {
@@ -1261,6 +1275,7 @@
             // 
             // numericUpDownTiempoCierreIndice
             // 
+            this.numericUpDownTiempoCierreIndice.AccessibleDescription = "1";
             this.numericUpDownTiempoCierreIndice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownTiempoCierreIndice.Location = new System.Drawing.Point(60, 33);
             this.numericUpDownTiempoCierreIndice.Name = "numericUpDownTiempoCierreIndice";
@@ -1300,6 +1315,7 @@
             // 
             // numericUpDownVelocidadAperturaIndice
             // 
+            this.numericUpDownVelocidadAperturaIndice.AccessibleDescription = "1";
             this.numericUpDownVelocidadAperturaIndice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadAperturaIndice.Location = new System.Drawing.Point(60, 52);
             this.numericUpDownVelocidadAperturaIndice.Name = "numericUpDownVelocidadAperturaIndice";
@@ -1308,6 +1324,7 @@
             // 
             // numericUpDownAnguloAperturaIndice
             // 
+            this.numericUpDownAnguloAperturaIndice.AccessibleDescription = "1";
             this.numericUpDownAnguloAperturaIndice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloAperturaIndice.Location = new System.Drawing.Point(60, 78);
             this.numericUpDownAnguloAperturaIndice.Maximum = new decimal(new int[] {
@@ -1326,6 +1343,7 @@
             // 
             // numericUpDownTiempoAperturaIndice
             // 
+            this.numericUpDownTiempoAperturaIndice.AccessibleDescription = "1";
             this.numericUpDownTiempoAperturaIndice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownTiempoAperturaIndice.Location = new System.Drawing.Point(60, 26);
             this.numericUpDownTiempoAperturaIndice.Name = "numericUpDownTiempoAperturaIndice";
@@ -1426,6 +1444,7 @@
             // 
             // numericUpDownVelocidadCierreCorazon
             // 
+            this.numericUpDownVelocidadCierreCorazon.AccessibleDescription = "1";
             this.numericUpDownVelocidadCierreCorazon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadCierreCorazon.Location = new System.Drawing.Point(60, 59);
             this.numericUpDownVelocidadCierreCorazon.Name = "numericUpDownVelocidadCierreCorazon";
@@ -1444,6 +1463,7 @@
             // 
             // numericUpDownAnguloCierreCorazon
             // 
+            this.numericUpDownAnguloCierreCorazon.AccessibleDescription = "1";
             this.numericUpDownAnguloCierreCorazon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloCierreCorazon.Location = new System.Drawing.Point(60, 85);
             this.numericUpDownAnguloCierreCorazon.Maximum = new decimal(new int[] {
@@ -1462,6 +1482,7 @@
             // 
             // numericUpDownTiempoCierreCorazon
             // 
+            this.numericUpDownTiempoCierreCorazon.AccessibleDescription = "1";
             this.numericUpDownTiempoCierreCorazon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownTiempoCierreCorazon.Location = new System.Drawing.Point(60, 33);
             this.numericUpDownTiempoCierreCorazon.Name = "numericUpDownTiempoCierreCorazon";
@@ -1501,6 +1522,7 @@
             // 
             // numericUpDownVelocidadAperturaCorazon
             // 
+            this.numericUpDownVelocidadAperturaCorazon.AccessibleDescription = "1";
             this.numericUpDownVelocidadAperturaCorazon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadAperturaCorazon.Location = new System.Drawing.Point(60, 52);
             this.numericUpDownVelocidadAperturaCorazon.Name = "numericUpDownVelocidadAperturaCorazon";
@@ -1509,6 +1531,7 @@
             // 
             // numericUpDownAnguloAperturaCorazon
             // 
+            this.numericUpDownAnguloAperturaCorazon.AccessibleDescription = "1";
             this.numericUpDownAnguloAperturaCorazon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloAperturaCorazon.Location = new System.Drawing.Point(60, 78);
             this.numericUpDownAnguloAperturaCorazon.Maximum = new decimal(new int[] {
@@ -1527,6 +1550,7 @@
             // 
             // numericUpDownTiempoAperturaCorazon
             // 
+            this.numericUpDownTiempoAperturaCorazon.AccessibleDescription = "1";
             this.numericUpDownTiempoAperturaCorazon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownTiempoAperturaCorazon.Location = new System.Drawing.Point(60, 26);
             this.numericUpDownTiempoAperturaCorazon.Name = "numericUpDownTiempoAperturaCorazon";
@@ -1627,6 +1651,7 @@
             // 
             // numericUpDownVelocidadCierreAnular
             // 
+            this.numericUpDownVelocidadCierreAnular.AccessibleDescription = "1";
             this.numericUpDownVelocidadCierreAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadCierreAnular.Location = new System.Drawing.Point(60, 59);
             this.numericUpDownVelocidadCierreAnular.Name = "numericUpDownVelocidadCierreAnular";
@@ -1645,6 +1670,7 @@
             // 
             // numericUpDownAnguloCierreAnular
             // 
+            this.numericUpDownAnguloCierreAnular.AccessibleDescription = "1";
             this.numericUpDownAnguloCierreAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloCierreAnular.Location = new System.Drawing.Point(60, 85);
             this.numericUpDownAnguloCierreAnular.Maximum = new decimal(new int[] {
@@ -1663,6 +1689,7 @@
             // 
             // numericUpDownTiempoCierreAnular
             // 
+            this.numericUpDownTiempoCierreAnular.AccessibleDescription = "1";
             this.numericUpDownTiempoCierreAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownTiempoCierreAnular.Location = new System.Drawing.Point(60, 33);
             this.numericUpDownTiempoCierreAnular.Name = "numericUpDownTiempoCierreAnular";
@@ -1702,6 +1729,7 @@
             // 
             // numericUpDownVelocidadAperturaAnular
             // 
+            this.numericUpDownVelocidadAperturaAnular.AccessibleDescription = "1";
             this.numericUpDownVelocidadAperturaAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadAperturaAnular.Location = new System.Drawing.Point(60, 52);
             this.numericUpDownVelocidadAperturaAnular.Name = "numericUpDownVelocidadAperturaAnular";
@@ -1710,6 +1738,7 @@
             // 
             // numericUpDownAnguloAperturaAnular
             // 
+            this.numericUpDownAnguloAperturaAnular.AccessibleDescription = "1";
             this.numericUpDownAnguloAperturaAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloAperturaAnular.Location = new System.Drawing.Point(60, 78);
             this.numericUpDownAnguloAperturaAnular.Maximum = new decimal(new int[] {
@@ -1728,6 +1757,7 @@
             // 
             // numericUpDownTiempoAperturaAnular
             // 
+            this.numericUpDownTiempoAperturaAnular.AccessibleDescription = "1";
             this.numericUpDownTiempoAperturaAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownTiempoAperturaAnular.Location = new System.Drawing.Point(60, 26);
             this.numericUpDownTiempoAperturaAnular.Name = "numericUpDownTiempoAperturaAnular";
@@ -1828,6 +1858,7 @@
             // 
             // numericUpDownVelocidadCierreMeñique
             // 
+            this.numericUpDownVelocidadCierreMeñique.AccessibleDescription = "1";
             this.numericUpDownVelocidadCierreMeñique.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadCierreMeñique.Location = new System.Drawing.Point(60, 59);
             this.numericUpDownVelocidadCierreMeñique.Name = "numericUpDownVelocidadCierreMeñique";
@@ -1846,6 +1877,7 @@
             // 
             // numericUpDownAnguloCierreMeñique
             // 
+            this.numericUpDownAnguloCierreMeñique.AccessibleDescription = "1";
             this.numericUpDownAnguloCierreMeñique.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloCierreMeñique.Location = new System.Drawing.Point(60, 85);
             this.numericUpDownAnguloCierreMeñique.Maximum = new decimal(new int[] {
@@ -1864,6 +1896,7 @@
             // 
             // numericUpDownTiempoCierreMeñique
             // 
+            this.numericUpDownTiempoCierreMeñique.AccessibleDescription = "1";
             this.numericUpDownTiempoCierreMeñique.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownTiempoCierreMeñique.Location = new System.Drawing.Point(60, 33);
             this.numericUpDownTiempoCierreMeñique.Name = "numericUpDownTiempoCierreMeñique";
@@ -1903,6 +1936,7 @@
             // 
             // numericUpDownVelocidadAperturaMeñique
             // 
+            this.numericUpDownVelocidadAperturaMeñique.AccessibleDescription = "1";
             this.numericUpDownVelocidadAperturaMeñique.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadAperturaMeñique.Location = new System.Drawing.Point(60, 52);
             this.numericUpDownVelocidadAperturaMeñique.Name = "numericUpDownVelocidadAperturaMeñique";
@@ -1911,6 +1945,7 @@
             // 
             // numericUpDownAnguloAperturaMeñique
             // 
+            this.numericUpDownAnguloAperturaMeñique.AccessibleDescription = "1";
             this.numericUpDownAnguloAperturaMeñique.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownAnguloAperturaMeñique.Location = new System.Drawing.Point(60, 78);
             this.numericUpDownAnguloAperturaMeñique.Maximum = new decimal(new int[] {
@@ -1929,6 +1964,7 @@
             // 
             // numericUpDownTiempoAperturaMeñique
             // 
+            this.numericUpDownTiempoAperturaMeñique.AccessibleDescription = "1";
             this.numericUpDownTiempoAperturaMeñique.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownTiempoAperturaMeñique.Location = new System.Drawing.Point(60, 26);
             this.numericUpDownTiempoAperturaMeñique.Name = "numericUpDownTiempoAperturaMeñique";
@@ -2040,6 +2076,7 @@
             // 
             // numericUpDown5
             // 
+            this.numericUpDown5.AccessibleDescription = "2";
             this.numericUpDown5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown5.Location = new System.Drawing.Point(111, 31);
             this.numericUpDown5.Name = "numericUpDown5";
@@ -2097,6 +2134,7 @@
             // 
             // numericUpDownVelocidadCierrePinza
             // 
+            this.numericUpDownVelocidadCierrePinza.AccessibleDescription = "2";
             this.numericUpDownVelocidadCierrePinza.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadCierrePinza.Location = new System.Drawing.Point(61, 59);
             this.numericUpDownVelocidadCierrePinza.Name = "numericUpDownVelocidadCierrePinza";
@@ -2105,6 +2143,7 @@
             // 
             // numericUpDownTiempoCierrePinza
             // 
+            this.numericUpDownTiempoCierrePinza.AccessibleDescription = "2";
             this.numericUpDownTiempoCierrePinza.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownTiempoCierrePinza.Location = new System.Drawing.Point(61, 33);
             this.numericUpDownTiempoCierrePinza.Name = "numericUpDownTiempoCierrePinza";
@@ -2142,6 +2181,7 @@
             // 
             // numericUpDownVelocidadAperturaPinza
             // 
+            this.numericUpDownVelocidadAperturaPinza.AccessibleDescription = "2";
             this.numericUpDownVelocidadAperturaPinza.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadAperturaPinza.Location = new System.Drawing.Point(60, 52);
             this.numericUpDownVelocidadAperturaPinza.Name = "numericUpDownVelocidadAperturaPinza";
@@ -2150,6 +2190,7 @@
             // 
             // numericUpDownTiempoAperturaPinza
             // 
+            this.numericUpDownTiempoAperturaPinza.AccessibleDescription = "2";
             this.numericUpDownTiempoAperturaPinza.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownTiempoAperturaPinza.Location = new System.Drawing.Point(60, 26);
             this.numericUpDownTiempoAperturaPinza.Name = "numericUpDownTiempoAperturaPinza";

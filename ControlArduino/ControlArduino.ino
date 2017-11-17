@@ -6,9 +6,13 @@
 
 // the setup function runs once when you press reset or power the board
 #include <Servo.h>
+#include <ArduinoJson.h>
 #include "Mano.h"
 Mano mano;
+String str="";
 void setup() {
+	DynamicJsonBuffer json;
+	Serial.
 }
 
 // the loop function runs over and over again until power down or reset

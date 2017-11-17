@@ -97,6 +97,7 @@ namespace IU_Windows
                     (obj as NumericUpDown).ValueChanged += HandlerHabilitarInicioTerapia;
                 }
             }
+            this.richTextBoxObservaciones.TextChanged += RichTextBoxObservaciones_TextChanged;
             this.thread.DoWork += Thread_DoWork;
             this.thread.ProgressChanged += Thread_ProgressChanged;
             this.thread.RunWorkerCompleted += Thread_RunWorkerCompleted;
@@ -176,8 +177,6 @@ namespace IU_Windows
                 CrearPaciente crearPaciente = new CrearPaciente();
                 crearPaciente.Show();
             }
-            else
-                MessageBox.Show("Has hecho click sobre " + e.Node.Text + "Con SqlId " + e.Node.Name);
         }
 
 
@@ -287,14 +286,15 @@ namespace IU_Windows
         private void btnGuardarTerapia_Click(object sender, EventArgs e)
         {
             Dictionary<string, decimal> parametros = new Dictionary<string, decimal>();
-
+            parametros.Add("tipoTerapia", comboBoxSeleccionTerapia.SelectedIndex);
             foreach (var field in this.GetType().GetFields(System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance))
             {
 
                 if (field.GetValue(this).GetType() == typeof(NumericUpDown))
                 {
                     NumericUpDown obj = (NumericUpDown)field.GetValue(this);
-                    parametros.Add(obj.Name, obj.Value);
+                    if(obj.AccessibleDescription!= null && (TipoTerapia)Int32.Parse(obj.AccessibleDescription) == (TipoTerapia)comboBoxSeleccionTerapia.SelectedIndex)
+                        parametros.Add(obj.Name, obj.Value);
                 }
             }
             MessageBox.Show(JsonConvert.SerializeObject(parametros));
@@ -333,6 +333,8 @@ namespace IU_Windows
         }
         private void Thread_DoWork(object sender, DoWorkEventArgs e)
         {
+            System.IO.Ports.SerialPort arduino = new System.IO.Ports.SerialPort("COM4",9600);
+
             Stopwatch marcaTiempo = Stopwatch.StartNew();
             while (marcaTiempo.ElapsedMilliseconds <= 10000)
             {
