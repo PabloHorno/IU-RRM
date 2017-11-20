@@ -11,6 +11,7 @@ namespace IU_Windows
         static public string Version = "1.0";
         static public string Autor = "Pablo Horno Pérez";
         static public string EnlaceGitHub = "https://github.com/PabloHorno";
+        static public Int32 VelocidadComunicacion = 9600;
         static public void AcercaDe()
         {
             MessageBox.Show($"Este es un programa desarollado por\n{Constants.Autor}", $"Version {Constants.Version}", MessageBoxButtons.OK, MessageBoxIcon.Information);

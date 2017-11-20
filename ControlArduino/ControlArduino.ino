@@ -9,13 +9,15 @@
 #include <ArduinoJson.h>
 #include "Mano.h"
 Mano mano;
-String str="";
 void setup() {
-	DynamicJsonBuffer json;
-	Serial.
+	Serial.begin(9600);
 }
 
 // the loop function runs over and over again until power down or reset
 void loop() {
-  
+	if (Serial.available())
+	{
+		String str = Serial.readString();
+		Serial.println(str);
+	}
 }

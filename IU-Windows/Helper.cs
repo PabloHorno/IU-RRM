@@ -74,6 +74,31 @@ namespace IU_Windows
             {"numericUpDownVelocidadCierre"+"Meñique", 15 },
 
         };
+        static public void GetRRMSerialPort(out System.IO.Ports.SerialPort serialPort)
+        {
+            serialPort = null;
+            serialPort = new System.IO.Ports.SerialPort("COM8", 9600);
+            serialPort.Open();
+            while (true)
+            {
+                var result = System.Windows.Forms.MessageBox.Show("Iniciado", "Ini", System.Windows.Forms.MessageBoxButtons.YesNoCancel);
+                switch(result)
+                {
+                    case System.Windows.Forms.DialogResult.Yes:
+                        serialPort.Write("y");
+                        break;
+                    case System.Windows.Forms.DialogResult.No:
+                        serialPort.Write("n");
+                        break;
+                    case System.Windows.Forms.DialogResult.Cancel:
+                        serialPort.Write("c");
+                        break;
+                }
+                System.Threading.Thread.Sleep(100);
+                System.Windows.Forms.MessageBox.Show(serialPort.ReadExisting());
+
+            }
+        }
     }
     public class SQLHelper
     {

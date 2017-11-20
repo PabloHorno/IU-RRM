@@ -17,7 +17,7 @@ namespace IU_Windows
     {
         Usuario usuario = new Usuario();
         Paciente paciente = new Paciente();
-        BackgroundWorker thread = new BackgroundWorker();
+        BackgroundWorker subprocesoTerapia = new BackgroundWorker();
         Stopwatch tiempoTranscurridoTerapia = new Stopwatch();
         public SeleccionDePaciente(int sqlId)
         {
@@ -98,10 +98,10 @@ namespace IU_Windows
                 }
             }
             this.richTextBoxObservaciones.TextChanged += RichTextBoxObservaciones_TextChanged;
-            this.thread.DoWork += Thread_DoWork;
-            this.thread.ProgressChanged += Thread_ProgressChanged;
-            this.thread.RunWorkerCompleted += Thread_RunWorkerCompleted;
-            this.thread.WorkerReportsProgress = true;
+            this.subprocesoTerapia.DoWork += Thread_DoWork;
+            this.subprocesoTerapia.ProgressChanged += Thread_ProgressChanged;
+            this.subprocesoTerapia.RunWorkerCompleted += Thread_RunWorkerCompleted;
+            this.subprocesoTerapia.WorkerReportsProgress = true;
             this.groupBoxDatosPaciente.Hide();
         }
 
@@ -313,7 +313,7 @@ namespace IU_Windows
 
         private void btnIniciarTerapia_Click(object sender, EventArgs e)
         {
-            this.thread.RunWorkerAsync();
+            this.subprocesoTerapia.RunWorkerAsync();
             DateTime tIni = DateTime.Now;
             this.lblComienzoTerapia.Text = DateTime.Now.ToShortTimeString();
             this.btnIniciarTerapia.Enabled = false;
@@ -333,15 +333,17 @@ namespace IU_Windows
         }
         private void Thread_DoWork(object sender, DoWorkEventArgs e)
         {
-            System.IO.Ports.SerialPort arduino = new System.IO.Ports.SerialPort("COM4",9600);
+            System.IO.Ports.SerialPort arduino = null;
+            Helper.GetRRMSerialPort(out arduino);
 
             Stopwatch marcaTiempo = Stopwatch.StartNew();
             while (marcaTiempo.ElapsedMilliseconds <= 10000)
             {
                 System.Threading.Thread.Sleep(100);
-                thread.ReportProgress((Int32)(marcaTiempo.ElapsedMilliseconds / 100));
+                subprocesoTerapia.ReportProgress((Int32)(marcaTiempo.ElapsedMilliseconds / 100));
             }
-            thread.ReportProgress(100);
+            subprocesoTerapia.ReportProgress(100);
         }
+        
     }
 }
