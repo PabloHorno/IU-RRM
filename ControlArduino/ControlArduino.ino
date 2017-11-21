@@ -11,6 +11,28 @@
 Mano mano;
 void setup() {
 	Serial.begin(9600);
+	while (!Serial.availableForWrite()) {}
+	Serial.println("READY");
+	while (true)
+	{
+		String str;
+		if (Serial.available() && Serial.readString() == "SYNC")
+		{
+			Serial.println("ACK");
+			break;
+		}
+		delay(20);
+	}
+	while (true)
+	{
+		String str;
+		if (Serial.available() && Serial.readString() == "INI")
+		{
+			Serial.println("OK");
+			break;
+		}
+		delay(20);
+	}
 }
 
 // the loop function runs over and over again until power down or reset

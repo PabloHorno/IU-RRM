@@ -77,33 +77,48 @@ namespace IU_Windows
         static public void GetRRMSerialPort(out System.IO.Ports.SerialPort serialPort)
         {
             serialPort = null;
-            serialPort = new System.IO.Ports.SerialPort("COM8", 9600);
-            serialPort.Open();
-            while (true)
+            foreach (var portName in System.IO.Ports.SerialPort.GetPortNames())
             {
-                var result = System.Windows.Forms.MessageBox.Show("Iniciado", "Ini", System.Windows.Forms.MessageBoxButtons.YesNoCancel);
-                switch(result)
+                serialPort = new System.IO.Ports.SerialPort(portName, Constants.VelocidadComunicacion);
+                serialPort.DtrEnable = true;
+                serialPort.RtsEnable = true;
+                serialPort.Open();
+                System.Diagnostics.Stopwatch timeOut = new System.Diagnostics.Stopwatch();
+                timeOut.Start();
+                while (!serialPort.ReadLine().Contains("READY"))
                 {
-                    case System.Windows.Forms.DialogResult.Yes:
-                        serialPort.Write("y");
+                    System.Windows.Forms.MessageBox.Show($"elpased {timeOut.ElapsedMilliseconds}");
+                    System.Windows.Forms.MessageBox.Show($"elpased {timeOut.ElapsedMilliseconds}");
+                    if (timeOut.ElapsedMilliseconds > Constants.TiempoDeBusqueda)
+                    {
+                        System.Windows.Forms.MessageBox.Show($"RRM no encontrado en puerto {portName}");
                         break;
-                    case System.Windows.Forms.DialogResult.No:
-                        serialPort.Write("n");
-                        break;
-                    case System.Windows.Forms.DialogResult.Cancel:
-                        serialPort.Write("c");
-                        break;
+                    }
                 }
+                serialPort.Write("SYNC");
                 System.Threading.Thread.Sleep(100);
-                System.Windows.Forms.MessageBox.Show(serialPort.ReadExisting());
 
+                String str = serialPort.ReadLine();
+                if (str.Contains("ACK"))
+                    System.Windows.Forms.MessageBox.Show($"Encontrado RRM en puerto {serialPort.PortName}");
+                else
+                {
+                    serialPort.Close();
+                    System.Windows.Forms.MessageBox.Show($"RRM no encontrado en puerto {serialPort.PortName}\nstr={str}");
+                }
+                if (!serialPort.IsOpen)
+                    serialPort = null;
+                else
+                    return;
             }
+
         }
     }
     public class SQLHelper
     {
         private SqlConnection sql;
-        private string sqlStringConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\joseangel\\source\\repos\\IU-RRM\\IU-Windows\\DataBase.mdf;Integrated Security=True";
+        private string sqlStringConnection =
+            "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\DataBase.mdf;Integrated Security=True";
         public SQLHelper()
         {
             sql = new SqlConnection(sqlStringConnection);
@@ -268,12 +283,12 @@ namespace IU_Windows
         {
             return SelectScalar($"SELECT COUNT(*) FROM {tabla}", new Dictionary<string, object>());
         }
-        public Dictionary<TipoTerapia,int> GetNumTerapiasRealizadasFromPaciente(Paciente paciente)
+        public Dictionary<TipoTerapia, int> GetNumTerapiasRealizadasFromPaciente(Paciente paciente)
         {
             Dictionary<TipoTerapia, int> numTerapias = new Dictionary<TipoTerapia, int>();
-            foreach(var terapia in Enum.GetValues(typeof(TipoTerapia)))
+            foreach (var terapia in Enum.GetValues(typeof(TipoTerapia)))
             {
-                numTerapias.Add( (TipoTerapia)terapia, this.SelectScalar("SELECT COUNT(*) FROM Terapias WHERE Tipo = @TipoTerapia AND SqlIdPaciente = @SqlId", new Dictionary<string, object> {
+                numTerapias.Add((TipoTerapia)terapia, this.SelectScalar("SELECT COUNT(*) FROM Terapias WHERE Tipo = @TipoTerapia AND SqlIdPaciente = @SqlId", new Dictionary<string, object> {
                                                                                                                                                         { "@TipoTerapia", terapia },
                                                                                                                                                         { "@SqlId", paciente.SqlId} }
                 ));
