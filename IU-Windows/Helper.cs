@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Management;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Data.Sql;
 using System.Data.SqlClient;
@@ -74,46 +76,61 @@ namespace IU_Windows
             {"numericUpDownVelocidadCierre"+"Meñique", 15 },
 
         };
-        static public void GetRRMSerialPort(out System.IO.Ports.SerialPort serialPort)
+        static public string GetRRMSerialPort()
         {
-            serialPort = null;
-            foreach (var portName in System.IO.Ports.SerialPort.GetPortNames())
+            ManagementScope connectionScope = new ManagementScope();
+            SelectQuery serialQuery = new SelectQuery("SELECT * FROM Win32_SerialPort");
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher(connectionScope, serialQuery);
+
+            try
             {
-                serialPort = new System.IO.Ports.SerialPort(portName, Constants.VelocidadComunicacion);
-                serialPort.DtrEnable = true;
-                serialPort.RtsEnable = true;
-                serialPort.Open();
-                System.Diagnostics.Stopwatch timeOut = new System.Diagnostics.Stopwatch();
-                timeOut.Start();
-                while (!serialPort.ReadLine().Contains("READY"))
+                foreach (ManagementObject item in searcher.Get())
                 {
-                    System.Windows.Forms.MessageBox.Show($"elpased {timeOut.ElapsedMilliseconds}");
-                    System.Windows.Forms.MessageBox.Show($"elpased {timeOut.ElapsedMilliseconds}");
-                    if (timeOut.ElapsedMilliseconds > Constants.TiempoDeBusqueda)
+                    string desc = item["Description"].ToString();
+                    string deviceId = item["DeviceID"].ToString();
+
+                    if (desc.Contains("Arduino"))
                     {
-                        System.Windows.Forms.MessageBox.Show($"RRM no encontrado en puerto {portName}");
-                        break;
+                        return deviceId;
                     }
                 }
-                serialPort.Write("SYNC");
-                System.Threading.Thread.Sleep(100);
+            }
+            catch (ManagementException e)
+            {
+                /* Do Nothing */
+            }
+            System.Windows.Forms.MessageBox.Show("No se ha podido encontrar el RRM", "Error", System.Windows.Forms.MessageBoxButtons.OK,System.Windows.Forms.MessageBoxIcon.Error);
+            return null;
+        }
+        private static string AutodetectArduinoPort()
+        {
+            ManagementScope connectionScope = new ManagementScope();
+            SelectQuery serialQuery = new SelectQuery("SELECT * FROM Win32_SerialPort");
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher(connectionScope, serialQuery);
 
-                String str = serialPort.ReadLine();
-                if (str.Contains("ACK"))
-                    System.Windows.Forms.MessageBox.Show($"Encontrado RRM en puerto {serialPort.PortName}");
-                else
+            try
+            {
+                foreach (ManagementObject item in searcher.Get())
                 {
-                    serialPort.Close();
-                    System.Windows.Forms.MessageBox.Show($"RRM no encontrado en puerto {serialPort.PortName}\nstr={str}");
+                    string desc = item["Description"].ToString();
+                    string deviceId = item["DeviceID"].ToString();
+
+                    if (desc.Contains("Arduino"))
+                    {
+                        return deviceId;
+                    }
                 }
-                if (!serialPort.IsOpen)
-                    serialPort = null;
-                else
-                    return;
+            }
+            catch (ManagementException e)
+            {
+                /* Do Nothing */
             }
 
+            return null;
         }
+
     }
+
     public class SQLHelper
     {
         private SqlConnection sql;

@@ -333,16 +333,20 @@ namespace IU_Windows
         }
         private void Thread_DoWork(object sender, DoWorkEventArgs e)
         {
-            System.IO.Ports.SerialPort arduino = null;
-            Helper.GetRRMSerialPort(out arduino);
-
-            Stopwatch marcaTiempo = Stopwatch.StartNew();
-            while (marcaTiempo.ElapsedMilliseconds <= 10000)
+            string portName = Helper.GetRRMSerialPort();
+            if (portName != null)
             {
-                System.Threading.Thread.Sleep(100);
-                subprocesoTerapia.ReportProgress((Int32)(marcaTiempo.ElapsedMilliseconds / 100));
+                MessageBox.Show($"RRM encontrado en el puerto {portName}");
+                RobotRehabilitacionMano RRM = new RobotRehabilitacionMano(portName);
+
+                Stopwatch marcaTiempo = Stopwatch.StartNew();
+                while (marcaTiempo.ElapsedMilliseconds <= 10000)
+                {
+                    System.Threading.Thread.Sleep(100);
+                    subprocesoTerapia.ReportProgress((Int32)(marcaTiempo.ElapsedMilliseconds / 100));
+                }
+                subprocesoTerapia.ReportProgress(100);
             }
-            subprocesoTerapia.ReportProgress(100);
         }
         
     }

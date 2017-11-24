@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Management;
 using System.Diagnostics;
 using System.Threading;
 
@@ -6,28 +7,32 @@ public class Example
 {
     public static void Main()
     {
-        var th = new Thread(ExecuteInForeground);
-        th.Start();
-        Thread.Sleep(1000);
-        Console.WriteLine("Main thread ({0}) exiting...",
-                          Thread.CurrentThread.ManagedThreadId);
+        Console.WriteLine(AutodetectArduinoPort());
+        Console.ReadKey();
     }
-
-    private static void ExecuteInForeground()
+    public static string AutodetectArduinoPort()
     {
-        DateTime start = DateTime.Now;
-        var sw = Stopwatch.StartNew();
-        Console.WriteLine("Thread {0}: {1}, Priority {2}",
-                          Thread.CurrentThread.ManagedThreadId,
-                          Thread.CurrentThread.ThreadState,
-                          Thread.CurrentThread.Priority);
-        do
+        ManagementScope connectionScope = new ManagementScope();
+        SelectQuery serialQuery = new SelectQuery("SELECT * FROM Win32_SerialPort");
+        ManagementObjectSearcher searcher = new ManagementObjectSearcher(connectionScope, serialQuery);
+
+        try
         {
-            Console.WriteLine("Thread {0}: Elapsed {1:N2} seconds",
-                              Thread.CurrentThread.ManagedThreadId,
-                              sw.ElapsedMilliseconds / 1000.0);
-            Thread.Sleep(500);
-        } while (sw.ElapsedMilliseconds <= 5000);
-        sw.Stop();
+            foreach (ManagementObject item in searcher.Get())
+            {
+                string desc = item["Description"].ToString();
+                string deviceId = item["DeviceID"].ToString();
+
+                if (desc.Contains("Arduino"))
+                {
+                    return deviceId;
+                }
+            }
+        }
+        catch (ManagementException e)
+        {
+            /* Do Nothing */
+        }
+        return null;
     }
 }

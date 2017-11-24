@@ -9,9 +9,11 @@
 #include <ArduinoJson.h>
 #include "Mano.h"
 Mano mano;
+Servo lineal;
 void setup() {
 	Serial.begin(9600);
 	while (!Serial.availableForWrite()) {}
+	lineal.attach(8);
 	Serial.println("READY");
 	while (true)
 	{
@@ -39,7 +41,8 @@ void setup() {
 void loop() {
 	if (Serial.available())
 	{
-		String str = Serial.readString();
-		Serial.println(str);
+		int pos = Serial.parseInt();
+		Serial.println(pos);
+		lineal.write(pos);
 	}
 }
