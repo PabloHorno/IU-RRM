@@ -330,12 +330,15 @@ namespace IU_Windows
         }
         public void InsertarPaciente(Paciente paciente)
         {
-            string query = "INSERT INTO Pacientes (Nombre, Apellidos, Responsable, [Fecha de nacimiento]) VALUES (@Nombre, @Apellidos, @Responsable,@FechaDeNacimiento)";
+            string query = "INSERT INTO Pacientes (Nombre, Apellidos, Responsable, FechaDeNacimiento) VALUES (@Nombre, @Apellidos, @Responsable,@FechaDeNacimiento)";
             SqlCommand cmd = new SqlCommand(query, sql);
             cmd.Parameters.AddWithValue("@Nombre", paciente.Nombre);
             cmd.Parameters.AddWithValue("@Apellidos", paciente.Apellidos);
             cmd.Parameters.AddWithValue("@Responsable", paciente.Responsable);
             cmd.Parameters.AddWithValue("@FechaDeNacimiento", paciente.FechaDeNacimiento);
+            this.Open();
+            cmd.ExecuteNonQuery();
+            this.Close();
         }
     }
 }
