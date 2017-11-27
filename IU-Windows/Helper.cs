@@ -227,6 +227,22 @@ namespace IU_Windows
             this.Close();
             return new Usuario();
         }
+        public Usuario GetUsuario(String nombre)
+        {
+            SqlCommand cmd = new SqlCommand($"SELECT * FROM Usuarios WHERE Nombre = @Nombre", sql);
+            cmd.Parameters.AddWithValue("@nombre", nombre);
+            this.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+                while (reader.Read())
+                {
+                    Usuario usuario = new Usuario { Nombre = reader["Nombre"].ToString(), Apellido = reader["Apellidos"].ToString(), SqlId = Int32.Parse(reader["Id"].ToString()) };
+                    this.Close();
+                    return usuario;
+                }
+            this.Close();
+            return new Usuario();
+        }
         public List<Paciente> GetPacientesFromUser(Int32 SqlId)
         {
             SqlCommand cmd = new SqlCommand("SELECT * FROM Pacientes WHERE Responsable = @RespId", sql);
@@ -311,6 +327,15 @@ namespace IU_Windows
                 ));
             }
             return numTerapias;
+        }
+        public void InsertarPaciente(Paciente paciente)
+        {
+            string query = "INSERT INTO Pacientes (Nombre, Apellidos, Responsable, [Fecha de nacimiento]) VALUES (@Nombre, @Apellidos, @Responsable,@FechaDeNacimiento)";
+            SqlCommand cmd = new SqlCommand(query, sql);
+            cmd.Parameters.AddWithValue("@Nombre", paciente.Nombre);
+            cmd.Parameters.AddWithValue("@Apellidos", paciente.Apellidos);
+            cmd.Parameters.AddWithValue("@Responsable", paciente.Responsable);
+            cmd.Parameters.AddWithValue("@FechaDeNacimiento", paciente.FechaDeNacimiento);
         }
     }
 }

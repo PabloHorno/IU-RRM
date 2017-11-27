@@ -12,6 +12,9 @@ namespace IU_Windows
         public int SqlId { get; set; }
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
+        public DateTime FechaDeNacimiento { get; set; }
+        public int Responsable { get; set; }
+
         private string _Observaciones;
 
         public string Observaciones

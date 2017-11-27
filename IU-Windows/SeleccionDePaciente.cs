@@ -157,6 +157,9 @@ namespace IU_Windows
         private void TreeView1_NodeMouseClick1(object sender, TreeNodeMouseClickEventArgs e)
         {
             int SqlId;
+            if(e.Button == MouseButtons.Left)
+            {
+
             if (e.Node.Nodes.Count == 0 && int.TryParse(e.Node.Name, out SqlId))
             {
                 List<Paciente> pacientes = new SQLHelper().GetPacientesFromUser(usuario.SqlId);
@@ -166,6 +169,11 @@ namespace IU_Windows
                     mostrarDatosPaciente(paciente);
                     this.groupBoxDatosPaciente.Show();
                 }
+                }
+            }
+            else if(e.Button == MouseButtons.Right)
+            {
+                contextMenuStrip1.Show(e.Location);
             }
 
         }
@@ -179,11 +187,6 @@ namespace IU_Windows
             }
         }
 
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
         private void CargarDatos(int sqlId)
         {
             treeView1.BeginUpdate();
