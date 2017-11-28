@@ -25,9 +25,9 @@ namespace IU_Windows
             usuario = new SQLHelper().GetUsuario(sqlId);
             InitializeComponent();
             Inicializacion();
-            CargarDatos(sqlId);
-            treeView1.NodeMouseDoubleClick += TreeView1_NodeMouseDoubleClick;
-            treeView1.NodeMouseClick += TreeView1_NodeMouseClick1;
+            CargarListaPacientes(sqlId);
+            treeViewPacientes.NodeMouseDoubleClick += TreeView1_NodeMouseDoubleClick;
+            treeViewPacientes.NodeMouseClick += TreeView1_NodeMouseClick1;
 
         }
 
@@ -103,6 +103,12 @@ namespace IU_Windows
             this.subprocesoTerapia.RunWorkerCompleted += Thread_RunWorkerCompleted;
             this.subprocesoTerapia.WorkerReportsProgress = true;
             this.groupBoxDatosPaciente.Hide();
+            this.textBoxBusqueda.TextChanged += TextBoxBusqueda_TextChanged;
+        }
+
+        private void TextBoxBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            CargarListaPacientes(usuario.SqlId);
         }
 
         private void HandlerHabilitarInicioTerapia(object sender, System.EventArgs e)
@@ -187,17 +193,23 @@ namespace IU_Windows
             }
         }
 
-        private void CargarDatos(int sqlId)
+        private void CargarListaPacientes(int sqlId)
         {
-            treeView1.BeginUpdate();
-            treeView1.Nodes.Add("Pacientes");
+            treeViewPacientes.BeginUpdate();
+            treeViewPacientes.Nodes.Clear();
+            treeViewPacientes.Nodes.Add("Pacientes");
             List<Paciente> pacientes = usuario.GetPacientes();
             foreach (Paciente paciente in pacientes)
             {
-                treeView1.Nodes[0].Nodes.Add(paciente.SqlId.ToString(), paciente.Nombre + " " + paciente.Apellidos);
+                if(string.IsNullOrEmpty(textBoxBusqueda.Text)
+                   || paciente.Nombre.IndexOf(textBoxBusqueda.Text,StringComparison.OrdinalIgnoreCase) >=0
+                   || paciente.Apellidos.IndexOf(textBoxBusqueda.Text, StringComparison.OrdinalIgnoreCase) >= 0)
+                    treeViewPacientes.Nodes[0].Nodes.Add(paciente.SqlId.ToString(), paciente.Nombre + " " + paciente.Apellidos);
             }
-            treeView1.Nodes.Add("Añadir Paciente");
-            treeView1.EndUpdate();
+            treeViewPacientes.Nodes.Add("Añadir Paciente");
+            if (!string.IsNullOrEmpty(textBoxBusqueda.Text))
+                treeViewPacientes.ExpandAll();
+            treeViewPacientes.EndUpdate();
         }
 
         private void mostrarDatosPaciente(Paciente paciente)

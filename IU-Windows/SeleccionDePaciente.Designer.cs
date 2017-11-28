@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SeleccionDePaciente));
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.treeViewPacientes = new System.Windows.Forms.TreeView();
             this.btnSalir = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -206,12 +206,14 @@
             this.comboBoxSeleccionTerapia = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.eliminarTerapiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblNombreCuenta = new System.Windows.Forms.Label();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.groupBoxDatosPaciente = new System.Windows.Forms.GroupBox();
             this.eliminarPacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.crearPacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblNombreCuenta = new System.Windows.Forms.Label();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.groupBoxDatosPaciente = new System.Windows.Forms.GroupBox();
+            this.textBoxBusqueda = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -292,12 +294,12 @@
             this.groupBoxDatosPaciente.SuspendLayout();
             this.SuspendLayout();
             // 
-            // treeView1
+            // treeViewPacientes
             // 
-            this.treeView1.Location = new System.Drawing.Point(13, 27);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(151, 512);
-            this.treeView1.TabIndex = 0;
+            this.treeViewPacientes.Location = new System.Drawing.Point(13, 70);
+            this.treeViewPacientes.Name = "treeViewPacientes";
+            this.treeViewPacientes.Size = new System.Drawing.Size(151, 469);
+            this.treeViewPacientes.TabIndex = 0;
             // 
             // btnSalir
             // 
@@ -2297,6 +2299,23 @@
             this.eliminarTerapiaToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.eliminarTerapiaToolStripMenuItem.Text = "Modificar Paciente";
             // 
+            // eliminarPacienteToolStripMenuItem
+            // 
+            this.eliminarPacienteToolStripMenuItem.Name = "eliminarPacienteToolStripMenuItem";
+            this.eliminarPacienteToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.eliminarPacienteToolStripMenuItem.Text = "Eliminar Paciente";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(170, 6);
+            // 
+            // crearPacienteToolStripMenuItem
+            // 
+            this.crearPacienteToolStripMenuItem.Name = "crearPacienteToolStripMenuItem";
+            this.crearPacienteToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.crearPacienteToolStripMenuItem.Text = "Crear Paciente";
+            // 
             // lblNombreCuenta
             // 
             this.lblNombreCuenta.AutoSize = true;
@@ -2325,32 +2344,33 @@
             this.groupBoxDatosPaciente.TabStop = false;
             this.groupBoxDatosPaciente.Text = "NOMBRE Y APELLIDOS";
             // 
-            // eliminarPacienteToolStripMenuItem
+            // textBoxBusqueda
             // 
-            this.eliminarPacienteToolStripMenuItem.Name = "eliminarPacienteToolStripMenuItem";
-            this.eliminarPacienteToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.eliminarPacienteToolStripMenuItem.Text = "Eliminar Paciente";
+            this.textBoxBusqueda.Location = new System.Drawing.Point(12, 44);
+            this.textBoxBusqueda.Name = "textBoxBusqueda";
+            this.textBoxBusqueda.Size = new System.Drawing.Size(151, 20);
+            this.textBoxBusqueda.TabIndex = 9;
             // 
-            // toolStripSeparator1
+            // label46
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(170, 6);
-            // 
-            // crearPacienteToolStripMenuItem
-            // 
-            this.crearPacienteToolStripMenuItem.Name = "crearPacienteToolStripMenuItem";
-            this.crearPacienteToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.crearPacienteToolStripMenuItem.Text = "Crear Paciente";
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(12, 25);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(58, 13);
+            this.label46.TabIndex = 10;
+            this.label46.Text = "Busqueda:";
             // 
             // SeleccionDePaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1197, 551);
+            this.Controls.Add(this.label46);
+            this.Controls.Add(this.textBoxBusqueda);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.groupBoxDatosPaciente);
             this.Controls.Add(this.lblNombreCuenta);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.treeViewPacientes);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -2460,7 +2480,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView treeViewPacientes;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
@@ -2642,5 +2662,7 @@
         private System.Windows.Forms.ToolStripMenuItem eliminarPacienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem crearPacienteToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBoxBusqueda;
+        private System.Windows.Forms.Label label46;
     }
 }
