@@ -27,7 +27,7 @@ namespace IU_Windows
             Inicializacion();
             CargarListaPacientes(sqlId);
             treeViewPacientes.NodeMouseDoubleClick += TreeView1_NodeMouseDoubleClick;
-            treeViewPacientes.NodeMouseClick += TreeView1_NodeMouseClick1;
+            treeViewPacientes.NodeMouseClick += treeViewPacientes_NodeMouseClick1;
 
         }
 
@@ -160,11 +160,9 @@ namespace IU_Windows
             this.btnActualizarObservaciones.Enabled = true;
         }
 
-        private void TreeView1_NodeMouseClick1(object sender, TreeNodeMouseClickEventArgs e)
+        private void treeViewPacientes_NodeMouseClick1(object sender, TreeNodeMouseClickEventArgs e)
         {
             int SqlId;
-            if(e.Button == MouseButtons.Left)
-            {
 
             if (e.Node.Nodes.Count == 0 && int.TryParse(e.Node.Name, out SqlId))
             {
@@ -173,16 +171,15 @@ namespace IU_Windows
                 {
                     paciente = pacientes.Find(x => x.SqlId.ToString() == e.Node.Name);
                     mostrarDatosPaciente(paciente);
+                    if (e.Button == MouseButtons.Right)
+                    {
+                        contextMenuStrip1.Items[0].Text = paciente.Nombre + " " + paciente.Apellidos;
+                        contextMenuStrip1.Show(treeViewPacientes, e.X, e.Y);
+                    }
                     this.groupBoxDatosPaciente.Show();
                 }
                 }
             }
-            else if(e.Button == MouseButtons.Right)
-            {
-                contextMenuStrip1.Show(e.Location);
-            }
-
-        }
 
         private void TreeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
