@@ -64,8 +64,9 @@ namespace IU_Windows
                     FechaDeNacimiento = Convert.ToDateTime(dateFechaDeNacimiento.Text),
                     Responsable = new SQLHelper().GetUsuario(comboBoxResponsable.Text).SqlId
                 };
+                db.InsertarPaciente(paciente);
                 this.Close();
-                MessageBox.Show($"Paciente {textBoxNombre.Text} {textBoxApellidos.Text} agregado correctamente");
+                MessageBox.Show($"Paciente {paciente.Nombre} {paciente.Apellidos} agregado correctamente");
             }
         }
         private void setRequeridos()

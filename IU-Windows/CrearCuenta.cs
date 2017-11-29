@@ -13,7 +13,7 @@ namespace IU_Windows
 {
     public partial class CrearCuenta : Form
     {
-        List<TextBox> requeridos = new List<TextBox>();
+        List<Tuple<TextBox, Label>> requeridos = new List<Tuple<TextBox, Label>>();
         public CrearCuenta()
         {
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -39,38 +39,60 @@ namespace IU_Windows
 
         private void BtnCrearCuenta_Click(object sender, EventArgs e)
         {
-            requeridos.ForEach(delegate (TextBox x) {
-                if(String.IsNullOrEmpty(x.Text))
+            bool error = false;
+            requeridos.ForEach(delegate (Tuple<TextBox, Label> x)
+            {
+                if (String.IsNullOrEmpty(x.Item1.Text))
                 {
                     lblErrorCrearCuenta.Text = "Faltan datos de rellenar";
-                    x.BackColor = Color.Red;
+                    x.Item2.ForeColor = Color.Red;
+                    error = true;
                 }
+                else
+                    x.Item2.ForeColor = Color.Black;
                 return;
             });
-
-            if(validarContraseña())
+            if (error)
+                return;
+            if (!Helper.ValidarEmail(inputCorreo.Text))
             {
-                SQLHelper db = new SQLHelper();
-                Dictionary<string, object> parametros = new Dictionary<string, object>();
-                parametros.Add("@Nombre", inputNombre.Text);
-                parametros.Add("@Apellidos", inputApellidos.Text);
-                parametros.Add("@Correo", inputCorreo.Text);
-                parametros.Add("@FechaDeNacimiento", inputNacimiento.Text);
-                parametros.Add("@Contraseña", Helper.encprytPassword(inputContraseña.Text));
-                db.Query("INSERT INTO Usuarios (Nombre,Contraseña,Apellidos,Correo) VALUES (@Nombre, @Contraseña, @Apellidos, @Correo)", parametros);
+                lblErrorCrearCuenta.Text = "El email no es valido";
+                return;
             }
+            if (!validarContraseña())
+            {
+                lblErrorCrearCuenta.Text = "Las contraseñas no coinciden";
+                return;
+            }
+            Usuario usuario = new SQLHelper().GetUsuario(lblNombre.Text);
+            MessageBox.Show(usuario.Nombre + " " + usuario.Apellido);
+            if (true)
+            {
+                lblErrorCrearCuenta.Text = $"El nombre de usuario {inputNombre.Text} no esta disponible. Utilize otro nombre";
+                return;
+            }
+            SQLHelper db = new SQLHelper();
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            parametros.Add("@Nombre", inputNombre.Text);
+            parametros.Add("@Apellidos", inputApellidos.Text);
+            parametros.Add("@Correo", inputCorreo.Text);
+            parametros.Add("@FechaDeNacimiento", inputNacimiento.Text);
+            parametros.Add("@Contraseña", Helper.encprytPassword(inputContraseña.Text));
+            db.Query("INSERT INTO Usuarios (Nombre,Contraseña,Apellidos,Correo) VALUES (@Nombre, @Contraseña, @Apellidos, @Correo)", parametros);
+
         }
-        
+
         private void setRequeridos()
         {
-            requeridos.Add(inputNombre);
-            requeridos.Add(inputCorreo);
-            requeridos.Add(inputContraseña);
-            requeridos.Add(inputContraseña2);
+            requeridos.Add(new Tuple<TextBox, Label>(inputNombre, lblNombre));
+            requeridos.Add(new Tuple<TextBox, Label>(inputCorreo, lblCorreo));
+            requeridos.Add(new Tuple<TextBox, Label>(inputContraseña, lblContraseña));
+            requeridos.Add(new Tuple<TextBox, Label>(inputContraseña2, lblContraseña2));
         }
         private bool validarContraseña()
         {
             return inputContraseña.Text == inputContraseña2.Text;
         }
+
     }
 }

@@ -128,6 +128,18 @@ namespace IU_Windows
 
             return null;
         }
+        public static bool ValidarEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
     }
 
@@ -241,7 +253,7 @@ namespace IU_Windows
                     return usuario;
                 }
             this.Close();
-            return new Usuario();
+            return null;
         }
         public List<Paciente> GetPacientesFromUser(Int32 SqlId)
         {

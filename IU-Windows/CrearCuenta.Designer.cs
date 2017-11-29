@@ -186,7 +186,7 @@
             // 
             this.lblErrorCrearCuenta.AutoSize = true;
             this.lblErrorCrearCuenta.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorCrearCuenta.Location = new System.Drawing.Point(278, 253);
+            this.lblErrorCrearCuenta.Location = new System.Drawing.Point(22, 222);
             this.lblErrorCrearCuenta.Name = "lblErrorCrearCuenta";
             this.lblErrorCrearCuenta.Size = new System.Drawing.Size(0, 13);
             this.lblErrorCrearCuenta.TabIndex = 18;

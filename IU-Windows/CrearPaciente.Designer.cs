@@ -125,6 +125,7 @@ namespace IU_Windows
             // 
             // comboBoxResponsable
             // 
+            this.comboBoxResponsable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxResponsable.FormattingEnabled = true;
             this.comboBoxResponsable.Location = new System.Drawing.Point(72, 212);
             this.comboBoxResponsable.Name = "comboBoxResponsable";
