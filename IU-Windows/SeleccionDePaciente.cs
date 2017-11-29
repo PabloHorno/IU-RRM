@@ -104,6 +104,7 @@ namespace IU_Windows
             this.subprocesoTerapia.WorkerReportsProgress = true;
             this.groupBoxDatosPaciente.Hide();
             this.textBoxBusqueda.TextChanged += TextBoxBusqueda_TextChanged;
+            
         }
 
         private void TextBoxBusqueda_TextChanged(object sender, EventArgs e)
@@ -280,7 +281,7 @@ namespace IU_Windows
 
         private void acercaDeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Constants.AcercaDe();
+            Constantes.AcercaDe();
         }
 
         private void nuevoPacienteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -360,6 +361,5 @@ namespace IU_Windows
                 subprocesoTerapia.ReportProgress(100);
             }
         }
-        
     }
 }

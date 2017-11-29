@@ -37,6 +37,7 @@
             this.nuevoPacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarPacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -204,6 +205,8 @@
             this.lblTipoTerapia = new System.Windows.Forms.Label();
             this.comboBoxSeleccionTerapia = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.eliminarTerapiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarPacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -213,9 +216,7 @@
             this.groupBoxDatosPaciente = new System.Windows.Forms.GroupBox();
             this.textBoxBusqueda = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
-            this.eliminarPacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label51 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -355,6 +356,12 @@
             this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
             this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.herramientasToolStripMenuItem.Text = "Editar";
+            // 
+            // eliminarPacientesToolStripMenuItem
+            // 
+            this.eliminarPacientesToolStripMenuItem.Name = "eliminarPacientesToolStripMenuItem";
+            this.eliminarPacientesToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.eliminarPacientesToolStripMenuItem.Text = "Eliminar Pacientes";
             // 
             // acercaDeToolStripMenuItem
             // 
@@ -2292,6 +2299,17 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(174, 104);
             // 
+            // usuarioToolStripMenuItem
+            // 
+            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.usuarioToolStripMenuItem.Text = "Usuario";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(170, 6);
+            // 
             // eliminarTerapiaToolStripMenuItem
             // 
             this.eliminarTerapiaToolStripMenuItem.Name = "eliminarTerapiaToolStripMenuItem";
@@ -2359,28 +2377,22 @@
             this.label46.TabIndex = 10;
             this.label46.Text = "Busqueda:";
             // 
-            // eliminarPacientesToolStripMenuItem
+            // label51
             // 
-            this.eliminarPacientesToolStripMenuItem.Name = "eliminarPacientesToolStripMenuItem";
-            this.eliminarPacientesToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.eliminarPacientesToolStripMenuItem.Text = "Eliminar Pacientes";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(170, 6);
-            // 
-            // usuarioToolStripMenuItem
-            // 
-            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.usuarioToolStripMenuItem.Text = "Usuario";
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label51.Location = new System.Drawing.Point(559, 9);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(528, 22);
+            this.label51.TabIndex = 11;
+            this.label51.Text = "ROBOT PROTOTIPO REHABILITACION DE MANO: ROBHAND";
             // 
             // SeleccionDePaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1197, 551);
+            this.Controls.Add(this.label51);
             this.Controls.Add(this.label46);
             this.Controls.Add(this.textBoxBusqueda);
             this.Controls.Add(this.btnSalir);
@@ -2390,8 +2402,8 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Text = Constantes.TituloVentana;
             this.Name = "SeleccionDePaciente";
-            this.Text = "SeleccionDePaciente";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -2682,5 +2694,6 @@
         private System.Windows.Forms.ToolStripMenuItem eliminarPacientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.Label label51;
     }
 }

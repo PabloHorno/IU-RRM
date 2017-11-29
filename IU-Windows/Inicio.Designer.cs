@@ -158,7 +158,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Inicio";
-            this.Text = "Prototipo de Robot de Rehabilitacion de Mano - v0.1";
+            this.Text = Constantes.TituloVentana;
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);

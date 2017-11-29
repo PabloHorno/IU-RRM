@@ -15,6 +15,5 @@ namespace IU_Windows
         {
             return new SQLHelper().GetPacientesFromUser(this);
         }
-
     }
 }

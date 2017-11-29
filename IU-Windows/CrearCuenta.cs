@@ -60,17 +60,17 @@ namespace IU_Windows
                 return;
             }
             if (!validarContraseña())
-            {
+            {   
                 lblErrorCrearCuenta.Text = "Las contraseñas no coinciden";
                 return;
             }
             Usuario usuario = new SQLHelper().GetUsuario(lblNombre.Text);
-            MessageBox.Show(usuario.Nombre + " " + usuario.Apellido);
-            if (true)
+            if (usuario != null)
             {
                 lblErrorCrearCuenta.Text = $"El nombre de usuario {inputNombre.Text} no esta disponible. Utilize otro nombre";
                 return;
             }
+            MessageBox.Show(usuario.Nombre + " " + usuario.Apellido);
             SQLHelper db = new SQLHelper();
             Dictionary<string, object> parametros = new Dictionary<string, object>();
             parametros.Add("@Nombre", inputNombre.Text);

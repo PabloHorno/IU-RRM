@@ -9,6 +9,7 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using Newtonsoft.Json;
+using System.Drawing;
 
 namespace IU_Windows
 {
@@ -18,7 +19,6 @@ namespace IU_Windows
         {
             byte[] bytes = Encoding.Unicode.GetBytes(password);
             byte[] inArray = HashAlgorithm.Create("SHA1").ComputeHash(bytes);
-
             return Convert.ToBase64String(inArray);
         }
         static public Dictionary<String, decimal> parametrosPorDefecto = new Dictionary<string, decimal>
@@ -214,7 +214,6 @@ namespace IU_Windows
             if (reader.HasRows)
                 while (reader.Read())
                 {
-                    //usuario = new Usuario { Nombre = reader["Nombre"].ToString(), Apellido = reader["Apellidos"].ToString(), SqlId = Int32.Parse(reader["Id"].ToString()) };
                     Int32 SqlId = Int32.Parse(reader["Id"].ToString());
                     sql.Close();
                     return GetUsuario(SqlId);
@@ -229,31 +228,35 @@ namespace IU_Windows
             cmd.Parameters.AddWithValue("@Id", SqlId);
             this.Open();
             SqlDataReader reader = cmd.ExecuteReader();
+            Usuario usuario = null;
             if (reader.HasRows)
                 while (reader.Read())
                 {
-                    Usuario usuario = new Usuario { Nombre = reader["Nombre"].ToString(), Apellido = reader["Apellidos"].ToString(), SqlId = Int32.Parse(reader["Id"].ToString()) };
+                    usuario = ReaderToUser(reader);
                     this.Close();
                     return usuario;
                 }
             this.Close();
-            return new Usuario();
+            return usuario;
         }
         public Usuario GetUsuario(String nombre)
         {
-            SqlCommand cmd = new SqlCommand($"SELECT * FROM Usuarios WHERE Nombre = @Nombre", sql);
-            cmd.Parameters.AddWithValue("@nombre", nombre);
+            Usuario usuario = null;
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Usuarios WHERE Nombre = @Nombre", sql);
+            cmd.Parameters.AddWithValue("@Nombre", nombre);
             this.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
                 while (reader.Read())
                 {
-                    Usuario usuario = new Usuario { Nombre = reader["Nombre"].ToString(), Apellido = reader["Apellidos"].ToString(), SqlId = Int32.Parse(reader["Id"].ToString()) };
+                    System.Windows.Forms.MessageBox.Show("SIPE");
+                    usuario = ReaderToUser(reader);
                     this.Close();
                     return usuario;
                 }
             this.Close();
-            return null;
+            System.Windows.Forms.MessageBox.Show("NOPE");
+            return usuario;
         }
         public List<Paciente> GetPacientesFromUser(Int32 SqlId)
         {
@@ -351,6 +354,16 @@ namespace IU_Windows
             this.Open();
             cmd.ExecuteNonQuery();
             this.Close();
+        }
+        private Usuario ReaderToUser(SqlDataReader reader)
+        {
+            Usuario usuario = new Usuario
+            {
+                Nombre = reader["Nombre"].ToString(),
+                Apellido = reader["Apellidos"].ToString(),
+                SqlId = Int32.Parse(reader["Id"].ToString())
+            };
+            return usuario;
         }
     }
 }
