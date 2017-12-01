@@ -104,7 +104,7 @@ namespace IU_Windows
             this.subprocesoTerapia.WorkerReportsProgress = true;
             this.groupBoxDatosPaciente.Hide();
             this.textBoxBusqueda.TextChanged += TextBoxBusqueda_TextChanged;
-            
+
         }
 
         private void TextBoxBusqueda_TextChanged(object sender, EventArgs e)
@@ -174,13 +174,14 @@ namespace IU_Windows
                     mostrarDatosPaciente(paciente);
                     if (e.Button == MouseButtons.Right)
                     {
-                        contextMenuStrip1.Items[0].Text = paciente.Nombre + " " + paciente.Apellidos;
-                        contextMenuStrip1.Show(treeViewPacientes, e.X, e.Y);
+                        contextMenuStripPaciente.Items[0].Text = paciente.Nombre + " " + paciente.Apellidos;
+                        contextMenuStripPaciente.Show(treeViewPacientes, e.X, e.Y);
+                        eliminarPacienteToolStripMenuItem.AccessibleDescription = SqlId.ToString();
                     }
                     this.groupBoxDatosPaciente.Show();
                 }
-                }
             }
+        }
 
         private void TreeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
@@ -197,10 +198,11 @@ namespace IU_Windows
             treeViewPacientes.Nodes.Clear();
             treeViewPacientes.Nodes.Add("Pacientes");
             List<Paciente> pacientes = usuario.GetPacientes();
+            pacientes.Sort((x, y) => x.Nombre.CompareTo(y.Nombre));
             foreach (Paciente paciente in pacientes)
             {
-                if(string.IsNullOrEmpty(textBoxBusqueda.Text)
-                   || paciente.Nombre.IndexOf(textBoxBusqueda.Text,StringComparison.OrdinalIgnoreCase) >=0
+                if (string.IsNullOrEmpty(textBoxBusqueda.Text)
+                   || paciente.Nombre.IndexOf(textBoxBusqueda.Text, StringComparison.OrdinalIgnoreCase) >= 0
                    || paciente.Apellidos.IndexOf(textBoxBusqueda.Text, StringComparison.OrdinalIgnoreCase) >= 0)
                     treeViewPacientes.Nodes[0].Nodes.Add(paciente.SqlId.ToString(), paciente.Nombre + " " + paciente.Apellidos);
             }
@@ -208,6 +210,7 @@ namespace IU_Windows
             if (!string.IsNullOrEmpty(textBoxBusqueda.Text))
                 treeViewPacientes.ExpandAll();
             treeViewPacientes.EndUpdate();
+            treeViewPacientes.ExpandAll();
         }
 
         private void mostrarDatosPaciente(Paciente paciente)
@@ -272,6 +275,8 @@ namespace IU_Windows
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+            Inicio inicio = new Inicio();
+            inicio.Show();
         }
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -306,7 +311,7 @@ namespace IU_Windows
                 if (field.GetValue(this).GetType() == typeof(NumericUpDown))
                 {
                     NumericUpDown obj = (NumericUpDown)field.GetValue(this);
-                    if(obj.AccessibleDescription!= null && (TipoTerapia)Int32.Parse(obj.AccessibleDescription) == (TipoTerapia)comboBoxSeleccionTerapia.SelectedIndex)
+                    if (obj.AccessibleDescription != null && (TipoTerapia)Int32.Parse(obj.AccessibleDescription) == (TipoTerapia)comboBoxSeleccionTerapia.SelectedIndex)
                         parametros.Add(obj.Name, obj.Value);
                 }
             }
@@ -336,7 +341,7 @@ namespace IU_Windows
         private void Thread_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             this.lblTiempoTranscurridoTerapia.Text = tiempoTranscurridoTerapia.Elapsed.ToString(@"mm\:ss");
-            this.progressBar1.Value = e.ProgressPercentage > 100 ? 100: e.ProgressPercentage;
+            this.progressBar1.Value = e.ProgressPercentage > 100 ? 100 : e.ProgressPercentage;
         }
         private void Thread_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
@@ -359,6 +364,18 @@ namespace IU_Windows
                     subprocesoTerapia.ReportProgress((Int32)(marcaTiempo.ElapsedMilliseconds / 100));
                 }
                 subprocesoTerapia.ReportProgress(100);
+            }
+        }
+
+        private void eliminarPacienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int SqlId = int.Parse((sender as ToolStripMenuItem).AccessibleDescription);
+            Paciente paciente = new SQLHelper().GetPaciente(SqlId);
+            var respuseta = MessageBox.Show($"¿Esta seguro de que desea eliminar al paciente {paciente.Nombre} {paciente.Apellidos} ?", "Eliminar Paciente", MessageBoxButtons.YesNo);
+            if(respuseta == DialogResult.Yes)
+            {
+                new SQLHelper().EliminarPaciente(paciente);
+                CargarListaPacientes(usuario.SqlId);
             }
         }
     }

@@ -70,7 +70,6 @@ namespace IU_Windows
                 lblErrorCrearCuenta.Text = $"El nombre de usuario {inputNombre.Text} no esta disponible. Utilize otro nombre";
                 return;
             }
-            MessageBox.Show(usuario.Nombre + " " + usuario.Apellido);
             SQLHelper db = new SQLHelper();
             Dictionary<string, object> parametros = new Dictionary<string, object>();
             parametros.Add("@Nombre", inputNombre.Text);

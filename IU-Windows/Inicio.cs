@@ -21,9 +21,7 @@ namespace IU_Windows
             this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             setRequeridos();
-            toolStripMenuItem1.Click += ToolStripMenuItem1_Click;
-            toolStripMenuItem2.Click += ToolStripMenuItem2_Click;
-            label1.Click += Label1_Click;
+            //label1.Click += Label1_Click;
             linkLabel1.Click += LinkLabel1_Click;
             btnIniciar.Click += BtnIniciar_Click;
         }
@@ -53,22 +51,6 @@ namespace IU_Windows
             CrearCuenta crearCuenta = new CrearCuenta();
             crearCuenta.Show();
         }
-
-        private void ToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            toolStripDropDownButton1.Text = "COM2";
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-            toolStripMenuItem1.Text = "";
-        }
-
-        private void ToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            toolStripDropDownButton1.Text = "COM1";
-        }
-
         private void Button1_Click(object sender, EventArgs e)
         {
 

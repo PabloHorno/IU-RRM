@@ -16,8 +16,8 @@ namespace IU_Windows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Inicio());
-            Application.Run(new SeleccionDePaciente(1));
+            Application.Run(new Inicio());
+            //Application.Run(new SeleccionDePaciente(1));
         }
     }
 }

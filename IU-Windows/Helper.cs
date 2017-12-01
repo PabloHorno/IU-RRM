@@ -258,6 +258,18 @@ namespace IU_Windows
             System.Windows.Forms.MessageBox.Show("NOPE");
             return usuario;
         }
+        public Paciente GetPaciente(Int32 SqlId)
+        {
+            Paciente paciente = null;
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Pacientes WHERE Id = @SqlId", sql);
+            cmd.Parameters.AddWithValue("@SqlId", SqlId);
+            this.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+                paciente = ReaderToPaciente(reader);
+            this.Close();
+            return paciente;
+        }
         public List<Paciente> GetPacientesFromUser(Int32 SqlId)
         {
             SqlCommand cmd = new SqlCommand("SELECT * FROM Pacientes WHERE Responsable = @RespId", sql);
@@ -266,13 +278,7 @@ namespace IU_Windows
             SqlDataReader reader = cmd.ExecuteReader();
             List<Paciente> pacientes = new List<Paciente>();
             while (reader.Read())
-                pacientes.Add(new Paciente
-                {
-                    Nombre = reader["Nombre"].ToString(),
-                    Apellidos = reader["Apellidos"].ToString(),
-                    SqlId = Int32.Parse(reader["Id"].ToString()),
-                    Observaciones = reader["Observaciones"].ToString()
-                });
+                pacientes.Add(ReaderToPaciente(reader));
             this.Close();
             return pacientes;
         }
@@ -355,6 +361,18 @@ namespace IU_Windows
             cmd.ExecuteNonQuery();
             this.Close();
         }
+        public void EliminarPaciente(Paciente paciente)
+        {
+            EliminarPaciente(paciente.SqlId);
+        }
+        public void EliminarPaciente(Int32 SqlId)
+        {
+            SqlCommand cmd = new SqlCommand("DELETE FROM Pacientes WHERE Id=@SqlId", sql);
+            cmd.Parameters.AddWithValue("@SqlId", SqlId);
+            this.Open();
+            cmd.ExecuteNonQuery();
+            this.Close();
+        }
         private Usuario ReaderToUser(SqlDataReader reader)
         {
             Usuario usuario = new Usuario
@@ -364,6 +382,17 @@ namespace IU_Windows
                 SqlId = Int32.Parse(reader["Id"].ToString())
             };
             return usuario;
+        }
+        private Paciente ReaderToPaciente(SqlDataReader reader)
+        {
+            Paciente paciente = new Paciente
+            {
+                Nombre = reader["Nombre"].ToString(),
+                Apellidos = reader["Apellidos"].ToString(),
+                SqlId = Int32.Parse(reader["Id"].ToString()),
+                Observaciones = reader["Observaciones"].ToString()
+            };
+            return paciente;
         }
     }
 }
