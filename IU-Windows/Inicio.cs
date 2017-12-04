@@ -21,10 +21,17 @@ namespace IU_Windows
             this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             setRequeridos();
-            //label1.Click += Label1_Click;
-            linkLabel1.Click += LinkLabel1_Click;
+            btnCrearCuenta.Click += BtnCrearCuenta_Click;
             btnIniciar.Click += BtnIniciar_Click;
         }
+
+        private void BtnCrearCuenta_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CrearCuenta crearCuenta = new CrearCuenta();
+            crearCuenta.Show();
+        }
+
         private void BtnIniciar_Click(object sender, EventArgs e)
         {
             if(String.IsNullOrEmpty(tBoxUser.Text) && String.IsNullOrEmpty(tBoxPassword.Text))
@@ -44,42 +51,12 @@ namespace IU_Windows
                     lblError.Text = "Usuario/Contraseña incorrectos";
             }
         }
-
-        private void LinkLabel1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            CrearCuenta crearCuenta = new CrearCuenta();
-            crearCuenta.Show();
-        }
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
         private void setRequeridos()
         {
             requeridos.Add(tBoxUser);
             requeridos.Add(tBoxPassword);
         }
+        
     }
     public static class ProcessHelper
     {

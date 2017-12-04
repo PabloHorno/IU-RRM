@@ -79,14 +79,20 @@
             this.tabControlTerapias = new System.Windows.Forms.TabControl();
             this.tabPageCompleto = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label55 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
             this.comboBoxTipoParametrosCierreCompleta = new System.Windows.Forms.ComboBox();
+            this.label57 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.numericUpDownVelocidadCierreCompleta = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.numericUpDownAnguloCierreCompleta = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownTiempoCierreCompleta = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
             this.comboBoxTipoParametrosAperturaCompleta = new System.Windows.Forms.ComboBox();
             this.numericUpDownVelocidadAperturaCompleta = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownAnguloAperturaCompleta = new System.Windows.Forms.NumericUpDown();
@@ -98,16 +104,22 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPagePulgar = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label61 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
             this.comboBoxTipoParametrosCierrePulgar = new System.Windows.Forms.ComboBox();
+            this.label63 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.numericUpDownVelocidadCierrePulgar = new System.Windows.Forms.NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
             this.numericUpDownAnguloCierrePulgar = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownTiempoCierrePulgar = new System.Windows.Forms.NumericUpDown();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label58 = new System.Windows.Forms.Label();
             this.comboBoxTipoParametrosAperturaPulgar = new System.Windows.Forms.ComboBox();
+            this.label59 = new System.Windows.Forms.Label();
             this.numericUpDownVelocidadAperturaPulgar = new System.Windows.Forms.NumericUpDown();
+            this.label60 = new System.Windows.Forms.Label();
             this.numericUpDownAnguloAperturaPulgar = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownTiempoAperturaPulgar = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
@@ -115,16 +127,22 @@
             this.label10 = new System.Windows.Forms.Label();
             this.tabPageIndice = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label67 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
             this.comboBoxTipoParametrosCierreIndice = new System.Windows.Forms.ComboBox();
+            this.label69 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.numericUpDownVelocidadCierreIndice = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
             this.numericUpDownAnguloCierreIndice = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownTiempoCierreIndice = new System.Windows.Forms.NumericUpDown();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label64 = new System.Windows.Forms.Label();
             this.comboBoxTipoParametrosAperturaIndice = new System.Windows.Forms.ComboBox();
+            this.label65 = new System.Windows.Forms.Label();
             this.numericUpDownVelocidadAperturaIndice = new System.Windows.Forms.NumericUpDown();
+            this.label66 = new System.Windows.Forms.Label();
             this.numericUpDownAnguloAperturaIndice = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownTiempoAperturaIndice = new System.Windows.Forms.NumericUpDown();
             this.label17 = new System.Windows.Forms.Label();
@@ -132,16 +150,22 @@
             this.label19 = new System.Windows.Forms.Label();
             this.tabPageCorazon = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.label73 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
             this.comboBoxTipoParametrosCierreCorazon = new System.Windows.Forms.ComboBox();
+            this.label75 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.numericUpDownVelocidadCierreCorazon = new System.Windows.Forms.NumericUpDown();
             this.label25 = new System.Windows.Forms.Label();
             this.numericUpDownAnguloCierreCorazon = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownTiempoCierreCorazon = new System.Windows.Forms.NumericUpDown();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label70 = new System.Windows.Forms.Label();
             this.comboBoxTipoParametrosAperturaCorazon = new System.Windows.Forms.ComboBox();
+            this.label71 = new System.Windows.Forms.Label();
             this.numericUpDownVelocidadAperturaCorazon = new System.Windows.Forms.NumericUpDown();
+            this.label72 = new System.Windows.Forms.Label();
             this.numericUpDownAnguloAperturaCorazon = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownTiempoAperturaCorazon = new System.Windows.Forms.NumericUpDown();
             this.label20 = new System.Windows.Forms.Label();
@@ -149,16 +173,22 @@
             this.label22 = new System.Windows.Forms.Label();
             this.tabPageAnular = new System.Windows.Forms.TabPage();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.label79 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
             this.comboBoxTipoParametrosCierreAnular = new System.Windows.Forms.ComboBox();
+            this.label81 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.numericUpDownVelocidadCierreAnular = new System.Windows.Forms.NumericUpDown();
             this.label40 = new System.Windows.Forms.Label();
             this.numericUpDownAnguloCierreAnular = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownTiempoCierreAnular = new System.Windows.Forms.NumericUpDown();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.label76 = new System.Windows.Forms.Label();
             this.comboBoxTipoParametrosAperturaAnular = new System.Windows.Forms.ComboBox();
+            this.label77 = new System.Windows.Forms.Label();
             this.numericUpDownVelocidadAperturaAnular = new System.Windows.Forms.NumericUpDown();
+            this.label78 = new System.Windows.Forms.Label();
             this.numericUpDownAnguloAperturaAnular = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownTiempoAperturaAnular = new System.Windows.Forms.NumericUpDown();
             this.label41 = new System.Windows.Forms.Label();
@@ -166,16 +196,22 @@
             this.label43 = new System.Windows.Forms.Label();
             this.tabPageMeñique = new System.Windows.Forms.TabPage();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.label85 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
+            this.label86 = new System.Windows.Forms.Label();
             this.comboBoxTipoParametrosCierreMeñique = new System.Windows.Forms.ComboBox();
+            this.label87 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.numericUpDownVelocidadCierreMeñique = new System.Windows.Forms.NumericUpDown();
             this.label34 = new System.Windows.Forms.Label();
             this.numericUpDownAnguloCierreMeñique = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownTiempoCierreMeñique = new System.Windows.Forms.NumericUpDown();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.label82 = new System.Windows.Forms.Label();
             this.comboBoxTipoParametrosAperturaMeñique = new System.Windows.Forms.ComboBox();
+            this.label83 = new System.Windows.Forms.Label();
             this.numericUpDownVelocidadAperturaMeñique = new System.Windows.Forms.NumericUpDown();
+            this.label84 = new System.Windows.Forms.Label();
             this.numericUpDownAnguloAperturaMeñique = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownTiempoAperturaMeñique = new System.Windows.Forms.NumericUpDown();
             this.label35 = new System.Windows.Forms.Label();
@@ -190,13 +226,17 @@
             this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.label26 = new System.Windows.Forms.Label();
+            this.label92 = new System.Windows.Forms.Label();
             this.comboBoxTipoParametrosCierrePinza = new System.Windows.Forms.ComboBox();
+            this.label93 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.numericUpDownVelocidadCierrePinza = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownTiempoCierrePinza = new System.Windows.Forms.NumericUpDown();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.comboBoxTipoParametrosAperturaPinza = new System.Windows.Forms.ComboBox();
+            this.label89 = new System.Windows.Forms.Label();
             this.numericUpDownVelocidadAperturaPinza = new System.Windows.Forms.NumericUpDown();
+            this.label90 = new System.Windows.Forms.Label();
             this.numericUpDownTiempoAperturaPinza = new System.Windows.Forms.NumericUpDown();
             this.label29 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
@@ -215,46 +255,6 @@
             this.textBoxBusqueda = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.label61 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.label63 = new System.Windows.Forms.Label();
-            this.label64 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
-            this.label67 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
-            this.label69 = new System.Windows.Forms.Label();
-            this.label70 = new System.Windows.Forms.Label();
-            this.label71 = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
-            this.label73 = new System.Windows.Forms.Label();
-            this.label74 = new System.Windows.Forms.Label();
-            this.label75 = new System.Windows.Forms.Label();
-            this.label76 = new System.Windows.Forms.Label();
-            this.label77 = new System.Windows.Forms.Label();
-            this.label78 = new System.Windows.Forms.Label();
-            this.label79 = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
-            this.label81 = new System.Windows.Forms.Label();
-            this.label82 = new System.Windows.Forms.Label();
-            this.label83 = new System.Windows.Forms.Label();
-            this.label84 = new System.Windows.Forms.Label();
-            this.label85 = new System.Windows.Forms.Label();
-            this.label86 = new System.Windows.Forms.Label();
-            this.label87 = new System.Windows.Forms.Label();
-            this.label89 = new System.Windows.Forms.Label();
-            this.label90 = new System.Windows.Forms.Label();
-            this.label92 = new System.Windows.Forms.Label();
-            this.label93 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -827,6 +827,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cierre";
             // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label55.Location = new System.Drawing.Point(132, 87);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(11, 13);
+            this.label55.TabIndex = 16;
+            this.label55.Text = Constantes.Unidades.Angulo;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -836,6 +846,16 @@
             this.label5.Size = new System.Drawing.Size(42, 13);
             this.label5.TabIndex = 12;
             this.label5.Text = "Tiempo";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.Location = new System.Drawing.Point(132, 61);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(33, 13);
+            this.label56.TabIndex = 15;
+            this.label56.Text = Constantes.Unidades.Velocidad;
             // 
             // comboBoxTipoParametrosCierreCompleta
             // 
@@ -850,6 +870,16 @@
             this.comboBoxTipoParametrosCierreCompleta.Name = "comboBoxTipoParametrosCierreCompleta";
             this.comboBoxTipoParametrosCierreCompleta.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosCierreCompleta.TabIndex = 18;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.Location = new System.Drawing.Point(132, 35);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(24, 13);
+            this.label57.TabIndex = 14;
+            this.label57.Text = Constantes.Unidades.Tiempo;
             // 
             // label7
             // 
@@ -927,6 +957,36 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Apertura";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label54.Location = new System.Drawing.Point(131, 80);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(11, 13);
+            this.label54.TabIndex = 13;
+            this.label54.Text = Constantes.Unidades.Angulo;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label53.Location = new System.Drawing.Point(131, 54);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(33, 13);
+            this.label53.TabIndex = 12;
+            this.label53.Text = Constantes.Unidades.Velocidad;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label52.Location = new System.Drawing.Point(131, 28);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(24, 13);
+            this.label52.TabIndex = 11;
+            this.label52.Text = Constantes.Unidades.Tiempo;
             // 
             // comboBoxTipoParametrosAperturaCompleta
             // 
@@ -1065,6 +1125,16 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Cierre";
             // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label61.Location = new System.Drawing.Point(131, 87);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(11, 13);
+            this.label61.TabIndex = 19;
+            this.label61.Text = Constantes.Unidades.Angulo;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -1074,6 +1144,16 @@
             this.label11.Size = new System.Drawing.Size(42, 13);
             this.label11.TabIndex = 12;
             this.label11.Text = "Tiempo";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label62.Location = new System.Drawing.Point(131, 61);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(33, 13);
+            this.label62.TabIndex = 18;
+            this.label62.Text = Constantes.Unidades.Velocidad;
             // 
             // comboBoxTipoParametrosCierrePulgar
             // 
@@ -1088,6 +1168,16 @@
             this.comboBoxTipoParametrosCierrePulgar.Name = "comboBoxTipoParametrosCierrePulgar";
             this.comboBoxTipoParametrosCierrePulgar.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosCierrePulgar.TabIndex = 18;
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label63.Location = new System.Drawing.Point(131, 35);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(24, 13);
+            this.label63.TabIndex = 17;
+            this.label63.Text = Constantes.Unidades.Tiempo;
             // 
             // label12
             // 
@@ -1166,6 +1256,16 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Apertura";
             // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label58.Location = new System.Drawing.Point(131, 80);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(11, 13);
+            this.label58.TabIndex = 16;
+            this.label58.Text = Constantes.Unidades.Angulo;
+            // 
             // comboBoxTipoParametrosAperturaPulgar
             // 
             this.comboBoxTipoParametrosAperturaPulgar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1180,6 +1280,16 @@
             this.comboBoxTipoParametrosAperturaPulgar.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosAperturaPulgar.TabIndex = 10;
             // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label59.Location = new System.Drawing.Point(131, 54);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(33, 13);
+            this.label59.TabIndex = 15;
+            this.label59.Text = Constantes.Unidades.Velocidad;
+            // 
             // numericUpDownVelocidadAperturaPulgar
             // 
             this.numericUpDownVelocidadAperturaPulgar.AccessibleDescription = "1";
@@ -1188,6 +1298,16 @@
             this.numericUpDownVelocidadAperturaPulgar.Name = "numericUpDownVelocidadAperturaPulgar";
             this.numericUpDownVelocidadAperturaPulgar.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownVelocidadAperturaPulgar.TabIndex = 9;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label60.Location = new System.Drawing.Point(131, 28);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(24, 13);
+            this.label60.TabIndex = 14;
+            this.label60.Text = Constantes.Unidades.Tiempo;
             // 
             // numericUpDownAnguloAperturaPulgar
             // 
@@ -1279,6 +1399,16 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Cierre";
             // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label67.Location = new System.Drawing.Point(131, 87);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(11, 13);
+            this.label67.TabIndex = 19;
+            this.label67.Text = Constantes.Unidades.Angulo;
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -1288,6 +1418,16 @@
             this.label14.Size = new System.Drawing.Size(42, 13);
             this.label14.TabIndex = 12;
             this.label14.Text = "Tiempo";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label68.Location = new System.Drawing.Point(131, 61);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(33, 13);
+            this.label68.TabIndex = 18;
+            this.label68.Text = Constantes.Unidades.Velocidad;
             // 
             // comboBoxTipoParametrosCierreIndice
             // 
@@ -1302,6 +1442,16 @@
             this.comboBoxTipoParametrosCierreIndice.Name = "comboBoxTipoParametrosCierreIndice";
             this.comboBoxTipoParametrosCierreIndice.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosCierreIndice.TabIndex = 18;
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label69.Location = new System.Drawing.Point(131, 35);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(24, 13);
+            this.label69.TabIndex = 17;
+            this.label69.Text = Constantes.Unidades.Tiempo;
             // 
             // label15
             // 
@@ -1380,6 +1530,16 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Apertura";
             // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label64.Location = new System.Drawing.Point(131, 80);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(11, 13);
+            this.label64.TabIndex = 16;
+            this.label64.Text = Constantes.Unidades.Angulo;
+            // 
             // comboBoxTipoParametrosAperturaIndice
             // 
             this.comboBoxTipoParametrosAperturaIndice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1394,6 +1554,16 @@
             this.comboBoxTipoParametrosAperturaIndice.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosAperturaIndice.TabIndex = 10;
             // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label65.Location = new System.Drawing.Point(131, 54);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(33, 13);
+            this.label65.TabIndex = 15;
+            this.label65.Text = Constantes.Unidades.Velocidad;
+            // 
             // numericUpDownVelocidadAperturaIndice
             // 
             this.numericUpDownVelocidadAperturaIndice.AccessibleDescription = "1";
@@ -1402,6 +1572,16 @@
             this.numericUpDownVelocidadAperturaIndice.Name = "numericUpDownVelocidadAperturaIndice";
             this.numericUpDownVelocidadAperturaIndice.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownVelocidadAperturaIndice.TabIndex = 9;
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label66.Location = new System.Drawing.Point(131, 28);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(24, 13);
+            this.label66.TabIndex = 14;
+            this.label66.Text = Constantes.Unidades.Tiempo;
             // 
             // numericUpDownAnguloAperturaIndice
             // 
@@ -1492,6 +1672,16 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Cierre";
             // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label73.Location = new System.Drawing.Point(131, 87);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(11, 13);
+            this.label73.TabIndex = 19;
+            this.label73.Text = Constantes.Unidades.Angulo;
+            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -1501,6 +1691,16 @@
             this.label23.Size = new System.Drawing.Size(42, 13);
             this.label23.TabIndex = 12;
             this.label23.Text = "Tiempo";
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label74.Location = new System.Drawing.Point(131, 61);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(33, 13);
+            this.label74.TabIndex = 18;
+            this.label74.Text = Constantes.Unidades.Velocidad;
             // 
             // comboBoxTipoParametrosCierreCorazon
             // 
@@ -1515,6 +1715,16 @@
             this.comboBoxTipoParametrosCierreCorazon.Name = "comboBoxTipoParametrosCierreCorazon";
             this.comboBoxTipoParametrosCierreCorazon.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosCierreCorazon.TabIndex = 18;
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label75.Location = new System.Drawing.Point(131, 35);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(24, 13);
+            this.label75.TabIndex = 17;
+            this.label75.Text = Constantes.Unidades.Tiempo;
             // 
             // label24
             // 
@@ -1593,6 +1803,16 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Apertura";
             // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label70.Location = new System.Drawing.Point(131, 80);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(11, 13);
+            this.label70.TabIndex = 16;
+            this.label70.Text = Constantes.Unidades.Angulo;
+            // 
             // comboBoxTipoParametrosAperturaCorazon
             // 
             this.comboBoxTipoParametrosAperturaCorazon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1607,6 +1827,16 @@
             this.comboBoxTipoParametrosAperturaCorazon.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosAperturaCorazon.TabIndex = 10;
             // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label71.Location = new System.Drawing.Point(131, 54);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(33, 13);
+            this.label71.TabIndex = 15;
+            this.label71.Text = Constantes.Unidades.Velocidad;
+            // 
             // numericUpDownVelocidadAperturaCorazon
             // 
             this.numericUpDownVelocidadAperturaCorazon.AccessibleDescription = "1";
@@ -1615,6 +1845,16 @@
             this.numericUpDownVelocidadAperturaCorazon.Name = "numericUpDownVelocidadAperturaCorazon";
             this.numericUpDownVelocidadAperturaCorazon.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownVelocidadAperturaCorazon.TabIndex = 9;
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label72.Location = new System.Drawing.Point(131, 28);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(24, 13);
+            this.label72.TabIndex = 14;
+            this.label72.Text = Constantes.Unidades.Tiempo;
             // 
             // numericUpDownAnguloAperturaCorazon
             // 
@@ -1705,6 +1945,16 @@
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Cierre";
             // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label79.Location = new System.Drawing.Point(131, 87);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(11, 13);
+            this.label79.TabIndex = 16;
+            this.label79.Text = Constantes.Unidades.Angulo;
+            // 
             // label38
             // 
             this.label38.AutoSize = true;
@@ -1714,6 +1964,16 @@
             this.label38.Size = new System.Drawing.Size(42, 13);
             this.label38.TabIndex = 12;
             this.label38.Text = "Tiempo";
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label80.Location = new System.Drawing.Point(131, 61);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(33, 13);
+            this.label80.TabIndex = 15;
+            this.label80.Text = Constantes.Unidades.Velocidad;
             // 
             // comboBoxTipoParametrosCierreAnular
             // 
@@ -1728,6 +1988,16 @@
             this.comboBoxTipoParametrosCierreAnular.Name = "comboBoxTipoParametrosCierreAnular";
             this.comboBoxTipoParametrosCierreAnular.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosCierreAnular.TabIndex = 18;
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label81.Location = new System.Drawing.Point(131, 35);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(24, 13);
+            this.label81.TabIndex = 14;
+            this.label81.Text = Constantes.Unidades.Tiempo;
             // 
             // label39
             // 
@@ -1806,6 +2076,16 @@
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Apertura";
             // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label76.Location = new System.Drawing.Point(131, 80);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(11, 13);
+            this.label76.TabIndex = 16;
+            this.label76.Text = Constantes.Unidades.Angulo;
+            // 
             // comboBoxTipoParametrosAperturaAnular
             // 
             this.comboBoxTipoParametrosAperturaAnular.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1820,6 +2100,16 @@
             this.comboBoxTipoParametrosAperturaAnular.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosAperturaAnular.TabIndex = 10;
             // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label77.Location = new System.Drawing.Point(131, 54);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(33, 13);
+            this.label77.TabIndex = 15;
+            this.label77.Text = Constantes.Unidades.Velocidad;
+            // 
             // numericUpDownVelocidadAperturaAnular
             // 
             this.numericUpDownVelocidadAperturaAnular.AccessibleDescription = "1";
@@ -1828,6 +2118,16 @@
             this.numericUpDownVelocidadAperturaAnular.Name = "numericUpDownVelocidadAperturaAnular";
             this.numericUpDownVelocidadAperturaAnular.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownVelocidadAperturaAnular.TabIndex = 9;
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label78.Location = new System.Drawing.Point(131, 28);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(24, 13);
+            this.label78.TabIndex = 14;
+            this.label78.Text = Constantes.Unidades.Tiempo;
             // 
             // numericUpDownAnguloAperturaAnular
             // 
@@ -1918,6 +2218,16 @@
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Cierre";
             // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label85.Location = new System.Drawing.Point(131, 87);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(11, 13);
+            this.label85.TabIndex = 19;
+            this.label85.Text = Constantes.Unidades.Angulo;
+            // 
             // label32
             // 
             this.label32.AutoSize = true;
@@ -1927,6 +2237,16 @@
             this.label32.Size = new System.Drawing.Size(42, 13);
             this.label32.TabIndex = 12;
             this.label32.Text = "Tiempo";
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label86.Location = new System.Drawing.Point(131, 61);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(33, 13);
+            this.label86.TabIndex = 18;
+            this.label86.Text = Constantes.Unidades.Velocidad;
             // 
             // comboBoxTipoParametrosCierreMeñique
             // 
@@ -1941,6 +2261,16 @@
             this.comboBoxTipoParametrosCierreMeñique.Name = "comboBoxTipoParametrosCierreMeñique";
             this.comboBoxTipoParametrosCierreMeñique.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosCierreMeñique.TabIndex = 18;
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label87.Location = new System.Drawing.Point(131, 35);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(24, 13);
+            this.label87.TabIndex = 17;
+            this.label87.Text = Constantes.Unidades.Tiempo;
             // 
             // label33
             // 
@@ -2019,6 +2349,16 @@
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Apertura";
             // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label82.Location = new System.Drawing.Point(131, 80);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(11, 13);
+            this.label82.TabIndex = 16;
+            this.label82.Text = Constantes.Unidades.Angulo;
+            // 
             // comboBoxTipoParametrosAperturaMeñique
             // 
             this.comboBoxTipoParametrosAperturaMeñique.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -2033,6 +2373,16 @@
             this.comboBoxTipoParametrosAperturaMeñique.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosAperturaMeñique.TabIndex = 10;
             // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label83.Location = new System.Drawing.Point(131, 54);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(33, 13);
+            this.label83.TabIndex = 15;
+            this.label83.Text = Constantes.Unidades.Velocidad;
+            // 
             // numericUpDownVelocidadAperturaMeñique
             // 
             this.numericUpDownVelocidadAperturaMeñique.AccessibleDescription = "1";
@@ -2041,6 +2391,16 @@
             this.numericUpDownVelocidadAperturaMeñique.Name = "numericUpDownVelocidadAperturaMeñique";
             this.numericUpDownVelocidadAperturaMeñique.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownVelocidadAperturaMeñique.TabIndex = 9;
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label84.Location = new System.Drawing.Point(131, 28);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(24, 13);
+            this.label84.TabIndex = 14;
+            this.label84.Text = Constantes.Unidades.Tiempo;
             // 
             // numericUpDownAnguloAperturaMeñique
             // 
@@ -2209,6 +2569,16 @@
             this.label26.TabIndex = 12;
             this.label26.Text = "Tiempo";
             // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label92.Location = new System.Drawing.Point(132, 61);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(33, 13);
+            this.label92.TabIndex = 18;
+            this.label92.Text = Constantes.Unidades.Velocidad;
+            // 
             // comboBoxTipoParametrosCierrePinza
             // 
             this.comboBoxTipoParametrosCierrePinza.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -2222,6 +2592,16 @@
             this.comboBoxTipoParametrosCierrePinza.Name = "comboBoxTipoParametrosCierrePinza";
             this.comboBoxTipoParametrosCierrePinza.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosCierrePinza.TabIndex = 18;
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label93.Location = new System.Drawing.Point(132, 35);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(24, 13);
+            this.label93.TabIndex = 17;
+            this.label93.Text = Constantes.Unidades.Tiempo;
             // 
             // label27
             // 
@@ -2282,6 +2662,16 @@
             this.comboBoxTipoParametrosAperturaPinza.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoParametrosAperturaPinza.TabIndex = 10;
             // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label89.Location = new System.Drawing.Point(131, 54);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(33, 13);
+            this.label89.TabIndex = 15;
+            this.label89.Text = Constantes.Unidades.Velocidad;
+            // 
             // numericUpDownVelocidadAperturaPinza
             // 
             this.numericUpDownVelocidadAperturaPinza.AccessibleDescription = "2";
@@ -2290,6 +2680,16 @@
             this.numericUpDownVelocidadAperturaPinza.Name = "numericUpDownVelocidadAperturaPinza";
             this.numericUpDownVelocidadAperturaPinza.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownVelocidadAperturaPinza.TabIndex = 9;
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label90.Location = new System.Drawing.Point(131, 28);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(24, 13);
+            this.label90.TabIndex = 14;
+            this.label90.Text = Constantes.Unidades.Tiempo;
             // 
             // numericUpDownTiempoAperturaPinza
             // 
@@ -2453,406 +2853,6 @@
             this.label51.TabIndex = 11;
             this.label51.Text = "ROBOT PROTOTIPO REHABILITACION DE MANO: ROBHAND";
             // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.Location = new System.Drawing.Point(131, 28);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(26, 13);
-            this.label52.TabIndex = 11;
-            this.label52.Text = Constantes.Unidades.Tiempo;
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label53.Location = new System.Drawing.Point(131, 54);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(33, 13);
-            this.label53.TabIndex = 12;
-            this.label53.Text = Constantes.Unidades.Velocidad;
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.Location = new System.Drawing.Point(131, 80);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(11, 13);
-            this.label54.TabIndex = 13;
-            this.label54.Text = Constantes.Unidades.Angulo;
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.Location = new System.Drawing.Point(132, 87);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(11, 13);
-            this.label55.TabIndex = 16;
-            this.label55.Text = Constantes.Unidades.Angulo;
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.Location = new System.Drawing.Point(132, 61);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(33, 13);
-            this.label56.TabIndex = 15;
-            this.label56.Text = Constantes.Unidades.Velocidad;
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label57.Location = new System.Drawing.Point(132, 35);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(26, 13);
-            this.label57.TabIndex = 14;
-            this.label57.Text = Constantes.Unidades.Tiempo;
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.Location = new System.Drawing.Point(131, 80);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(11, 13);
-            this.label58.TabIndex = 16;
-            this.label58.Text = Constantes.Unidades.Angulo;
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label59.Location = new System.Drawing.Point(131, 54);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(33, 13);
-            this.label59.TabIndex = 15;
-            this.label59.Text = Constantes.Unidades.Velocidad;
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.Location = new System.Drawing.Point(131, 28);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(26, 13);
-            this.label60.TabIndex = 14;
-            this.label60.Text = Constantes.Unidades.Tiempo;
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label61.Location = new System.Drawing.Point(131, 87);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(11, 13);
-            this.label61.TabIndex = 19;
-            this.label61.Text = Constantes.Unidades.Angulo;
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label62.Location = new System.Drawing.Point(131, 61);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(33, 13);
-            this.label62.TabIndex = 18;
-            this.label62.Text = Constantes.Unidades.Velocidad;
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label63.Location = new System.Drawing.Point(131, 35);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(26, 13);
-            this.label63.TabIndex = 17;
-            this.label63.Text = Constantes.Unidades.Tiempo;
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.Location = new System.Drawing.Point(131, 80);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(11, 13);
-            this.label64.TabIndex = 16;
-            this.label64.Text = Constantes.Unidades.Angulo;
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label65.Location = new System.Drawing.Point(131, 54);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(33, 13);
-            this.label65.TabIndex = 15;
-            this.label65.Text = Constantes.Unidades.Velocidad;
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label66.Location = new System.Drawing.Point(131, 28);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(26, 13);
-            this.label66.TabIndex = 14;
-            this.label66.Text = Constantes.Unidades.Tiempo;
-            // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label67.Location = new System.Drawing.Point(131, 87);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(11, 13);
-            this.label67.TabIndex = 19;
-            this.label67.Text = Constantes.Unidades.Angulo;
-            // 
-            // label68
-            // 
-            this.label68.AutoSize = true;
-            this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label68.Location = new System.Drawing.Point(131, 61);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(33, 13);
-            this.label68.TabIndex = 18;
-            this.label68.Text = Constantes.Unidades.Velocidad;
-            // 
-            // label69
-            // 
-            this.label69.AutoSize = true;
-            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label69.Location = new System.Drawing.Point(131, 35);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(26, 13);
-            this.label69.TabIndex = 17;
-            this.label69.Text = Constantes.Unidades.Tiempo;
-            // 
-            // label70
-            // 
-            this.label70.AutoSize = true;
-            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label70.Location = new System.Drawing.Point(131, 80);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(11, 13);
-            this.label70.TabIndex = 16;
-            this.label70.Text = Constantes.Unidades.Angulo;
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label71.Location = new System.Drawing.Point(131, 54);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(33, 13);
-            this.label71.TabIndex = 15;
-            this.label71.Text = Constantes.Unidades.Velocidad;
-            // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label72.Location = new System.Drawing.Point(131, 28);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(26, 13);
-            this.label72.TabIndex = 14;
-            this.label72.Text = Constantes.Unidades.Tiempo;
-            // 
-            // label73
-            // 
-            this.label73.AutoSize = true;
-            this.label73.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label73.Location = new System.Drawing.Point(131, 87);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(11, 13);
-            this.label73.TabIndex = 19;
-            this.label73.Text = Constantes.Unidades.Angulo;
-            // 
-            // label74
-            // 
-            this.label74.AutoSize = true;
-            this.label74.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label74.Location = new System.Drawing.Point(131, 61);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(33, 13);
-            this.label74.TabIndex = 18;
-            this.label74.Text = Constantes.Unidades.Velocidad;
-            // 
-            // label75
-            // 
-            this.label75.AutoSize = true;
-            this.label75.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label75.Location = new System.Drawing.Point(131, 35);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(26, 13);
-            this.label75.TabIndex = 17;
-            this.label75.Text = Constantes.Unidades.Tiempo;
-            // 
-            // label76
-            // 
-            this.label76.AutoSize = true;
-            this.label76.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label76.Location = new System.Drawing.Point(131, 80);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(11, 13);
-            this.label76.TabIndex = 16;
-            this.label76.Text = Constantes.Unidades.Angulo;
-            // 
-            // label77
-            // 
-            this.label77.AutoSize = true;
-            this.label77.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label77.Location = new System.Drawing.Point(131, 54);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(33, 13);
-            this.label77.TabIndex = 15;
-            this.label77.Text = Constantes.Unidades.Velocidad;
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label78.Location = new System.Drawing.Point(131, 28);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(26, 13);
-            this.label78.TabIndex = 14;
-            this.label78.Text = Constantes.Unidades.Tiempo;
-            // 
-            // label79
-            // 
-            this.label79.AutoSize = true;
-            this.label79.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label79.Location = new System.Drawing.Point(131, 87);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(11, 13);
-            this.label79.TabIndex = 16;
-            this.label79.Text = Constantes.Unidades.Angulo;
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label80.Location = new System.Drawing.Point(131, 61);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(33, 13);
-            this.label80.TabIndex = 15;
-            this.label80.Text = Constantes.Unidades.Velocidad;
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label81.Location = new System.Drawing.Point(131, 35);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(26, 13);
-            this.label81.TabIndex = 14;
-            this.label81.Text = Constantes.Unidades.Tiempo;
-            // 
-            // label82
-            // 
-            this.label82.AutoSize = true;
-            this.label82.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label82.Location = new System.Drawing.Point(131, 80);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(11, 13);
-            this.label82.TabIndex = 16;
-            this.label82.Text = Constantes.Unidades.Angulo;
-            // 
-            // label83
-            // 
-            this.label83.AutoSize = true;
-            this.label83.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label83.Location = new System.Drawing.Point(131, 54);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(33, 13);
-            this.label83.TabIndex = 15;
-            this.label83.Text = Constantes.Unidades.Velocidad;
-            // 
-            // label84
-            // 
-            this.label84.AutoSize = true;
-            this.label84.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label84.Location = new System.Drawing.Point(131, 28);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(26, 13);
-            this.label84.TabIndex = 14;
-            this.label84.Text = Constantes.Unidades.Tiempo;
-            // 
-            // label85
-            // 
-            this.label85.AutoSize = true;
-            this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label85.Location = new System.Drawing.Point(131, 87);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(11, 13);
-            this.label85.TabIndex = 19;
-            this.label85.Text = Constantes.Unidades.Angulo;
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label86.Location = new System.Drawing.Point(131, 61);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(33, 13);
-            this.label86.TabIndex = 18;
-            this.label86.Text = Constantes.Unidades.Velocidad;
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label87.Location = new System.Drawing.Point(131, 35);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(26, 13);
-            this.label87.TabIndex = 17;
-            this.label87.Text = Constantes.Unidades.Tiempo;
-            // 
-            // label89
-            // 
-            this.label89.AutoSize = true;
-            this.label89.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label89.Location = new System.Drawing.Point(131, 54);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(33, 13);
-            this.label89.TabIndex = 15;
-            this.label89.Text = Constantes.Unidades.Velocidad;
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label90.Location = new System.Drawing.Point(131, 28);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(26, 13);
-            this.label90.TabIndex = 14;
-            this.label90.Text = Constantes.Unidades.Tiempo;
-            // 
-            // label92
-            // 
-            this.label92.AutoSize = true;
-            this.label92.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label92.Location = new System.Drawing.Point(132, 61);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(33, 13);
-            this.label92.TabIndex = 18;
-            this.label92.Text = Constantes.Unidades.Velocidad;
-            // 
-            // label93
-            // 
-            this.label93.AutoSize = true;
-            this.label93.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label93.Location = new System.Drawing.Point(132, 35);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(26, 13);
-            this.label93.TabIndex = 17;
-            this.label93.Text = Constantes.Unidades.Tiempo;
-            // 
             // SeleccionDePaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2866,10 +2866,12 @@
             this.Controls.Add(this.lblNombreCuenta);
             this.Controls.Add(this.treeViewPacientes);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "SeleccionDePaciente";
-            this.Text = "Prototipo de Robot de Rehabilitacion de Mano - v1.0";
+            this.Text = Constantes.TituloVentana;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);

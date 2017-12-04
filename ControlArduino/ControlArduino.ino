@@ -24,8 +24,10 @@ void setup() {
 
 // the loop function runs over and over again until power down or reset
 void loop() {
-	if (Serial.available())
-		servo.writeMicroseconds(map(Serial.parseInt(),0,50,1050,2000));
+	/*if (Serial.available())
+		servo.writeMicroseconds(map(Serial.parseInt(),0,50,1050,2000));*/
+	//servo.write(150, 2, true);
+	//servo.write(60, 255, true);
 }
 
 bool handShake()

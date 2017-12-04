@@ -18,15 +18,15 @@
 24	
 25	// the loop function runs over and over again until power down or reset
 --&gt;26	void loop() {
-27		if (Serial.available())
-28			servo.writeMicroseconds(map(Serial.parseInt(),0,50,1050,2000));
-29	}
-30	
-31	bool handShake()
-32	{
-33		while (!Serial.availableForWrite()) {}
-34		Serial.println("READY");
-35		while (true)
+27		/*if (Serial.available())
+28			servo.writeMicroseconds(map(Serial.parseInt(),0,50,1050,2000));*/
+29		//servo.write(150, 2, true);
+30		//servo.write(60, 255, true);
+31	}
+32	
+33	bool handShake()
+34	{
+35		while (!Serial.availableForWrite()) {}
 </Source>
         <MessageVariables>
           <MessageVariable Name="millis()" Index="1" />
