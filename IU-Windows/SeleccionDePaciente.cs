@@ -375,6 +375,7 @@ namespace IU_Windows
             if(respuseta == DialogResult.Yes)
             {
                 new SQLHelper().EliminarPaciente(paciente);
+                groupBoxDatosPaciente.Hide();
                 CargarListaPacientes(usuario.SqlId);
             }
         }

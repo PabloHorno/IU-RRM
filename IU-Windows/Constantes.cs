@@ -10,6 +10,12 @@ namespace IU_Windows
         static public string EnlaceGitHub = "https://github.com/PabloHorno";
         static public Int32 VelocidadComunicacion = 9600;
         static public Int32 TiempoDeBusqueda = 2000; //Milisegundos de busqueda en puerto COM
+        static public class Unidades
+        {
+            static public string Velocidad = "°/seg";
+            static public string Angulo = "°";
+            static public string Tiempo = "seg";
+        }
         static public void AcercaDe()
         {
             System.Windows.Forms.MessageBox.Show($"Este es un programa desarollado por\n{Constantes.Autor}", $"Version {Constantes.Version}", 
