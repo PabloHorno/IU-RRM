@@ -324,11 +324,6 @@ namespace IU_Windows
             MessageBox.Show(JsonConvert.SerializeObject(parametros));
         }
 
-        private void tabPage3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnActualizarObservaciones_Click(object sender, EventArgs e)
         {
             paciente.Observaciones = this.richTextBoxObservaciones.Text;
@@ -354,6 +349,7 @@ namespace IU_Windows
             this.btnIniciarTerapia.Enabled = true;
             this.progressBar1.Style = ProgressBarStyle.Marquee;
             tiempoTranscurridoTerapia.Reset();
+            MessageBox.Show("Fin de Terapia");
         }
         private void Thread_DoWork(object sender, DoWorkEventArgs e)
         {
