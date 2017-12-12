@@ -378,7 +378,7 @@
             this.nuevoPacienteToolStripMenuItem.Name = "nuevoPacienteToolStripMenuItem";
             this.nuevoPacienteToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.nuevoPacienteToolStripMenuItem.Text = "Nuevo Paciente";
-            this.nuevoPacienteToolStripMenuItem.Click += new System.EventHandler(this.nuevoPacienteToolStripMenuItem_Click);
+            this.nuevoPacienteToolStripMenuItem.Click += new System.EventHandler(this.crearPacienteForm);
             // 
             // salirToolStripMenuItem
             // 
@@ -833,9 +833,9 @@
             this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label55.Location = new System.Drawing.Point(132, 87);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(11, 13);
+            this.label55.Size = new System.Drawing.Size(39, 13);
             this.label55.TabIndex = 16;
-            this.label55.Text = Constantes.Unidades.Angulo;
+            this.label55.Text = "grados";
             // 
             // label5
             // 
@@ -853,9 +853,9 @@
             this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label56.Location = new System.Drawing.Point(132, 61);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(33, 13);
+            this.label56.Size = new System.Drawing.Size(61, 13);
             this.label56.TabIndex = 15;
-            this.label56.Text = Constantes.Unidades.Velocidad;
+            this.label56.Text = "grados/seg";
             // 
             // comboBoxTipoParametrosCierreCompleta
             // 
@@ -879,7 +879,7 @@
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(24, 13);
             this.label57.TabIndex = 14;
-            this.label57.Text = Constantes.Unidades.Tiempo;
+            this.label57.Text = "seg";
             // 
             // label7
             // 
@@ -964,9 +964,9 @@
             this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label54.Location = new System.Drawing.Point(131, 80);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(11, 13);
+            this.label54.Size = new System.Drawing.Size(39, 13);
             this.label54.TabIndex = 13;
-            this.label54.Text = Constantes.Unidades.Angulo;
+            this.label54.Text = "grados";
             // 
             // label53
             // 
@@ -974,9 +974,9 @@
             this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label53.Location = new System.Drawing.Point(131, 54);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(33, 13);
+            this.label53.Size = new System.Drawing.Size(61, 13);
             this.label53.TabIndex = 12;
-            this.label53.Text = Constantes.Unidades.Velocidad;
+            this.label53.Text = "grados/seg";
             // 
             // label52
             // 
@@ -986,7 +986,7 @@
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(24, 13);
             this.label52.TabIndex = 11;
-            this.label52.Text = Constantes.Unidades.Tiempo;
+            this.label52.Text = "seg";
             // 
             // comboBoxTipoParametrosAperturaCompleta
             // 
@@ -1131,9 +1131,9 @@
             this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label61.Location = new System.Drawing.Point(131, 87);
             this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(11, 13);
+            this.label61.Size = new System.Drawing.Size(39, 13);
             this.label61.TabIndex = 19;
-            this.label61.Text = Constantes.Unidades.Angulo;
+            this.label61.Text = "grados";
             // 
             // label11
             // 
@@ -1151,9 +1151,9 @@
             this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label62.Location = new System.Drawing.Point(131, 61);
             this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(33, 13);
+            this.label62.Size = new System.Drawing.Size(61, 13);
             this.label62.TabIndex = 18;
-            this.label62.Text = Constantes.Unidades.Velocidad;
+            this.label62.Text = "grados/seg";
             // 
             // comboBoxTipoParametrosCierrePulgar
             // 
@@ -1177,7 +1177,7 @@
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(24, 13);
             this.label63.TabIndex = 17;
-            this.label63.Text = Constantes.Unidades.Tiempo;
+            this.label63.Text = "seg";
             // 
             // label12
             // 
@@ -1262,9 +1262,9 @@
             this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label58.Location = new System.Drawing.Point(131, 80);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(11, 13);
+            this.label58.Size = new System.Drawing.Size(39, 13);
             this.label58.TabIndex = 16;
-            this.label58.Text = Constantes.Unidades.Angulo;
+            this.label58.Text = "grados";
             // 
             // comboBoxTipoParametrosAperturaPulgar
             // 
@@ -1286,9 +1286,9 @@
             this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label59.Location = new System.Drawing.Point(131, 54);
             this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(33, 13);
+            this.label59.Size = new System.Drawing.Size(61, 13);
             this.label59.TabIndex = 15;
-            this.label59.Text = Constantes.Unidades.Velocidad;
+            this.label59.Text = "grados/seg";
             // 
             // numericUpDownVelocidadAperturaPulgar
             // 
@@ -1307,7 +1307,7 @@
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(24, 13);
             this.label60.TabIndex = 14;
-            this.label60.Text = Constantes.Unidades.Tiempo;
+            this.label60.Text = "seg";
             // 
             // numericUpDownAnguloAperturaPulgar
             // 
@@ -1405,9 +1405,9 @@
             this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label67.Location = new System.Drawing.Point(131, 87);
             this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(11, 13);
+            this.label67.Size = new System.Drawing.Size(39, 13);
             this.label67.TabIndex = 19;
-            this.label67.Text = Constantes.Unidades.Angulo;
+            this.label67.Text = "grados";
             // 
             // label14
             // 
@@ -1425,9 +1425,9 @@
             this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label68.Location = new System.Drawing.Point(131, 61);
             this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(33, 13);
+            this.label68.Size = new System.Drawing.Size(61, 13);
             this.label68.TabIndex = 18;
-            this.label68.Text = Constantes.Unidades.Velocidad;
+            this.label68.Text = "grados/seg";
             // 
             // comboBoxTipoParametrosCierreIndice
             // 
@@ -1451,7 +1451,7 @@
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(24, 13);
             this.label69.TabIndex = 17;
-            this.label69.Text = Constantes.Unidades.Tiempo;
+            this.label69.Text = "seg";
             // 
             // label15
             // 
@@ -1536,9 +1536,9 @@
             this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label64.Location = new System.Drawing.Point(131, 80);
             this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(11, 13);
+            this.label64.Size = new System.Drawing.Size(39, 13);
             this.label64.TabIndex = 16;
-            this.label64.Text = Constantes.Unidades.Angulo;
+            this.label64.Text = "grados";
             // 
             // comboBoxTipoParametrosAperturaIndice
             // 
@@ -1560,9 +1560,9 @@
             this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label65.Location = new System.Drawing.Point(131, 54);
             this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(33, 13);
+            this.label65.Size = new System.Drawing.Size(61, 13);
             this.label65.TabIndex = 15;
-            this.label65.Text = Constantes.Unidades.Velocidad;
+            this.label65.Text = "grados/seg";
             // 
             // numericUpDownVelocidadAperturaIndice
             // 
@@ -1581,7 +1581,7 @@
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(24, 13);
             this.label66.TabIndex = 14;
-            this.label66.Text = Constantes.Unidades.Tiempo;
+            this.label66.Text = "seg";
             // 
             // numericUpDownAnguloAperturaIndice
             // 
@@ -1678,9 +1678,9 @@
             this.label73.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label73.Location = new System.Drawing.Point(131, 87);
             this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(11, 13);
+            this.label73.Size = new System.Drawing.Size(39, 13);
             this.label73.TabIndex = 19;
-            this.label73.Text = Constantes.Unidades.Angulo;
+            this.label73.Text = "grados";
             // 
             // label23
             // 
@@ -1698,9 +1698,9 @@
             this.label74.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label74.Location = new System.Drawing.Point(131, 61);
             this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(33, 13);
+            this.label74.Size = new System.Drawing.Size(61, 13);
             this.label74.TabIndex = 18;
-            this.label74.Text = Constantes.Unidades.Velocidad;
+            this.label74.Text = "grados/seg";
             // 
             // comboBoxTipoParametrosCierreCorazon
             // 
@@ -1724,7 +1724,7 @@
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(24, 13);
             this.label75.TabIndex = 17;
-            this.label75.Text = Constantes.Unidades.Tiempo;
+            this.label75.Text = "seg";
             // 
             // label24
             // 
@@ -1809,9 +1809,9 @@
             this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label70.Location = new System.Drawing.Point(131, 80);
             this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(11, 13);
+            this.label70.Size = new System.Drawing.Size(39, 13);
             this.label70.TabIndex = 16;
-            this.label70.Text = Constantes.Unidades.Angulo;
+            this.label70.Text = "grados";
             // 
             // comboBoxTipoParametrosAperturaCorazon
             // 
@@ -1833,9 +1833,9 @@
             this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label71.Location = new System.Drawing.Point(131, 54);
             this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(33, 13);
+            this.label71.Size = new System.Drawing.Size(61, 13);
             this.label71.TabIndex = 15;
-            this.label71.Text = Constantes.Unidades.Velocidad;
+            this.label71.Text = "grados/seg";
             // 
             // numericUpDownVelocidadAperturaCorazon
             // 
@@ -1854,7 +1854,7 @@
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(24, 13);
             this.label72.TabIndex = 14;
-            this.label72.Text = Constantes.Unidades.Tiempo;
+            this.label72.Text = "seg";
             // 
             // numericUpDownAnguloAperturaCorazon
             // 
@@ -1951,9 +1951,9 @@
             this.label79.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label79.Location = new System.Drawing.Point(131, 87);
             this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(11, 13);
+            this.label79.Size = new System.Drawing.Size(39, 13);
             this.label79.TabIndex = 16;
-            this.label79.Text = Constantes.Unidades.Angulo;
+            this.label79.Text = "grados";
             // 
             // label38
             // 
@@ -1971,9 +1971,9 @@
             this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label80.Location = new System.Drawing.Point(131, 61);
             this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(33, 13);
+            this.label80.Size = new System.Drawing.Size(61, 13);
             this.label80.TabIndex = 15;
-            this.label80.Text = Constantes.Unidades.Velocidad;
+            this.label80.Text = "grados/seg";
             // 
             // comboBoxTipoParametrosCierreAnular
             // 
@@ -1997,7 +1997,7 @@
             this.label81.Name = "label81";
             this.label81.Size = new System.Drawing.Size(24, 13);
             this.label81.TabIndex = 14;
-            this.label81.Text = Constantes.Unidades.Tiempo;
+            this.label81.Text = "seg";
             // 
             // label39
             // 
@@ -2082,9 +2082,9 @@
             this.label76.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label76.Location = new System.Drawing.Point(131, 80);
             this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(11, 13);
+            this.label76.Size = new System.Drawing.Size(39, 13);
             this.label76.TabIndex = 16;
-            this.label76.Text = Constantes.Unidades.Angulo;
+            this.label76.Text = "grados";
             // 
             // comboBoxTipoParametrosAperturaAnular
             // 
@@ -2106,9 +2106,9 @@
             this.label77.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label77.Location = new System.Drawing.Point(131, 54);
             this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(33, 13);
+            this.label77.Size = new System.Drawing.Size(61, 13);
             this.label77.TabIndex = 15;
-            this.label77.Text = Constantes.Unidades.Velocidad;
+            this.label77.Text = "grados/seg";
             // 
             // numericUpDownVelocidadAperturaAnular
             // 
@@ -2127,7 +2127,7 @@
             this.label78.Name = "label78";
             this.label78.Size = new System.Drawing.Size(24, 13);
             this.label78.TabIndex = 14;
-            this.label78.Text = Constantes.Unidades.Tiempo;
+            this.label78.Text = "seg";
             // 
             // numericUpDownAnguloAperturaAnular
             // 
@@ -2224,9 +2224,9 @@
             this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label85.Location = new System.Drawing.Point(131, 87);
             this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(11, 13);
+            this.label85.Size = new System.Drawing.Size(39, 13);
             this.label85.TabIndex = 19;
-            this.label85.Text = Constantes.Unidades.Angulo;
+            this.label85.Text = "grados";
             // 
             // label32
             // 
@@ -2244,9 +2244,9 @@
             this.label86.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label86.Location = new System.Drawing.Point(131, 61);
             this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(33, 13);
+            this.label86.Size = new System.Drawing.Size(61, 13);
             this.label86.TabIndex = 18;
-            this.label86.Text = Constantes.Unidades.Velocidad;
+            this.label86.Text = "grados/seg";
             // 
             // comboBoxTipoParametrosCierreMeñique
             // 
@@ -2270,7 +2270,7 @@
             this.label87.Name = "label87";
             this.label87.Size = new System.Drawing.Size(24, 13);
             this.label87.TabIndex = 17;
-            this.label87.Text = Constantes.Unidades.Tiempo;
+            this.label87.Text = "seg";
             // 
             // label33
             // 
@@ -2355,9 +2355,9 @@
             this.label82.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label82.Location = new System.Drawing.Point(131, 80);
             this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(11, 13);
+            this.label82.Size = new System.Drawing.Size(39, 13);
             this.label82.TabIndex = 16;
-            this.label82.Text = Constantes.Unidades.Angulo;
+            this.label82.Text = "grados";
             // 
             // comboBoxTipoParametrosAperturaMeñique
             // 
@@ -2379,9 +2379,9 @@
             this.label83.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label83.Location = new System.Drawing.Point(131, 54);
             this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(33, 13);
+            this.label83.Size = new System.Drawing.Size(61, 13);
             this.label83.TabIndex = 15;
-            this.label83.Text = Constantes.Unidades.Velocidad;
+            this.label83.Text = "grados/seg";
             // 
             // numericUpDownVelocidadAperturaMeñique
             // 
@@ -2400,7 +2400,7 @@
             this.label84.Name = "label84";
             this.label84.Size = new System.Drawing.Size(24, 13);
             this.label84.TabIndex = 14;
-            this.label84.Text = Constantes.Unidades.Tiempo;
+            this.label84.Text = "seg";
             // 
             // numericUpDownAnguloAperturaMeñique
             // 
@@ -2575,9 +2575,9 @@
             this.label92.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label92.Location = new System.Drawing.Point(132, 61);
             this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(33, 13);
+            this.label92.Size = new System.Drawing.Size(61, 13);
             this.label92.TabIndex = 18;
-            this.label92.Text = Constantes.Unidades.Velocidad;
+            this.label92.Text = "grados/seg";
             // 
             // comboBoxTipoParametrosCierrePinza
             // 
@@ -2601,7 +2601,7 @@
             this.label93.Name = "label93";
             this.label93.Size = new System.Drawing.Size(24, 13);
             this.label93.TabIndex = 17;
-            this.label93.Text = Constantes.Unidades.Tiempo;
+            this.label93.Text = "seg";
             // 
             // label27
             // 
@@ -2668,9 +2668,9 @@
             this.label89.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label89.Location = new System.Drawing.Point(131, 54);
             this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(33, 13);
+            this.label89.Size = new System.Drawing.Size(61, 13);
             this.label89.TabIndex = 15;
-            this.label89.Text = Constantes.Unidades.Velocidad;
+            this.label89.Text = "grados/seg";
             // 
             // numericUpDownVelocidadAperturaPinza
             // 
@@ -2689,7 +2689,7 @@
             this.label90.Name = "label90";
             this.label90.Size = new System.Drawing.Size(24, 13);
             this.label90.TabIndex = 14;
-            this.label90.Text = Constantes.Unidades.Tiempo;
+            this.label90.Text = "seg";
             // 
             // numericUpDownTiempoAperturaPinza
             // 
@@ -2803,7 +2803,7 @@
             // 
             this.lblNombreCuenta.AutoSize = true;
             this.lblNombreCuenta.BackColor = System.Drawing.Color.White;
-            this.lblNombreCuenta.Location = new System.Drawing.Point(1097, 9);
+            this.lblNombreCuenta.Location = new System.Drawing.Point(1097, 6);
             this.lblNombreCuenta.Name = "lblNombreCuenta";
             this.lblNombreCuenta.Size = new System.Drawing.Size(88, 13);
             this.lblNombreCuenta.TabIndex = 7;
@@ -2871,7 +2871,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "SeleccionDePaciente";
-            this.Text = Constantes.TituloVentana;
+            this.Text = "Robot prototipo de Rehabilitacion de Mano - v1.0 @PHP";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);

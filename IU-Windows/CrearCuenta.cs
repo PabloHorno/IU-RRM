@@ -37,7 +37,7 @@ namespace IU_Windows
             inputContraseña.UseSystemPasswordChar = !inputContraseña.UseSystemPasswordChar;
         }
 
-        private void BtnCrearCuenta_Click(object sender, EventArgs e)
+        private void BtnCrearCuenta_Click(object sender, EventArgs eventArgs)
         {
             bool error = false;
             requeridos.ForEach(delegate (Tuple<TextBox, Label> x)
@@ -60,14 +60,8 @@ namespace IU_Windows
                 return;
             }
             if (!validarContraseña())
-            {   
-                lblErrorCrearCuenta.Text = "Las contraseñas no coinciden";
-                return;
-            }
-            Usuario usuario = new SQLHelper().GetUsuario(lblNombre.Text);
-            if (usuario != null)
             {
-                lblErrorCrearCuenta.Text = $"El nombre de usuario {inputNombre.Text} no esta disponible. Utilize otro nombre";
+                lblErrorCrearCuenta.Text = "Las contraseñas no coinciden";
                 return;
             }
             SQLHelper db = new SQLHelper();
@@ -77,8 +71,20 @@ namespace IU_Windows
             parametros.Add("@Correo", inputCorreo.Text);
             parametros.Add("@FechaDeNacimiento", inputNacimiento.Text);
             parametros.Add("@Contraseña", Helper.encprytPassword(inputContraseña.Text));
-            db.Query("INSERT INTO Usuarios (Nombre,Contraseña,Apellidos,Correo) VALUES (@Nombre, @Contraseña, @Apellidos, @Correo)", parametros);
+            try
+            {
+                db.Query("INSERT INTO Usuarios (Nombre,Contraseña,Apellidos,Correo) VALUES (@Nombre, @Contraseña, @Apellidos, @Correo)", parametros);
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                if(e.Number == 2627)
+                    lblErrorCrearCuenta.Text = "El nombre de usuario '" + inputNombre.Text + "' ya esta en uso. Utiliza otro nombre";
+                return;
+            }
 
+            MessageBox.Show($"Usuario {inputNombre.Text} creado correctamente.\nAhora puede iniciar sesion con su usuario y contraseña", "Creacion Correcta", MessageBoxButtons.OK);
+            this.Close();
+            new Inicio().Show();
         }
 
         private void setRequeridos()

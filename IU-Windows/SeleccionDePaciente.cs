@@ -26,8 +26,8 @@ namespace IU_Windows
             InitializeComponent();
             Inicializacion();
             CargarListaPacientes(sqlId);
-            treeViewPacientes.NodeMouseDoubleClick += TreeView1_NodeMouseDoubleClick;
-            treeViewPacientes.NodeMouseClick += treeViewPacientes_NodeMouseClick1;
+            treeViewPacientes.NodeMouseDoubleClick += treeViewPacientesDobleClick;
+            treeViewPacientes.NodeMouseClick += treeViewPacientesClick;
 
         }
 
@@ -109,13 +109,16 @@ namespace IU_Windows
 
         private void TextBoxBusqueda_TextChanged(object sender, EventArgs e)
         {
-            CargarListaPacientes(usuario.SqlId);
+            CargarListaPacientes();
         }
 
         private void HandlerHabilitarInicioTerapia(object sender, System.EventArgs e)
         {
             TipoTerapia tipoTerapia = (TipoTerapia)this.comboBoxSeleccionTerapia.SelectedIndex;
             bool enable = true;
+
+            if (numRepeticiones.Value == 0)
+                enable = false;
 
             foreach (var prop in this.GetType().GetFields(System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance))
             {
@@ -161,7 +164,7 @@ namespace IU_Windows
             this.btnActualizarObservaciones.Enabled = true;
         }
 
-        private void treeViewPacientes_NodeMouseClick1(object sender, TreeNodeMouseClickEventArgs e)
+        private void treeViewPacientesClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             int SqlId;
 
@@ -183,17 +186,19 @@ namespace IU_Windows
             }
         }
 
-        private void TreeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        private void treeViewPacientesDobleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             if (e.Node.Text.Contains("Añadir Paciente"))
             {
-                CrearPaciente crearPaciente = new CrearPaciente();
-                crearPaciente.Show();
+                crearPacienteForm(sender, e);
             }
         }
 
-        private void CargarListaPacientes(int sqlId)
+        private void CargarListaPacientes(int sqlId = -1)
         {
+            if (sqlId == -1)
+                sqlId = usuario.SqlId;
+
             treeViewPacientes.BeginUpdate();
             treeViewPacientes.Nodes.Clear();
             treeViewPacientes.Nodes.Add("Pacientes");
@@ -289,10 +294,11 @@ namespace IU_Windows
             Constantes.AcercaDe();
         }
 
-        private void nuevoPacienteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void crearPacienteForm(object sender, EventArgs e)
         {
             CrearPaciente crearPaciente = new CrearPaciente();
-            crearPaciente.Show();
+            crearPaciente.ShowDialog();
+            CargarListaPacientes();
         }
 
 
@@ -376,7 +382,7 @@ namespace IU_Windows
             {
                 new SQLHelper().EliminarPaciente(paciente);
                 groupBoxDatosPaciente.Hide();
-                CargarListaPacientes(usuario.SqlId);
+                CargarListaPacientes();
             }
         }
     }

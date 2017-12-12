@@ -249,13 +249,11 @@ namespace IU_Windows
             if (reader.HasRows)
                 while (reader.Read())
                 {
-                    System.Windows.Forms.MessageBox.Show("SIPE");
                     usuario = ReaderToUser(reader);
                     this.Close();
                     return usuario;
                 }
             this.Close();
-            System.Windows.Forms.MessageBox.Show("NOPE");
             return usuario;
         }
         public Paciente GetPaciente(Int32 SqlId)
