@@ -38,6 +38,11 @@ namespace IU_Windows
             List<Terapia> terapias = db.GetTerapiasFromPaciente(this);
             return terapias;
         }
+        public void GuardarTerapia(Terapia terapia)
+        {
+            SQLHelper db = new SQLHelper();
+            db.GuardarTerapiaPaciente(this, terapia);
+        }
         public TimeSpan GetHorasTerapias()
         {
             return new SQLHelper().GetHorasTerapiasFromPaciente(this);

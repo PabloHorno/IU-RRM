@@ -284,11 +284,6 @@ namespace IU_Windows
             inicio.Show();
         }
 
-        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void acercaDeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Constantes.AcercaDe();
@@ -348,6 +343,8 @@ namespace IU_Windows
         {
             this.btnIniciarTerapia.Enabled = true;
             this.progressBar1.Style = ProgressBarStyle.Marquee;
+            Terapia terapia = new Terapia();
+            paciente.GuardarTerapia(terapia);
             tiempoTranscurridoTerapia.Reset();
             MessageBox.Show("Fin de Terapia");
         }

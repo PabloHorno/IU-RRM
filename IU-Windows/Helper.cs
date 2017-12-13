@@ -347,6 +347,22 @@ namespace IU_Windows
             }
             return numTerapias;
         }
+        public void GuardarTerapiaPaciente(Paciente paciente, Terapia terapia)
+        {
+            string query = "INSERT INTO Terapias(SqlIdPaciente, Repeticiones, Tipo, Duracion, Parametros, Observaciones, Fecha) VALUE(@SqlIdPaciente, @Repeticiones, @Tipo, @Duracion, @Parametros, @Observaciones, @Fecha)";
+            SqlCommand cmd = new SqlCommand(query, sql);
+            cmd.Parameters.AddWithValue("@SqlIdPaciente", paciente.SqlId);
+            cmd.Parameters.AddWithValue("@Repeticiones", terapia.Repeticiones);
+            cmd.Parameters.AddWithValue("@Tipo", terapia.tipoTerapia);
+            cmd.Parameters.AddWithValue("@Duracion", terapia.Duracion);
+            cmd.Parameters.AddWithValue("@Fecha", terapia.Fecha);
+            cmd.Parameters.AddWithValue("@Parametros", terapia.Parametros);
+            cmd.Parameters.AddWithValue("@Observaciones", terapia.Observaciones);
+            this.Open();
+            cmd.ExecuteNonQuery();
+            this.Close();
+
+        }
         public void InsertarPaciente(Paciente paciente)
         {
             string query = "INSERT INTO Pacientes (Nombre, Apellidos, Responsable, FechaDeNacimiento) VALUES (@Nombre, @Apellidos, @Responsable,@FechaDeNacimiento)";

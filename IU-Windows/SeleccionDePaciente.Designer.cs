@@ -408,7 +408,6 @@
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
             this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.acercaDeToolStripMenuItem.Text = "Ayuda";
-            this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
             // acercaDeToolStripMenuItem1
             // 
@@ -690,7 +689,6 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nueva Terapia";
             this.tabPage3.UseVisualStyleBackColor = true;
-            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
             // groupBoxEjecucionTerapia
             // 
