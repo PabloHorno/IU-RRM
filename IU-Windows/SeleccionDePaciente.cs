@@ -304,8 +304,13 @@ namespace IU_Windows
 
         private void btnGuardarTerapia_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(ParametrosToJson());
+        }
+        Dictionary<string, decimal> GetParametros()
+        {
             Dictionary<string, decimal> parametros = new Dictionary<string, decimal>();
             parametros.Add("tipoTerapia", comboBoxSeleccionTerapia.SelectedIndex);
+            parametros.Add("repeticiones", numRepeticiones.Value);
             foreach (var field in this.GetType().GetFields(System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance))
             {
 
@@ -316,7 +321,11 @@ namespace IU_Windows
                         parametros.Add(obj.Name, obj.Value);
                 }
             }
-            MessageBox.Show(JsonConvert.SerializeObject(parametros));
+            return parametros;
+        }
+        string ParametrosToJson()
+        {
+            return JsonConvert.SerializeObject(GetParametros());
         }
 
         private void btnActualizarObservaciones_Click(object sender, EventArgs e)
@@ -327,7 +336,7 @@ namespace IU_Windows
 
         private void btnIniciarTerapia_Click(object sender, EventArgs e)
         {
-            this.subprocesoTerapia.RunWorkerAsync();
+            this.subprocesoTerapia.RunWorkerAsync(GetParametros());
             DateTime tIni = DateTime.Now;
             this.lblComienzoTerapia.Text = DateTime.Now.ToShortTimeString();
             this.btnIniciarTerapia.Enabled = false;
@@ -344,25 +353,25 @@ namespace IU_Windows
             this.btnIniciarTerapia.Enabled = true;
             this.progressBar1.Style = ProgressBarStyle.Marquee;
             Terapia terapia = new Terapia();
-            paciente.GuardarTerapia(terapia);
+            //paciente.GuardarTerapia(terapia);
             tiempoTranscurridoTerapia.Reset();
             MessageBox.Show("Fin de Terapia");
         }
         private void Thread_DoWork(object sender, DoWorkEventArgs e)
         {
+            Dictionary<string, decimal> parametros = (Dictionary<string, decimal>)e.Argument;
             string portName = Helper.GetRRMSerialPort();
-            if (portName != null)
+            RobotRehabilitacionMano RRM = new RobotRehabilitacionMano(portName, parametros);
+            if (portName == null)
+                MessageBox.Show("No se ha podido encontrar el RRM.\n Por favor, verifique la conexion al puerto USB.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
             {
-                MessageBox.Show($"RRM encontrado en el puerto {portName}");
-                RobotRehabilitacionMano RRM = new RobotRehabilitacionMano(portName);
-
-                Stopwatch marcaTiempo = Stopwatch.StartNew();
-                while (marcaTiempo.ElapsedMilliseconds <= 10000)
+                while (!RRM.finTerapia)
                 {
-                    System.Threading.Thread.Sleep(100);
-                    subprocesoTerapia.ReportProgress((Int32)(marcaTiempo.ElapsedMilliseconds / 100));
+                    RRM.RealizarMovimiento();
+                    subprocesoTerapia.ReportProgress(RRM.ProgresoRealizado());
                 }
-                subprocesoTerapia.ReportProgress(100);
+
             }
         }
 
@@ -371,7 +380,7 @@ namespace IU_Windows
             int SqlId = int.Parse((sender as ToolStripMenuItem).AccessibleDescription);
             Paciente paciente = new SQLHelper().GetPaciente(SqlId);
             var respuseta = MessageBox.Show($"¿Esta seguro de que desea eliminar al paciente {paciente.Nombre} {paciente.Apellidos} ?", "Eliminar Paciente", MessageBoxButtons.YesNo);
-            if(respuseta == DialogResult.Yes)
+            if (respuseta == DialogResult.Yes)
             {
                 new SQLHelper().EliminarPaciente(paciente);
                 groupBoxDatosPaciente.Hide();

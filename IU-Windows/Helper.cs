@@ -99,7 +99,6 @@ namespace IU_Windows
             {
                 /* Do Nothing */
             }
-            System.Windows.Forms.MessageBox.Show("No se ha podido encontrar el RRM", "Error", System.Windows.Forms.MessageBoxButtons.OK,System.Windows.Forms.MessageBoxIcon.Error);
             return null;
         }
         private static string AutodetectArduinoPort()

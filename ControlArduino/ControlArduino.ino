@@ -18,7 +18,7 @@ int refreshTime = 20; // the time needed in between pulses
 Servo servo;
 void setup() {
 	Serial.begin(9600);
-	//handShake();
+	handShake();
 	servo.attach(8);
 }
 
