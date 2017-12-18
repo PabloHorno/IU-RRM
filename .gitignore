@@ -261,5 +261,5 @@ __pycache__/
 *.pyc
 
 # Private documentation
-*.doc
-*.docx
+#*.doc
+#*.docx
