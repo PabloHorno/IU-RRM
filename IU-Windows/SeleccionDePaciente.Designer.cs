@@ -894,6 +894,11 @@
             this.numericUpDownVelocidadCierreCompleta.AccessibleDescription = "0";
             this.numericUpDownVelocidadCierreCompleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadCierreCompleta.Location = new System.Drawing.Point(61, 59);
+            this.numericUpDownVelocidadCierreCompleta.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             this.numericUpDownVelocidadCierreCompleta.Name = "numericUpDownVelocidadCierreCompleta";
             this.numericUpDownVelocidadCierreCompleta.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownVelocidadCierreCompleta.TabIndex = 17;
@@ -1005,6 +1010,11 @@
             this.numericUpDownVelocidadAperturaCompleta.AccessibleDescription = "0";
             this.numericUpDownVelocidadAperturaCompleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadAperturaCompleta.Location = new System.Drawing.Point(60, 52);
+            this.numericUpDownVelocidadAperturaCompleta.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             this.numericUpDownVelocidadAperturaCompleta.Name = "numericUpDownVelocidadAperturaCompleta";
             this.numericUpDownVelocidadAperturaCompleta.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownVelocidadAperturaCompleta.TabIndex = 9;
@@ -1192,6 +1202,11 @@
             this.numericUpDownVelocidadCierrePulgar.AccessibleDescription = "1";
             this.numericUpDownVelocidadCierrePulgar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadCierrePulgar.Location = new System.Drawing.Point(60, 59);
+            this.numericUpDownVelocidadCierrePulgar.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             this.numericUpDownVelocidadCierrePulgar.Name = "numericUpDownVelocidadCierrePulgar";
             this.numericUpDownVelocidadCierrePulgar.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownVelocidadCierrePulgar.TabIndex = 17;
@@ -1293,6 +1308,11 @@
             this.numericUpDownVelocidadAperturaPulgar.AccessibleDescription = "1";
             this.numericUpDownVelocidadAperturaPulgar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadAperturaPulgar.Location = new System.Drawing.Point(60, 52);
+            this.numericUpDownVelocidadAperturaPulgar.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             this.numericUpDownVelocidadAperturaPulgar.Name = "numericUpDownVelocidadAperturaPulgar";
             this.numericUpDownVelocidadAperturaPulgar.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownVelocidadAperturaPulgar.TabIndex = 9;
@@ -1466,6 +1486,11 @@
             this.numericUpDownVelocidadCierreIndice.AccessibleDescription = "1";
             this.numericUpDownVelocidadCierreIndice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadCierreIndice.Location = new System.Drawing.Point(60, 59);
+            this.numericUpDownVelocidadCierreIndice.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             this.numericUpDownVelocidadCierreIndice.Name = "numericUpDownVelocidadCierreIndice";
             this.numericUpDownVelocidadCierreIndice.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownVelocidadCierreIndice.TabIndex = 17;
@@ -1567,6 +1592,11 @@
             this.numericUpDownVelocidadAperturaIndice.AccessibleDescription = "1";
             this.numericUpDownVelocidadAperturaIndice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadAperturaIndice.Location = new System.Drawing.Point(60, 52);
+            this.numericUpDownVelocidadAperturaIndice.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             this.numericUpDownVelocidadAperturaIndice.Name = "numericUpDownVelocidadAperturaIndice";
             this.numericUpDownVelocidadAperturaIndice.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownVelocidadAperturaIndice.TabIndex = 9;
@@ -1739,6 +1769,11 @@
             this.numericUpDownVelocidadCierreCorazon.AccessibleDescription = "1";
             this.numericUpDownVelocidadCierreCorazon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadCierreCorazon.Location = new System.Drawing.Point(60, 59);
+            this.numericUpDownVelocidadCierreCorazon.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             this.numericUpDownVelocidadCierreCorazon.Name = "numericUpDownVelocidadCierreCorazon";
             this.numericUpDownVelocidadCierreCorazon.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownVelocidadCierreCorazon.TabIndex = 17;
@@ -1840,6 +1875,11 @@
             this.numericUpDownVelocidadAperturaCorazon.AccessibleDescription = "1";
             this.numericUpDownVelocidadAperturaCorazon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadAperturaCorazon.Location = new System.Drawing.Point(60, 52);
+            this.numericUpDownVelocidadAperturaCorazon.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             this.numericUpDownVelocidadAperturaCorazon.Name = "numericUpDownVelocidadAperturaCorazon";
             this.numericUpDownVelocidadAperturaCorazon.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownVelocidadAperturaCorazon.TabIndex = 9;
@@ -2012,6 +2052,11 @@
             this.numericUpDownVelocidadCierreAnular.AccessibleDescription = "1";
             this.numericUpDownVelocidadCierreAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadCierreAnular.Location = new System.Drawing.Point(60, 59);
+            this.numericUpDownVelocidadCierreAnular.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             this.numericUpDownVelocidadCierreAnular.Name = "numericUpDownVelocidadCierreAnular";
             this.numericUpDownVelocidadCierreAnular.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownVelocidadCierreAnular.TabIndex = 17;
@@ -2113,6 +2158,11 @@
             this.numericUpDownVelocidadAperturaAnular.AccessibleDescription = "1";
             this.numericUpDownVelocidadAperturaAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadAperturaAnular.Location = new System.Drawing.Point(60, 52);
+            this.numericUpDownVelocidadAperturaAnular.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             this.numericUpDownVelocidadAperturaAnular.Name = "numericUpDownVelocidadAperturaAnular";
             this.numericUpDownVelocidadAperturaAnular.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownVelocidadAperturaAnular.TabIndex = 9;
@@ -2285,6 +2335,11 @@
             this.numericUpDownVelocidadCierreMeñique.AccessibleDescription = "1";
             this.numericUpDownVelocidadCierreMeñique.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadCierreMeñique.Location = new System.Drawing.Point(60, 59);
+            this.numericUpDownVelocidadCierreMeñique.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             this.numericUpDownVelocidadCierreMeñique.Name = "numericUpDownVelocidadCierreMeñique";
             this.numericUpDownVelocidadCierreMeñique.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownVelocidadCierreMeñique.TabIndex = 17;
@@ -2386,6 +2441,11 @@
             this.numericUpDownVelocidadAperturaMeñique.AccessibleDescription = "1";
             this.numericUpDownVelocidadAperturaMeñique.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadAperturaMeñique.Location = new System.Drawing.Point(60, 52);
+            this.numericUpDownVelocidadAperturaMeñique.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             this.numericUpDownVelocidadAperturaMeñique.Name = "numericUpDownVelocidadAperturaMeñique";
             this.numericUpDownVelocidadAperturaMeñique.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownVelocidadAperturaMeñique.TabIndex = 9;
@@ -2616,6 +2676,11 @@
             this.numericUpDownVelocidadCierrePinza.AccessibleDescription = "2";
             this.numericUpDownVelocidadCierrePinza.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadCierrePinza.Location = new System.Drawing.Point(61, 59);
+            this.numericUpDownVelocidadCierrePinza.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             this.numericUpDownVelocidadCierrePinza.Name = "numericUpDownVelocidadCierrePinza";
             this.numericUpDownVelocidadCierrePinza.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownVelocidadCierrePinza.TabIndex = 17;
@@ -2675,6 +2740,11 @@
             this.numericUpDownVelocidadAperturaPinza.AccessibleDescription = "2";
             this.numericUpDownVelocidadAperturaPinza.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownVelocidadAperturaPinza.Location = new System.Drawing.Point(60, 52);
+            this.numericUpDownVelocidadAperturaPinza.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             this.numericUpDownVelocidadAperturaPinza.Name = "numericUpDownVelocidadAperturaPinza";
             this.numericUpDownVelocidadAperturaPinza.Size = new System.Drawing.Size(65, 20);
             this.numericUpDownVelocidadAperturaPinza.TabIndex = 9;
