@@ -23,6 +23,12 @@ namespace IU_Windows
             setRequeridos();
             btnCrearCuenta.Click += BtnCrearCuenta_Click;
             btnIniciar.Click += BtnIniciar_Click;
+            this.FormClosing += Inicio_FormClosing;
+        }
+
+        private void Inicio_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
 
         private void BtnCrearCuenta_Click(object sender, EventArgs e)
