@@ -66,7 +66,7 @@ namespace IU_Windows
                 };
                 db.InsertarPaciente(paciente);
                 this.Close();
-                MessageBox.Show($"Paciente {paciente.Nombre} {paciente.Apellidos} agregado correctamente");
+                MessageBox.Show($"Paciente {paciente.Nombre} {paciente.Apellidos} agregado correctamente","Creacion de Paciente Correcta");
             }
         }
         private void setRequeridos()
