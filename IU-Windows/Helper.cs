@@ -27,53 +27,53 @@ namespace IU_Windows
             //Abrir
             {"numericUpDownTiempoApertura"+"Completa", 5 },
             {"numericUpDownAnguloApertura"+"Completa", 30 },
-            {"numericUpDownVelocidadApertura"+"Completa", 15 },
+            {"numericUpDownVelocidadApertura"+"Completa", 2 },
             //Cerrar
             {"numericUpDownTiempoCierre"+"Completa", 5 },
             {"numericUpDownAnguloCierre"+"Completa", -90 },
-            {"numericUpDownVelocidadCierre"+"Completa", 15 },
+            {"numericUpDownVelocidadCierre"+"Completa", 2 },
             ///ABRIR CERRAR DEDOS
             //Pulgar
             //Abrir
             {"numericUpDownTiempoApertura"+"Pulgar", 5 },
             {"numericUpDownAnguloApertura"+"Pulgar", 30 },
-            {"numericUpDownVelocidadApertura"+"Pulgar", 15 },
+            {"numericUpDownVelocidadApertura"+"Pulgar", 2 },
             //Cerrar
             {"numericUpDownTiempoCierre"+"Pulgar", 5 },
             {"numericUpDownAnguloCierre"+"Pulgar", 30 },
-            {"numericUpDownVelocidadCierre"+"Pulgar", 15 },
+            {"numericUpDownVelocidadCierre"+"Pulgar", 2 },
             //Indice
             {"numericUpDownTiempoApertura"+"Indice", 5 },
             {"numericUpDownAnguloApertura"+"Indice", 30 },
-            {"numericUpDownVelocidadApertura"+"Indice", 15 },
+            {"numericUpDownVelocidadApertura"+"Indice", 2 },
             //Cerrar
             {"numericUpDownTiempoCierre"+"Indice", 5 },
             {"numericUpDownAnguloCierre"+"Indice", 30 },
-            {"numericUpDownVelocidadCierre"+"Indice", 15 },
+            {"numericUpDownVelocidadCierre"+"Indice", 2 },
             //Corazón
             {"numericUpDownTiempoApertura"+"Corazon", 5 },
             {"numericUpDownAnguloApertura"+"Corazon", 30 },
-            {"numericUpDownVelocidadApertura"+"Corazon", 15 },
+            {"numericUpDownVelocidadApertura"+"Corazon", 2 },
             //Cerrar
             {"numericUpDownTiempoCierre"+"Corazon", 5 },
             {"numericUpDownAnguloCierre"+"Corazon", 30 },
-            {"numericUpDownVelocidadCierre"+"Corazon", 15 },
+            {"numericUpDownVelocidadCierre"+"Corazon", 2 },
             //Anular
             {"numericUpDownTiempoApertura"+"Anular", 5 },
             {"numericUpDownAnguloApertura"+"Anular", 30 },
-            {"numericUpDownVelocidadApertura"+"Anular", 15 },
+            {"numericUpDownVelocidadApertura"+"Anular", 2 },
             //Cerrar
             {"numericUpDownTiempoCierre"+"Anular", 5 },
             {"numericUpDownAnguloCierre"+"Anular", 30 },
-            {"numericUpDownVelocidadCierre"+"Anular", 15 },
+            {"numericUpDownVelocidadCierre"+"Anular", 2 },
             //Meñique
             {"numericUpDownTiempoApertura"+"Meñique", 5 },
             {"numericUpDownAnguloApertura"+"Meñique", 30 },
-            {"numericUpDownVelocidadApertura"+"Meñique", 15 },
+            {"numericUpDownVelocidadApertura"+"Meñique", 2 },
             //Cerrar
             {"numericUpDownTiempoCierre"+"Meñique", 5 },
             {"numericUpDownAnguloCierre"+"Meñique", 30 },
-            {"numericUpDownVelocidadCierre"+"Meñique", 15 },
+            {"numericUpDownVelocidadCierre"+"Meñique", 2 },
 
         };
         static public string GetRRMSerialPort()
