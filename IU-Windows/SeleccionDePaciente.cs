@@ -361,11 +361,11 @@ namespace IU_Windows
         {
             Dictionary<string, decimal> parametros = (Dictionary<string, decimal>)e.Argument;
             string portName = Helper.GetRRMSerialPort();
-            RobotRehabilitacionMano RRM = new RobotRehabilitacionMano(portName, parametros);
-            if (portName == null)
+            if (string.IsNullOrEmpty(portName))
                 MessageBox.Show("No se ha podido encontrar el RRM.\n Por favor, verifique la conexion al puerto USB.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
+                RobotRehabilitacionMano RRM = new RobotRehabilitacionMano(portName, parametros);
                 while (!RRM.finTerapia)
                 {
                     RRM.RealizarMovimiento();
