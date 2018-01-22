@@ -339,7 +339,7 @@
             // 
             this.treeViewPacientes.Location = new System.Drawing.Point(13, 70);
             this.treeViewPacientes.Name = "treeViewPacientes";
-            this.treeViewPacientes.Size = new System.Drawing.Size(151, 469);
+            this.treeViewPacientes.Size = new System.Drawing.Size(175, 469);
             this.treeViewPacientes.TabIndex = 0;
             // 
             // btnSalir
@@ -700,7 +700,7 @@
             this.groupBoxEjecucionTerapia.Controls.Add(this.btnGuardarTerapia);
             this.groupBoxEjecucionTerapia.Controls.Add(this.btnIniciarTerapia);
             this.groupBoxEjecucionTerapia.Enabled = false;
-            this.groupBoxEjecucionTerapia.Location = new System.Drawing.Point(438, 8);
+            this.groupBoxEjecucionTerapia.Location = new System.Drawing.Point(434, 18);
             this.groupBoxEjecucionTerapia.Name = "groupBoxEjecucionTerapia";
             this.groupBoxEjecucionTerapia.Size = new System.Drawing.Size(449, 399);
             this.groupBoxEjecucionTerapia.TabIndex = 9;
@@ -2899,7 +2899,7 @@
             // 
             this.textBoxBusqueda.Location = new System.Drawing.Point(12, 44);
             this.textBoxBusqueda.Name = "textBoxBusqueda";
-            this.textBoxBusqueda.Size = new System.Drawing.Size(151, 20);
+            this.textBoxBusqueda.Size = new System.Drawing.Size(176, 20);
             this.textBoxBusqueda.TabIndex = 9;
             // 
             // label46
