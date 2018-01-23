@@ -25,55 +25,66 @@ namespace IU_Windows
         {
             ///ABRIR CERRAR COMPLETA
             //Abrir
-            {"numericUpDownTiempoApertura"+"Completa", 5 },
-            {"numericUpDownAnguloApertura"+"Completa", 30 },
-            {"numericUpDownVelocidadApertura"+"Completa", 2 },
+            {"numericUpDown"+"Tiempo"+"Apertura"+"Completa", 5 },
+            {"numericUpDown"+"Angulo"+"Apertura"+"Completa", 30 },
+            {"numericUpDown"+"Velocidad"+"Apertura"+"Completa", 2 },
             //Cerrar
-            {"numericUpDownTiempoCierre"+"Completa", 5 },
-            {"numericUpDownAnguloCierre"+"Completa", -90 },
-            {"numericUpDownVelocidadCierre"+"Completa", 2 },
+            {"numericUpDown"+"Tiempo"+"Cierre"+"Completa", 5 },
+            {"numericUpDown"+"Angulo"+"Cierre"+"Completa", -90 },
+            {"numericUpDown"+"Velocidad"+"Cierre"+"Completa", 2 },
+
             ///ABRIR CERRAR DEDOS
             //Pulgar
             //Abrir
-            {"numericUpDownTiempoApertura"+"Pulgar", 5 },
+            {"numericUpDown"+"Tiempo"+"Apertura"+"Pulgar", 5 },
             {"numericUpDownAnguloApertura"+"Pulgar", 30 },
-            {"numericUpDownVelocidadApertura"+"Pulgar", 2 },
+            {"numericUpDown"+"Velocidad"+"Apertura"+"Pulgar", 2 },
             //Cerrar
-            {"numericUpDownTiempoCierre"+"Pulgar", 5 },
-            {"numericUpDownAnguloCierre"+"Pulgar", 30 },
-            {"numericUpDownVelocidadCierre"+"Pulgar", 2 },
+            {"numericUpDown"+"Tiempo"+"Cierre"+"Pulgar", 5 },
+            {"numericUpDown"+"Angulo"+"Cierre"+"Pulgar", 30 },
+            {"numericUpDown"+"Velocidad"+"Cierre"+"Pulgar", 2 },
             //Indice
-            {"numericUpDownTiempoApertura"+"Indice", 5 },
-            {"numericUpDownAnguloApertura"+"Indice", 30 },
-            {"numericUpDownVelocidadApertura"+"Indice", 2 },
+            {"numericUpDown"+"Tiempo"+"Apertura"+"Indice", 5 },
+            {"numericUpDown"+"Angulo"+"Apertura"+"Indice", 30 },
+            {"numericUpDown"+"Velocidad"+"Apertura"+"Indice", 2 },
             //Cerrar
-            {"numericUpDownTiempoCierre"+"Indice", 5 },
-            {"numericUpDownAnguloCierre"+"Indice", 30 },
-            {"numericUpDownVelocidadCierre"+"Indice", 2 },
+            {"numericUpDown"+"Tiempo"+"Cierre"+"Indice", 5 },
+            {"numericUpDown"+"Angulo"+"Cierre"+"Indice", 30 },
+            {"numericUpDown"+"Velocidad"+"Cierre"+"Indice", 2 },
             //Corazón
-            {"numericUpDownTiempoApertura"+"Corazon", 5 },
-            {"numericUpDownAnguloApertura"+"Corazon", 30 },
-            {"numericUpDownVelocidadApertura"+"Corazon", 2 },
+            {"numericUpDown"+"Tiempo"+"Apertura"+"Corazon", 5 },
+            {"numericUpDown"+"Angulo"+"Apertura"+"Corazon", 30 },
+            {"numericUpDown"+"Velocidad"+"Apertura"+"Corazon", 2 },
             //Cerrar
-            {"numericUpDownTiempoCierre"+"Corazon", 5 },
-            {"numericUpDownAnguloCierre"+"Corazon", 30 },
-            {"numericUpDownVelocidadCierre"+"Corazon", 2 },
+            {"numericUpDown"+"Tiempo"+"Cierre"+"Corazon", 5 },
+            {"numericUpDown"+"Angulo"+"Cierre"+"Corazon", 30 },
+            {"numericUpDown"+"Velocidad"+"Cierre"+"Corazon", 2 },
             //Anular
-            {"numericUpDownTiempoApertura"+"Anular", 5 },
-            {"numericUpDownAnguloApertura"+"Anular", 30 },
-            {"numericUpDownVelocidadApertura"+"Anular", 2 },
+            {"numericUpDown"+"Tiempo"+"Apertura"+"Anular", 5 },
+            {"numericUpDown"+"Angulo"+"Apertura"+"Anular", 30 },
+            {"numericUpDown"+"Velocidad"+"Apertura"+"Anular", 2 },
             //Cerrar
-            {"numericUpDownTiempoCierre"+"Anular", 5 },
-            {"numericUpDownAnguloCierre"+"Anular", 30 },
-            {"numericUpDownVelocidadCierre"+"Anular", 2 },
+            {"numericUpDown"+"Tiempo"+"Cierre"+"Anular", 5 },
+            {"numericUpDown"+"Angulo"+"Cierre"+"Anular", 30 },
+            {"numericUpDown"+"Velocidad"+"Cierre"+"Anular", 2 },
             //Meñique
-            {"numericUpDownTiempoApertura"+"Meñique", 5 },
-            {"numericUpDownAnguloApertura"+"Meñique", 30 },
-            {"numericUpDownVelocidadApertura"+"Meñique", 2 },
+            {"numericUpDown"+"Tiempo"+"Apertura"+"Meñique", 5 },
+            {"numericUpDown"+"Angulo"+"Apertura"+"Meñique", 30 },
+            {"numericUpDown"+"Velocidad"+"Apertura"+"Meñique", 2 },
             //Cerrar
-            {"numericUpDownTiempoCierre"+"Meñique", 5 },
-            {"numericUpDownAnguloCierre"+"Meñique", 30 },
-            {"numericUpDownVelocidadCierre"+"Meñique", 2 },
+            {"numericUpDown"+"Tiempo"+"Cierre"+"Meñique", 5 },
+            {"numericUpDown"+"Angulo"+"Cierre"+"Meñique", 30 },
+            {"numericUpDown"+"Velocidad"+"Cierre"+"Meñique", 2 },
+
+            ///PINZAGRUESA FINA
+            //Abrir
+            {"numericUpDown"+"Tiempo"+"Apertura"+"Pinza", 5 },
+            {"numericUpDown"+"Velocidad"+"Apertura"+"Pinza", 5 },
+            //Cerrar
+            {"numericUpDown"+"Tiempo"+"Cierre"+"Pinza", 5 },
+            {"numericUpDown"+"Velocidad"+"Cierre"+"Pinza", 2 },
+
+
 
         };
         static public string GetRRMSerialPort()
