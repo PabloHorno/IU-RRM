@@ -219,8 +219,8 @@
             this.label37 = new System.Windows.Forms.Label();
             this.tabPagePinza = new System.Windows.Forms.TabPage();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButonPizaFina = new System.Windows.Forms.RadioButton();
+            this.radioButtonPinzaGruesa = new System.Windows.Forms.RadioButton();
             this.label28 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
@@ -2532,8 +2532,8 @@
             // 
             // groupBox16
             // 
-            this.groupBox16.Controls.Add(this.radioButton2);
-            this.groupBox16.Controls.Add(this.radioButton1);
+            this.groupBox16.Controls.Add(this.radioButonPizaFina);
+            this.groupBox16.Controls.Add(this.radioButtonPinzaGruesa);
             this.groupBox16.Controls.Add(this.label28);
             this.groupBox16.Controls.Add(this.comboBox1);
             this.groupBox16.Controls.Add(this.numericUpDown5);
@@ -2545,27 +2545,27 @@
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "Parametros";
             // 
-            // radioButton2
+            // radioButonPizaFina
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Location = new System.Drawing.Point(16, 70);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(84, 17);
-            this.radioButton2.TabIndex = 20;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Pinza Fina";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButonPizaFina.AutoSize = true;
+            this.radioButonPizaFina.Checked = true;
+            this.radioButonPizaFina.Location = new System.Drawing.Point(16, 70);
+            this.radioButonPizaFina.Name = "radioButonPizaFina";
+            this.radioButonPizaFina.Size = new System.Drawing.Size(84, 17);
+            this.radioButonPizaFina.TabIndex = 20;
+            this.radioButonPizaFina.TabStop = true;
+            this.radioButonPizaFina.Text = "Pinza Fina";
+            this.radioButonPizaFina.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radioButtonPinzaGruesa
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(111, 70);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(100, 17);
-            this.radioButton1.TabIndex = 19;
-            this.radioButton1.Text = "Pinza Gruesa";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonPinzaGruesa.AutoSize = true;
+            this.radioButtonPinzaGruesa.Location = new System.Drawing.Point(111, 70);
+            this.radioButtonPinzaGruesa.Name = "radioButtonPinzaGruesa";
+            this.radioButtonPinzaGruesa.Size = new System.Drawing.Size(100, 17);
+            this.radioButtonPinzaGruesa.TabIndex = 19;
+            this.radioButtonPinzaGruesa.Text = "Pinza Gruesa";
+            this.radioButtonPinzaGruesa.UseVisualStyleBackColor = true;
             // 
             // label28
             // 
@@ -3187,8 +3187,8 @@
         private System.Windows.Forms.NumericUpDown numericUpDownTiempoAperturaPinza;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButonPizaFina;
+        private System.Windows.Forms.RadioButton radioButtonPinzaGruesa;
         private System.Windows.Forms.ComboBox comboBoxTipoParametrosCierreMeñique;
         private System.Windows.Forms.ListView listViewHistorialTerapias;
         private System.Windows.Forms.ColumnHeader Terapia;

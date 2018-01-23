@@ -309,7 +309,10 @@ namespace IU_Windows
         Dictionary<string, decimal> GetParametros()
         {
             Dictionary<string, decimal> parametros = new Dictionary<string, decimal>();
-            parametros.Add("tipoTerapia", comboBoxSeleccionTerapia.SelectedIndex);
+            if ((TipoTerapia)comboBoxSeleccionTerapia.SelectedIndex == TipoTerapia.PinzaFina && radioButtonPinzaGruesa.Checked)
+                parametros.Add("tipoTerapia", (decimal)TipoTerapia.PinzaGruesa);
+            else
+                parametros.Add("tipoTerapia", comboBoxSeleccionTerapia.SelectedIndex);
             parametros.Add("repeticiones", numRepeticiones.Value);
             foreach (var field in this.GetType().GetFields(System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance))
             {

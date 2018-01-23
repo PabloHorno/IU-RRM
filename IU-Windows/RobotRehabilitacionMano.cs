@@ -18,6 +18,7 @@ namespace IU_Windows
         {
             this.parametros = parametros;
             NumeroRepeticiones = int.Parse(parametros["repeticiones"].ToString());
+            tipoTerapia = (TipoTerapia)int.Parse(parametros["tipoTerapia"].ToString());
             puertoSerial = new SerialPort(portName, Constantes.VelocidadComunicacion);
         }
         ~RobotRehabilitacionMano()
@@ -46,13 +47,16 @@ namespace IU_Windows
                 switch (tipoTerapia)
                 {
                     case TipoTerapia.AbrirCerrarMano:
-
+                        System.Windows.Forms.MessageBox.Show("AbrirCerrarMano");
                         break;
                     case TipoTerapia.AbrirCerrarDedos:
+                        System.Windows.Forms.MessageBox.Show("AbrirCerrarDedos");
                         break;
                     case TipoTerapia.PinzaFina:
+                        System.Windows.Forms.MessageBox.Show("AbrirCerrarPinzaFina");
                         break;
                     case TipoTerapia.PinzaGruesa:
+                        System.Windows.Forms.MessageBox.Show("AbrirCerrarPinzaGruesa");
                         break;
                 }
                 Thread.Sleep(20);
