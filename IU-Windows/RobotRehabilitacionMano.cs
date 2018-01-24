@@ -5,15 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO.Ports;
 using System.Threading;
+using Newtonsoft.Json;
 
 namespace IU_Windows
 {
     public class RobotRehabilitacionMano
     {
-        public RobotRehabilitacionMano(String portName)
-        {
-            puertoSerial = new SerialPort(portName, Constantes.VelocidadComunicacion);
-        }
         public RobotRehabilitacionMano(String portName, Dictionary<string, decimal> parametros)
         {
             this.parametros = parametros;
@@ -47,19 +44,19 @@ namespace IU_Windows
                 switch (tipoTerapia)
                 {
                     case TipoTerapia.AbrirCerrarMano:
-                        System.Windows.Forms.MessageBox.Show("AbrirCerrarMano");
+                        puertoSerial.WriteLine(JsonConvert.SerializeObject(parametros));
                         break;
                     case TipoTerapia.AbrirCerrarDedos:
-                        System.Windows.Forms.MessageBox.Show("AbrirCerrarDedos");
+                        //System.Windows.Forms.MessageBox.Show("AbrirCerrarDedos");
                         break;
                     case TipoTerapia.PinzaFina:
-                        System.Windows.Forms.MessageBox.Show("AbrirCerrarPinzaFina");
+                        //System.Windows.Forms.MessageBox.Show("AbrirCerrarPinzaFina");
                         break;
                     case TipoTerapia.PinzaGruesa:
-                        System.Windows.Forms.MessageBox.Show("AbrirCerrarPinzaGruesa");
+                        //System.Windows.Forms.MessageBox.Show("AbrirCerrarPinzaGruesa");
                         break;
                 }
-                Thread.Sleep(20);
+                Thread.Sleep(1000);
             }
             if (progreso > NumeroRepeticiones)
                 finTerapia = true;

@@ -73,7 +73,7 @@
             this.lblComienzoTerapia = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.btnGuardarTerapia = new System.Windows.Forms.Button();
+            this.btnDetenerTerapia = new System.Windows.Forms.Button();
             this.btnIniciarTerapia = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabControlTerapias = new System.Windows.Forms.TabControl();
@@ -697,7 +697,7 @@
             this.groupBoxEjecucionTerapia.Controls.Add(this.lblComienzoTerapia);
             this.groupBoxEjecucionTerapia.Controls.Add(this.label44);
             this.groupBoxEjecucionTerapia.Controls.Add(this.progressBar1);
-            this.groupBoxEjecucionTerapia.Controls.Add(this.btnGuardarTerapia);
+            this.groupBoxEjecucionTerapia.Controls.Add(this.btnDetenerTerapia);
             this.groupBoxEjecucionTerapia.Controls.Add(this.btnIniciarTerapia);
             this.groupBoxEjecucionTerapia.Enabled = false;
             this.groupBoxEjecucionTerapia.Location = new System.Drawing.Point(434, 18);
@@ -751,15 +751,17 @@
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar1.TabIndex = 6;
             // 
-            // btnGuardarTerapia
+            // btnDetenerTerapia
             // 
-            this.btnGuardarTerapia.Location = new System.Drawing.Point(308, 345);
-            this.btnGuardarTerapia.Name = "btnGuardarTerapia";
-            this.btnGuardarTerapia.Size = new System.Drawing.Size(105, 23);
-            this.btnGuardarTerapia.TabIndex = 8;
-            this.btnGuardarTerapia.Text = "Guardar Terapia";
-            this.btnGuardarTerapia.UseVisualStyleBackColor = true;
-            this.btnGuardarTerapia.Click += new System.EventHandler(this.btnGuardarTerapia_Click);
+            this.btnDetenerTerapia.BackColor = System.Drawing.Color.Transparent;
+            this.btnDetenerTerapia.Enabled = false;
+            this.btnDetenerTerapia.Location = new System.Drawing.Point(308, 345);
+            this.btnDetenerTerapia.Name = "btnDetenerTerapia";
+            this.btnDetenerTerapia.Size = new System.Drawing.Size(105, 23);
+            this.btnDetenerTerapia.TabIndex = 8;
+            this.btnDetenerTerapia.Text = "Detener Terapia";
+            this.btnDetenerTerapia.UseVisualStyleBackColor = false;
+            this.btnDetenerTerapia.Click += new System.EventHandler(this.btnDetenerTerapia_Click);
             // 
             // btnIniciarTerapia
             // 
@@ -3210,7 +3212,7 @@
         private System.Windows.Forms.Label lblNpinzaFina;
         private System.Windows.Forms.Label lblTotalTerapiasRealizadas;
         private System.Windows.Forms.ColumnHeader Fecha;
-        private System.Windows.Forms.Button btnGuardarTerapia;
+        private System.Windows.Forms.Button btnDetenerTerapia;
         private System.Windows.Forms.Button btnIniciarTerapia;
         private System.Windows.Forms.GroupBox groupBox17;
         private System.Windows.Forms.RichTextBox richTextBoxObservaciones;

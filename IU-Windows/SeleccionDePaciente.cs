@@ -302,10 +302,6 @@ namespace IU_Windows
             this.tabControlTerapias.SelectedIndex = this.comboBoxSeleccionTerapia.SelectedIndex;
         }
 
-        private void btnGuardarTerapia_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(ParametrosToJson());
-        }
         Dictionary<string, decimal> GetParametros()
         {
             Dictionary<string, decimal> parametros = new Dictionary<string, decimal>();
@@ -339,12 +335,19 @@ namespace IU_Windows
 
         private void btnIniciarTerapia_Click(object sender, EventArgs e)
         {
+            this.subprocesoTerapia.WorkerSupportsCancellation  = true;
             this.subprocesoTerapia.RunWorkerAsync(GetParametros());
             DateTime tIni = DateTime.Now;
             this.lblComienzoTerapia.Text = DateTime.Now.ToShortTimeString();
             this.btnIniciarTerapia.Enabled = false;
             this.progressBar1.Style = ProgressBarStyle.Continuous;
+            this.btnDetenerTerapia.Enabled = true;
+            this.btnDetenerTerapia.BackColor = Color.Red;
             tiempoTranscurridoTerapia.Start();
+        }
+        private void btnDetenerTerapia_Click(object sender, EventArgs e)
+        {
+            subprocesoTerapia.CancelAsync();
         }
         private void Thread_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
@@ -353,26 +356,49 @@ namespace IU_Windows
         }
         private void Thread_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            if (e.Cancelled == false)
+            {
+                Terapia terapia = new Terapia();
+                //paciente.GuardarTerapia(terapia);
+                MessageBox.Show("Fin de Terapia");
+            }
+            else
+            {
+                MessageBox.Show("Terapia cancelada. No se guardaran datos.", "Terapia Detenida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            tiempoTranscurridoTerapia.Reset();
             this.btnIniciarTerapia.Enabled = true;
             this.progressBar1.Style = ProgressBarStyle.Marquee;
-            Terapia terapia = new Terapia();
-            //paciente.GuardarTerapia(terapia);
-            tiempoTranscurridoTerapia.Reset();
-            MessageBox.Show("Fin de Terapia");
+            this.btnDetenerTerapia.Enabled = false;
+            this.btnDetenerTerapia.BackColor = Color.Transparent;
+            subprocesoTerapia.Dispose();
         }
         private void Thread_DoWork(object sender, DoWorkEventArgs e)
         {
             Dictionary<string, decimal> parametros = (Dictionary<string, decimal>)e.Argument;
             string portName = Helper.GetRRMSerialPort();
             if (string.IsNullOrEmpty(portName))
+            {
                 MessageBox.Show("No se ha podido encontrar el RRM.\n Por favor, verifique la conexion al puerto USB.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Cancel = true;
+                return;
+            }
             else
             {
                 RobotRehabilitacionMano RRM = new RobotRehabilitacionMano(portName, parametros);
                 while (!RRM.finTerapia)
                 {
-                    RRM.RealizarMovimiento();
-                    subprocesoTerapia.ReportProgress(RRM.ProgresoRealizado());
+                    if (subprocesoTerapia.CancellationPending)
+                    {
+                        e.Cancel = true;
+                        return;
+                    }
+                    else
+                    {
+                        RRM.RealizarMovimiento();
+                        subprocesoTerapia.ReportProgress(RRM.ProgresoRealizado());
+                    }
                 }
 
             }
