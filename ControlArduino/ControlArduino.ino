@@ -4,8 +4,9 @@
  Author:	Pablo Horno
 */
 #include <ArduinoJson.h>
+//#include <Servo.h>
 //#include <VarSpeedServo.h>
-#include<Servo.h>
+//#include<Servo.h>
 //max/min puse values in microseconds to send to the servo
 #define POS_MIN      1050  //fully retracted
 #define POS_MAX      2000 //fully extended
@@ -15,19 +16,22 @@ int pos;
 int lastPulse = 0;    // the time in milliseconds of the last pulse
 int refreshTime = 20; // the time needed in between pulses
 //VarSpeedServo servo;
-Servo servo;
 void setup() {
 	Serial.begin(9600);
-	handShake();
-	servo.attach(8);
+	//handShake();
+//	servo.attach(8);
 }
 
 // the loop function runs over and over again until power down or reset
 void loop() {
-	/*if (Serial.available())
-		servo.writeMicroseconds(map(Serial.parseInt(),0,50,1050,2000));*/
-	//servo.write(150, 2, true);
-	//servo.write(60, 255, true);
+	if (Serial.available())
+	{
+		DynamicJsonBuffer jsonBuffer;
+		JsonObject& parametros = jsonBuffer.parseObject(Serial.readString());
+		Serial.println((int)parametros["tipo"]);
+	}
+ Serial.println("NEXT");
+ delay(1000);
 }
 
 bool handShake()

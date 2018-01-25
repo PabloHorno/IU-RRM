@@ -306,10 +306,10 @@ namespace IU_Windows
         {
             Dictionary<string, decimal> parametros = new Dictionary<string, decimal>();
             if ((TipoTerapia)comboBoxSeleccionTerapia.SelectedIndex == TipoTerapia.PinzaFina && radioButtonPinzaGruesa.Checked)
-                parametros.Add("tipoTerapia", (decimal)TipoTerapia.PinzaGruesa);
+                parametros.Add("tipo", (decimal)TipoTerapia.PinzaGruesa);
             else
-                parametros.Add("tipoTerapia", comboBoxSeleccionTerapia.SelectedIndex);
-            parametros.Add("repeticiones", numRepeticiones.Value);
+                parametros.Add("tipo", comboBoxSeleccionTerapia.SelectedIndex);
+            parametros.Add("R", numRepeticiones.Value);
             foreach (var field in this.GetType().GetFields(System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance))
             {
 
@@ -317,14 +317,22 @@ namespace IU_Windows
                 {
                     NumericUpDown obj = (NumericUpDown)field.GetValue(this);
                     if (obj.AccessibleDescription != null && (TipoTerapia)Int32.Parse(obj.AccessibleDescription) == (TipoTerapia)comboBoxSeleccionTerapia.SelectedIndex)
-                        parametros.Add(obj.Name, obj.Value);
+                        parametros.Add(obj.Name
+                                                .Replace("numericUpDown", "")
+                                                .Replace("Apertura", "A")
+                                                .Replace("Cierre", "C")
+                                                .Replace("Angulo", "A")
+                                                .Replace("Velocidad", "V")
+                                                .Replace("Tiempo", "T")
+                                                .Replace("Pulgar", "P")
+                                                .Replace("Indice", "I")
+                                                .Replace("Corazon", "C")
+                                                .Replace("Anular", "A")
+                                                .Replace("Meñique", "M")
+                                                , obj.Value);
                 }
             }
             return parametros;
-        }
-        string ParametrosToJson()
-        {
-            return JsonConvert.SerializeObject(GetParametros());
         }
 
         private void btnActualizarObservaciones_Click(object sender, EventArgs e)
@@ -335,7 +343,9 @@ namespace IU_Windows
 
         private void btnIniciarTerapia_Click(object sender, EventArgs e)
         {
-            this.subprocesoTerapia.WorkerSupportsCancellation  = true;
+
+            //MessageBox.Show(JsonConvert.SerializeObject(GetParametros()));     //Mostrar parametros por dialogo
+            this.subprocesoTerapia.WorkerSupportsCancellation = true;
             this.subprocesoTerapia.RunWorkerAsync(GetParametros());
             DateTime tIni = DateTime.Now;
             this.lblComienzoTerapia.Text = DateTime.Now.ToShortTimeString();
@@ -386,6 +396,7 @@ namespace IU_Windows
             }
             else
             {
+                int count = 1;
                 RobotRehabilitacionMano RRM = new RobotRehabilitacionMano(portName, parametros);
                 while (!RRM.finTerapia)
                 {
@@ -396,11 +407,14 @@ namespace IU_Windows
                     }
                     else
                     {
+                        //MessageBox.Show(count.ToString());
+                        count++;
                         RRM.RealizarMovimiento();
                         subprocesoTerapia.ReportProgress(RRM.ProgresoRealizado());
+                        Thread.Sleep(200);
                     }
                 }
-
+                RRM.puertoSerial.Close();
             }
         }
 

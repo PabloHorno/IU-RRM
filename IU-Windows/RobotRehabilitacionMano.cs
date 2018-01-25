@@ -14,8 +14,8 @@ namespace IU_Windows
         public RobotRehabilitacionMano(String portName, Dictionary<string, decimal> parametros)
         {
             this.parametros = parametros;
-            NumeroRepeticiones = int.Parse(parametros["repeticiones"].ToString());
-            tipoTerapia = (TipoTerapia)int.Parse(parametros["tipoTerapia"].ToString());
+            NumeroRepeticiones = int.Parse(parametros["R"].ToString());
+            tipoTerapia = (TipoTerapia)int.Parse(parametros["tipo"].ToString());
             puertoSerial = new SerialPort(portName, Constantes.VelocidadComunicacion);
         }
         ~RobotRehabilitacionMano()
@@ -27,7 +27,7 @@ namespace IU_Windows
         public Dictionary<string, decimal> parametros { get; set; }
         public bool finTerapia { get; set; } = false;
         public TipoTerapia tipoTerapia { get; set; }
-        Mano mano;
+        private bool siguienteMovimiento = true;
 
         public int NumeroRepeticiones { get; set; }
         public int progreso { get; set; } = 0;
@@ -40,43 +40,33 @@ namespace IU_Windows
             if (finTerapia == false)
             {
                 if (!puertoSerial.IsOpen)
-                    puertoSerial.Open();
-                switch (tipoTerapia)
                 {
-                    case TipoTerapia.AbrirCerrarMano:
-                        puertoSerial.WriteLine(JsonConvert.SerializeObject(parametros));
-                        break;
-                    case TipoTerapia.AbrirCerrarDedos:
-                        //System.Windows.Forms.MessageBox.Show("AbrirCerrarDedos");
-                        break;
-                    case TipoTerapia.PinzaFina:
-                        //System.Windows.Forms.MessageBox.Show("AbrirCerrarPinzaFina");
-                        break;
-                    case TipoTerapia.PinzaGruesa:
-                        //System.Windows.Forms.MessageBox.Show("AbrirCerrarPinzaGruesa");
-                        break;
+                    try
+                    {
+                        puertoSerial.Open();
+                    }
+                    catch(Exception e)
+                    {
+                        System.Windows.Forms.MessageBox.Show(e.Message);
+                    }
                 }
-                Thread.Sleep(1000);
+                if (siguienteMovimiento)
+                {
+                    siguienteMovimiento = false;
+                    puertoSerial.WriteLine(JsonConvert.SerializeObject(parametros));
+                    progreso++;
+                }
+                if (puertoSerial.BytesToRead > 0 && puertoSerial.ReadLine().Contains("NEXT"))
+                {
+                    siguienteMovimiento = true;
+                }
             }
             if (progreso > NumeroRepeticiones)
+            {
                 finTerapia = true;
-            else
-                progreso++;
+                puertoSerial.Close();
+            }
         }
 
-    }
-    public class Mano
-    {
-        public Dedo Pulgar;
-        public Dedo Indice;
-        public Dedo Corazon { get; set; }
-        public Dedo Anular { get; set; }
-        public Dedo Meñique { get; set; }
-    }
-    public class Dedo
-    {
-        public float Tiempo { get; set; }
-        public float Angulo { get; set; }
-        public float Velocidad { get; set; }
     }
 }
