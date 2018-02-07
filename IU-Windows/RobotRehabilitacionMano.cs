@@ -11,6 +11,7 @@ namespace IU_Windows
 {
     public class RobotRehabilitacionMano
     {
+        string messageError = "{\"tipo\":-1}";
         public RobotRehabilitacionMano(String portName, Dictionary<string, decimal> parametros)
         {
             this.parametros = parametros;
@@ -68,5 +69,22 @@ namespace IU_Windows
             }
         }
 
+        public void Detener()
+        {
+            if (!puertoSerial.IsOpen)
+            {
+                try
+                {
+                    puertoSerial.Open();
+                }
+                catch (Exception e)
+                {
+                    System.Windows.Forms.MessageBox.Show(e.Message);
+                }
+                puertoSerial.WriteLine(messageError);
+                puertoSerial.Close();
+                finTerapia = true;
+            }
+        }
     }
 }

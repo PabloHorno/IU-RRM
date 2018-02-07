@@ -402,6 +402,7 @@ namespace IU_Windows
                 {
                     if (subprocesoTerapia.CancellationPending)
                     {
+                        RRM.Detener();
                         e.Cancel = true;
                         return;
                     }

@@ -3,61 +3,22 @@
  Created:	10/6/2017 11:58:17 AM
  Author:	Pablo Horno
 */
-#include <ArduinoJson.h>
-//#include <Servo.h>
-//#include <VarSpeedServo.h>
-//#include<Servo.h>
+#include "Mano.h"
 //max/min puse values in microseconds to send to the servo
 #define POS_MIN      1050  //fully retracted
 #define POS_MAX      2000 //fully extended
 
-int speed;
-int pos;
-int lastPulse = 0;    // the time in milliseconds of the last pulse
-int refreshTime = 20; // the time needed in between pulses
-//VarSpeedServo servo;
+Mano RRH;
+
 void setup() {
+	RRH.set_pines(4, 5, 6, 7, 8);
 	Serial.begin(9600);
-	//handShake();
-//	servo.attach(8);
 }
 
 // the loop function runs over and over again until power down or reset
 void loop() {
 	if (Serial.available())
 	{
-		DynamicJsonBuffer jsonBuffer;
-		JsonObject& parametros = jsonBuffer.parseObject(Serial.readString());
-		Serial.println((int)parametros["tipo"]);
+		RRH.procesar();
 	}
- Serial.println("NEXT");
- delay(1000);
 }
-
-bool handShake()
-{
-	while (!Serial.availableForWrite()) {}
-	Serial.println("READY");
-	while (true)
-	{
-		String str;
-		if (Serial.available() && Serial.readString() == "SYNC")
-		{
-			Serial.println("ACK");
-			break;
-		}
-		delay(20);
-	}
-	while (true)
-	{
-		String str;
-		if (Serial.available() && Serial.readString() == "INI")
-		{
-			Serial.println("OK");
-			break;
-		}
-		delay(20);
-	}
-
-}
-

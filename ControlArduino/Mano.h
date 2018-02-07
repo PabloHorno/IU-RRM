@@ -1,5 +1,6 @@
 #pragma once
 
+#include <ArduinoJson.h>
 #include "dedo.h"
 //PULGAR
 #define PULGAR_ABIERTO 60
@@ -20,16 +21,19 @@
 class Mano {
 public:
 	enum dedos {PULGAR, INDICE, CORAZON, ANULAR, MENIQUE};
+	Mano();
 	void set_pines(unsigned pin[5]);
 	void set_pines(unsigned pin_pulgar, unsigned pin_indice,unsigned pin_corazon, unsigned pin_anular, unsigned pin_menique);
 	void abrir_dedos();
+  void set_posicion_dedos(float angulo, unsigned velocidad, bool wait);
 	void cerrar_dedos();
 	void contar(unsigned iteraciones = 1);
 	void indice_pulgar();
 	void asignar_posicion_dedos(unsigned posiciones[5]);
 	void calibrar_dedos();
 	bool is_ready();
-
+  void procesar();
+  DynamicJsonBuffer jsonBuffer;
 	//private:
 	Dedo dedos[5];
 };

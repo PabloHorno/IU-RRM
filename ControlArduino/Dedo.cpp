@@ -27,3 +27,8 @@ void Dedo::cerrar(bool _delay)
 		estado = cerrado;
 	}
 }
+
+unsigned Dedo::get_posicion_via_angulo(float angulo)
+{
+	return map((-B - sqrtf(B*B - 4 * A*(C - angulo))) / (2 * A),0,50,POS_MIN,POS_MAX);
+}
