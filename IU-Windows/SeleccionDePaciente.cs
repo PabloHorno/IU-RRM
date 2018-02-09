@@ -368,9 +368,18 @@ namespace IU_Windows
         {
             if (e.Cancelled == false)
             {
-                Terapia terapia = new Terapia();
-                //paciente.GuardarTerapia(terapia);
-                MessageBox.Show("Fin de Terapia");
+                Terapia terapia = new Terapia {
+                    PacienteSqlid = paciente.SqlId,
+                    Duracion = tiempoTranscurridoTerapia.Elapsed,
+                    Fecha = DateTime.Now,
+                    Parametros = GetParametros(),
+                    Repeticiones = (int)GetParametros()["R"],
+                    tipoTerapia = (TipoTerapia)GetParametros()["tipo"],
+                    Observaciones = ""
+                 };
+
+                paciente.GuardarTerapia(terapia);
+                MessageBox.Show("Fin de Terapia y a sido guardada");
             }
             else
             {
