@@ -156,8 +156,8 @@ namespace IU_Windows
     public class SQLHelper
     {
         private SqlConnection sql;
-        private string sqlStringConnection =
-            "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\DataBase.mdf;Integrated Security=True";
+        //       private string sqlStringConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\DataBase.mdf;Integrated Security=True";
+        private string sqlStringConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\EII\\DataBase.mdf;Integrated Security=True";
         public SQLHelper()
         {
             sql = new SqlConnection(sqlStringConnection);

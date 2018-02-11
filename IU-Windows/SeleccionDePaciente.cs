@@ -343,8 +343,7 @@ namespace IU_Windows
 
         private void btnIniciarTerapia_Click(object sender, EventArgs e)
         {
-
-            //MessageBox.Show(JsonConvert.SerializeObject(GetParametros()));     //Mostrar parametros por dialogo
+            //MessageBox.Show(JsonConvert.SerializeObject(GetParametros()));     //Mostrar parametros por dialogo (Debug)
             this.subprocesoTerapia.WorkerSupportsCancellation = true;
             this.subprocesoTerapia.RunWorkerAsync(GetParametros());
             DateTime tIni = DateTime.Now;

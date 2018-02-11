@@ -5,15 +5,11 @@ VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IU-Windows", "IU-Windows\IU-Windows.csproj", "{7CDFD694-89AD-4B5C-BE6E-1350F6A480EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VentanaRender", "WindowsGame2\WindowsGame2\VentanaRender.csproj", "{2C91924A-E90F-4C9D-98A0-51090483DB26}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsGame2Content", "WindowsGame2\WindowsGame2Content\WindowsGame2Content.contentproj", "{10738FDE-4EE5-46F0-A779-C4582BE02CC9}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ControlArduino", "ControlArduino\ControlArduino.vcxproj", "{C5F80730-F44F-4478-BDAE-6634EFC2CA88}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testConsole", "testConsole\testConsole.csproj", "{1EBA1047-8B1B-44E1-9011-20C941D2FD39}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Interfaz de Usuario RRM", "Interfaz de Usuario RRM\Interfaz de Usuario RRM.vdproj", "{977182F0-AD2D-458D-9358-B27292F19CF5}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "IU-RRM Installer", "Interfaz de Usuario RRM\Interfaz de Usuario RRM.vdproj", "{977182F0-AD2D-458D-9358-B27292F19CF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,16 +27,6 @@ Global
 		{7CDFD694-89AD-4B5C-BE6E-1350F6A480EE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7CDFD694-89AD-4B5C-BE6E-1350F6A480EE}.Release|x86.ActiveCfg = Release|Any CPU
 		{7CDFD694-89AD-4B5C-BE6E-1350F6A480EE}.Release|x86.Build.0 = Release|Any CPU
-		{2C91924A-E90F-4C9D-98A0-51090483DB26}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{2C91924A-E90F-4C9D-98A0-51090483DB26}.Debug|x86.ActiveCfg = Debug|x86
-		{2C91924A-E90F-4C9D-98A0-51090483DB26}.Debug|x86.Build.0 = Debug|x86
-		{2C91924A-E90F-4C9D-98A0-51090483DB26}.Release|Any CPU.ActiveCfg = Release|x86
-		{2C91924A-E90F-4C9D-98A0-51090483DB26}.Release|x86.ActiveCfg = Release|x86
-		{2C91924A-E90F-4C9D-98A0-51090483DB26}.Release|x86.Build.0 = Release|x86
-		{10738FDE-4EE5-46F0-A779-C4582BE02CC9}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{10738FDE-4EE5-46F0-A779-C4582BE02CC9}.Debug|x86.ActiveCfg = Debug|x86
-		{10738FDE-4EE5-46F0-A779-C4582BE02CC9}.Release|Any CPU.ActiveCfg = Release|x86
-		{10738FDE-4EE5-46F0-A779-C4582BE02CC9}.Release|x86.ActiveCfg = Release|x86
 		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.ActiveCfg = Debug|Win32
 		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.Build.0 = Debug|Win32
