@@ -72,7 +72,7 @@ namespace IU_Windows
                                                 .Replace("Indice", "I")
                                                 .Replace("Corazon", "C")
                                                 .Replace("Anular", "A")
-                                                .Replace("Meñique", "M");
+                                                .Replace("Meñique", "M"); //Acortamiento para que el buffer del arduino pueda manejar toda la informacion
 
                                 obj.Value = ultimaTerapia.Parametros[str];
                             }
