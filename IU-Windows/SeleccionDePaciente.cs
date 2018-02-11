@@ -61,7 +61,20 @@ namespace IU_Windows
                             }
                             else
                             {
-                                obj.Value = ultimaTerapia.Parametros[obj.Name];
+                                string str = obj.Name
+                                                .Replace("numericUpDown", "")
+                                                .Replace("Apertura", "A")
+                                                .Replace("Cierre", "C")
+                                                .Replace("Angulo", "A")
+                                                .Replace("Velocidad", "V")
+                                                .Replace("Tiempo", "T")
+                                                .Replace("Pulgar", "P")
+                                                .Replace("Indice", "I")
+                                                .Replace("Corazon", "C")
+                                                .Replace("Anular", "A")
+                                                .Replace("Meñique", "M");
+
+                                obj.Value = ultimaTerapia.Parametros[str];
                             }
                         }
                     }

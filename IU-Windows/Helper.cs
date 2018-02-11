@@ -156,8 +156,8 @@ namespace IU_Windows
     public class SQLHelper
     {
         private SqlConnection sql;
-        //       private string sqlStringConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\DataBase.mdf;Integrated Security=True";
-        private string sqlStringConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\EII\\DataBase.mdf;Integrated Security=True";
+               private string sqlStringConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\DataBase.mdf;Integrated Security=True";
+        //private string sqlStringConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\EII\\DataBase.mdf;Integrated Security=True";
         public SQLHelper()
         {
             sql = new SqlConnection(sqlStringConnection);
@@ -359,14 +359,14 @@ namespace IU_Windows
         }
         public void GuardarTerapiaPaciente(Paciente paciente, Terapia terapia)
         {
-            string query = "INSERT INTO Terapias(SqlIdPaciente, Repeticiones, Tipo, Duracion, Parametros, Observaciones, Fecha) VALUE(@SqlIdPaciente, @Repeticiones, @Tipo, @Duracion, @Parametros, @Observaciones, @Fecha)";
+            string query = "INSERT INTO Terapias(SqlIdPaciente, Repeticiones, Tipo, Duracion, Parametros, Observaciones, Fecha) VALUES (@SqlIdPaciente, @Repeticiones, @Tipo, @Duracion, @Parametros, @Observaciones, @Fecha)";
             SqlCommand cmd = new SqlCommand(query, sql);
             cmd.Parameters.AddWithValue("@SqlIdPaciente", paciente.SqlId);
             cmd.Parameters.AddWithValue("@Repeticiones", terapia.Repeticiones);
             cmd.Parameters.AddWithValue("@Tipo", terapia.tipoTerapia);
             cmd.Parameters.AddWithValue("@Duracion", terapia.Duracion);
             cmd.Parameters.AddWithValue("@Fecha", terapia.Fecha);
-            cmd.Parameters.AddWithValue("@Parametros", terapia.Parametros);
+            cmd.Parameters.AddWithValue("@Parametros", JsonConvert.SerializeObject(terapia.Parametros));
             cmd.Parameters.AddWithValue("@Observaciones", terapia.Observaciones);
             this.Open();
             cmd.ExecuteNonQuery();
