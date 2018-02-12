@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_1CEEE0B3541C41DBA2BE4DC79ACBFE41"
+        "MsmKey" = "8:_2191AD86FDBB4DFBA2305499CE8A959C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -33,8 +33,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_B02779B74FAA2D22211D4327A0621CAD"
-        "OwnerKey" = "8:_1CEEE0B3541C41DBA2BE4DC79ACBFE41"
+        "MsmKey" = "8:_BFF92EE3890384BE3C602C0136D7C4F2"
+        "OwnerKey" = "8:_2191AD86FDBB4DFBA2305499CE8A959C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D25ED8C072D509148EB69D648A72D1CF"
+        "OwnerKey" = "8:_2191AD86FDBB4DFBA2305499CE8A959C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -45,26 +51,20 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_DF147993879230B2406E992ADC490D08"
-        "OwnerKey" = "8:_1CEEE0B3541C41DBA2BE4DC79ACBFE41"
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_D25ED8C072D509148EB69D648A72D1CF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B02779B74FAA2D22211D4327A0621CAD"
+        "OwnerKey" = "8:_2191AD86FDBB4DFBA2305499CE8A959C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1CEEE0B3541C41DBA2BE4DC79ACBFE41"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DF147993879230B2406E992ADC490D08"
+        "OwnerKey" = "8:_BFF92EE3890384BE3C602C0136D7C4F2"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -167,7 +167,7 @@
             "SourcePath" = "8:D:\\Users\\Pablo\\Downloads\\eii.ico"
             "TargetName" = "8:eii.ico"
             "Tag" = "8:"
-            "Folder" = "8:_912F73C3CF12400195BEF20CD7BDF774"
+            "Folder" = "8:_AF713D4B4D1D405DADFB5EAD5E4773D0"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -187,7 +187,7 @@
             "SourcePath" = "8:..\\Documentacion\\Manual de Instalación del Software.pdf"
             "TargetName" = "8:Manual de Instalación del Software.pdf"
             "Tag" = "8:"
-            "Folder" = "8:_28605AD8D6764097866924793F82498C"
+            "Folder" = "8:_36BF63EA2D7C4FCFB8797E1079679681"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -202,14 +202,45 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B02779B74FAA2D22211D4327A0621CAD"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BFF92EE3890384BE3C602C0136D7C4F2"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_BFF92EE3890384BE3C602C0136D7C4F2"
+                    {
+                    "Name" = "8:Newtonsoft.Json.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Newtonsoft.Json.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_D2B1DE436A1D44C98E1FC7F092C8BE46"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D25ED8C072D509148EB69D648A72D1CF"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
-                    "_B02779B74FAA2D22211D4327A0621CAD"
+                    "_D25ED8C072D509148EB69D648A72D1CF"
                     {
                     "Name" = "8:System.Net.Http.dll"
                     "Attributes" = "3:512"
@@ -218,7 +249,7 @@
             "SourcePath" = "8:System.Net.Http.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_D7AF6CBC5C15445CAA75621706316C33"
+            "Folder" = "8:_D2B1DE436A1D44C98E1FC7F092C8BE46"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -238,7 +269,7 @@
             "SourcePath" = "8:..\\Documentacion\\Manual de Usuario.pdf"
             "TargetName" = "8:Manual de Usuario.pdf"
             "Tag" = "8:"
-            "Folder" = "8:_28605AD8D6764097866924793F82498C"
+            "Folder" = "8:_36BF63EA2D7C4FCFB8797E1079679681"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -251,37 +282,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DF147993879230B2406E992ADC490D08"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_DF147993879230B2406E992ADC490D08"
-                    {
-                    "Name" = "8:Newtonsoft.Json.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Newtonsoft.Json.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_D7AF6CBC5C15445CAA75621706316C33"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
         }
@@ -366,18 +366,7 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
-                }
-            }
-            "{1525181F-901A-416C-8A58-119130FE478E}:_D7AF6CBC5C15445CAA75621706316C33"
-            {
-            "Name" = "8:#1912"
-            "AlwaysCreate" = "11:FALSE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Property" = "8:ProgramFilesFolder"
-                "Folders"
-                {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_28605AD8D6764097866924793F82498C"
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_36BF63EA2D7C4FCFB8797E1079679681"
                     {
                     "Name" = "8:Documentacion"
                     "AlwaysCreate" = "11:FALSE"
@@ -388,7 +377,7 @@
                         {
                         }
                     }
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_912F73C3CF12400195BEF20CD7BDF774"
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_AF713D4B4D1D405DADFB5EAD5E4773D0"
                     {
                     "Name" = "8:src"
                     "AlwaysCreate" = "11:FALSE"
@@ -418,7 +407,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Interfaz de Usuario RRM"
         "ProductCode" = "8:{B69C15F7-635D-42D8-9BC5-D6F112A805A0}"
-        "PackageCode" = "8:{68F3F671-77BD-4BF4-B407-4D0BF6A4EA72}"
+        "PackageCode" = "8:{26B095D1-4260-466D-B412-2E8310A38DA9}"
         "UpgradeCode" = "8:{1D063117-D348-4C81-A458-9A9155360173}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -560,7 +549,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_1CEEE0B3541C41DBA2BE4DC79ACBFE41"
+            "Target" = "8:_2191AD86FDBB4DFBA2305499CE8A959C"
             "Folder" = "8:_1122CA02AF98477187F83B9A71641382"
             "WorkingFolder" = "8:_2C2EE81C383D4578B099AAB80E26C242"
             "Icon" = "8:_4DFBB24E7D724F87B4AF49AAA446F54E"
@@ -574,7 +563,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_1CEEE0B3541C41DBA2BE4DC79ACBFE41"
+            "Target" = "8:_2191AD86FDBB4DFBA2305499CE8A959C"
             "Folder" = "8:_7F6E83A6702E41FD9F7DC7371CC89A5D"
             "WorkingFolder" = "8:_2C2EE81C383D4578B099AAB80E26C242"
             "Icon" = "8:_4DFBB24E7D724F87B4AF49AAA446F54E"
@@ -993,12 +982,12 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_1CEEE0B3541C41DBA2BE4DC79ACBFE41"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_2191AD86FDBB4DFBA2305499CE8A959C"
             {
             "SourcePath" = "8:..\\IU-Windows\\obj\\Debug\\IU-Windows.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_D7AF6CBC5C15445CAA75621706316C33"
+            "Folder" = "8:_D2B1DE436A1D44C98E1FC7F092C8BE46"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"

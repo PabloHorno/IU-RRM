@@ -391,11 +391,11 @@ namespace IU_Windows
                  };
 
                 paciente.GuardarTerapia(terapia);
-                MessageBox.Show("Fin de Terapia y a sido guardada");
+                MessageBox.Show("Fin de Terapia y ha sido guardada");
             }
             else
             {
-                MessageBox.Show("Terapia cancelada. No se guardaran datos.", "Terapia Detenida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Terapia cancelada. No se guardarán datos.", "Terapia Detenida", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             tiempoTranscurridoTerapia.Reset();
