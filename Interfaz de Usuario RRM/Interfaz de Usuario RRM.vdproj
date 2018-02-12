@@ -52,12 +52,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D25ED8C072D509148EB69D648A72D1CF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_2191AD86FDBB4DFBA2305499CE8A959C"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -65,6 +59,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_BFF92EE3890384BE3C602C0136D7C4F2"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_D25ED8C072D509148EB69D648A72D1CF"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -407,7 +407,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Interfaz de Usuario RRM"
         "ProductCode" = "8:{B69C15F7-635D-42D8-9BC5-D6F112A805A0}"
-        "PackageCode" = "8:{26B095D1-4260-466D-B412-2E8310A38DA9}"
+        "PackageCode" = "8:{37862D64-8ACD-40C7-AEEB-74EAFC487BA6}"
         "UpgradeCode" = "8:{1D063117-D348-4C81-A458-9A9155360173}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
